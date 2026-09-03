@@ -14,7 +14,7 @@ Este repositorio se trabaja de forma colaborativa:
 🔀 Los cambios se integran a main mediante Pull Requests
 ✅ Revisión en equipo antes de fusionar
 👥 Equipo — Otter Devs
-🧑‍💻 Danie
+🧑‍💻 DanieL
 🛠️ Estado del proyecto
 
 🚧 En desarrollo
