@@ -1,0 +1,411 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    background-color: #101114;
+    color: white;
+
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   EQUIPO
+========================= */
+
+.equipo {
+    width: 100%;
+    max-width: 1760px;
+
+    padding: 40px 20px;
+}
+
+.valoresObjetivos,
+.seccion-equipo {
+    width: 100%;
+}
+
+.valoresObjetivos {
+    margin-bottom: 40px;
+}
+
+.valoresObjetivos h1,
+.seccion-equipo h2 {
+    margin: 0 0 20px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.cards-informacion {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.tarjeta-informacion {
+    min-height: 130px;
+    padding: 20px;
+    background-color: #18191d;
+    border: 1px solid #2b2d31;
+    border-radius: 12px;
+}
+
+.tarjeta-informacion h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.tarjeta-informacion p {
+    margin: 0;
+    color: #d8d8da;
+}
+
+
+/* =========================
+   PERSONA
+========================= */
+
+.persona {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================
+   BARRA DE PERSONA
+========================= */
+
+.barra-persona {
+    background-color: #18191d;
+
+    border: 1px solid #2b2d31;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 9px 12px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.barra-persona:hover {
+    background-color: #232428;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   AVATAR DE LA BARRA
+========================= */
+
+.avatar-barra {
+    width: 42px;
+    height: 42px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    margin-right: 10px;
+}
+
+
+/* =========================
+   DATOS DE LA BARRA
+========================= */
+
+.datos-barra {
+    flex: 1;
+}
+
+.datos-barra h5 {
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.datos-barra span {
+    font-size: 12px;
+
+    color: #a5a5aa;
+}
+
+
+/* =========================
+   ICONOS
+========================= */
+
+.iconos {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    font-size: 18px;
+
+    color: #c5c5c7;
+}
+
+
+/* =========================
+   FLECHA
+========================= */
+
+.flecha {
+    transition: transform 0.3s;
+}
+
+.barra-persona[aria-expanded="true"] .flecha {
+    transform: rotate(180deg);
+}
+
+
+/* =========================
+   CONTENEDOR DE TARJETA
+========================= */
+
+.tarjeta-contenedor {
+    position: absolute;
+
+    bottom: calc(100% + 12px);
+    left: 0;
+
+    width: 100%;
+
+    z-index: 10;
+}
+
+
+/* =========================
+   TARJETA
+========================= */
+
+.tarjeta {
+    background-color: #111214;
+
+    border: 1px solid #292b30;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.portada {
+    height: 105px;
+
+    background: linear-gradient(
+        135deg,
+        #315ee7,
+        #7138e7
+    );
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.contenido {
+    padding: 0 18px 18px;
+}
+
+
+/* =========================
+   AVATAR GRANDE
+========================= */
+
+.contenedor-avatar {
+    position: relative;
+
+    width: max-content;
+}
+
+.avatar-grande {
+    width: 86px;
+    height: 86px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 6px solid #111214;
+
+    margin-top: -45px;
+
+    background-color: #111214;
+}
+
+
+/* =========================
+   ESTADO
+========================= */
+
+.estado {
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    right: 2px;
+    bottom: 4px;
+
+    background-color: #21c063;
+
+    border: 4px solid #111214;
+    border-radius: 50%;
+}
+
+
+/* =========================
+   NOMBRE
+========================= */
+
+.nombre {
+    margin-top: 10px;
+    margin-bottom: 0;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   USUARIO
+========================= */
+
+.usuario {
+    color: #9c9da3;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   DESCRIPCIÓN
+========================= */
+
+.descripcion {
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    color: #d8d8da;
+}
+
+
+/* =========================
+   HABILIDADES
+========================= */
+
+.habilidades {
+    margin-top: 15px;
+}
+
+.habilidades span {
+    display: inline-block;
+
+    background-color: #202225;
+    color: #dadade;
+
+    border-radius: 7px;
+
+    padding: 5px 9px;
+
+    margin: 3px 2px;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   REDES
+========================= */
+
+.redes {
+    margin-top: 17px;
+
+    display: flex;
+
+    gap: 8px;
+}
+
+.redes a {
+    flex: 1;
+
+    background-color: #1d1f23;
+    color: white;
+
+    border-radius: 8px;
+
+    padding: 8px;
+
+    text-align: center;
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.redes a:hover {
+    background-color: #315ee7;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 400px) {
+
+    .persona {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 1500px) {
+    .cards {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 850px) {
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
