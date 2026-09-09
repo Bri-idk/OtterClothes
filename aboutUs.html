@@ -1,24 +1,90 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <title>About Us</title>
-  </head>
-  <body>
-    <main class="equipo">
-      <section class="valoresObjetivos">
-        <h1>Valores y objetivos</h1>
-        <p>texto de ejemplo</p>
-      </section>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>About Us</title>
+</head>
+
+<body>
+  <main class="equipo">
+    <section class="valoresObjetivos">
+      <h1>Valores y objetivos</h1>
+      <p>texto de ejemplo</p>
+    </section>
+
+    <section class="seccion-equipo">
+      <h2>Equipo</h2>
+      <section class="cards">
+        <!--?CARDS POR MIEMBRO DEL EQUIPO-->
+        <!--*BRIAN-->
+        <div class="persona">
+          <!-- TARJETA DESPLEGABLE -->
+          <div class="collapse tarjeta-contenedor" id="perfilNombre1">
+            <div class="tarjeta">
+              <!-- PORTADA -->
+              <div class="portada"></div>
+
+              <!-- CONTENIDO -->
+              <div class="contenido">
+                <!-- FOTO -->
+                <div class="contenedor-avatar">
+                  <img src="https://i.pravatar.cc/200?img=12" class="avatar-grande" alt="Foto de Nombre" />
+
+                  <span class="estado"></span>
+                </div>
+
+                <!-- NOMBRE -->
+                <h4 class="nombre">Nombre</h4>
+
+                <span class="usuario"> @usuario </span>
+
+                <!-- DESCRIPCIÓN -->
+                <p class="descripcion">
+                  Describe aquí el rol y las responsabilidades de esta
+                  persona.
+                </p>
+
+                <!-- HABILIDADES -->
+                <div class="habilidades">
+                  <span>
+                    <i class="bi bi-filetype-html"></i>
+                    HTML
+                  </span>
+
+                  <span>
+                    <i class="bi bi-filetype-css"></i>
+                    CSS
+                  </span>
+
+                  <span>
+                    <i class="bi bi-bootstrap"></i>
+                    Bootstrap
+                  </span>
+
+                  <span>
+                    <i class="bi bi-filetype-js"></i>
+                    JavaScript
+                  </span>
+                </div>
+
+                <!-- REDES -->
+                <div class="redes">
+                  <a href="#">
+                    <i class="bi bi-github"></i>
+                  </a>
+
+                  <a href="#">
+                    <i class="bi bi-linkedin"></i>
+                  </a>
+
+                  <a href="#">
+                    <i class="bi bi-envelope"></i>
+                  </a>
       <section class="seccion-equipo">
         <h2>Equipo</h2>
         <section class="cards">
@@ -104,7 +170,12 @@
                 </div>
               </div>
             </div>
+          </div>
 
+          <!-- BARRA -->
+          <div class="barra-persona" data-bs-toggle="collapse" data-bs-target="#perfilNombre1" aria-expanded="false"
+            aria-controls="perfilNombre1">
+            <img src="https://i.pravatar.cc/200?img=12" class="avatar-barra" alt="Nombre" />
             <!-- BARRA -->
             <div
               class="barra-persona"
@@ -121,13 +192,84 @@
                 <span> Java fullstack developer </span>
               </div>
 
-              <div class="iconos">
-                <i class="bi bi-person-circle"></i>
+            <div class="datos-barra">
+              <h5>Nombre</h5>
 
-                <i class="bi bi-chevron-up flecha"></i>
-              </div>
+              <span> Rubro o rol </span>
+            </div>
+
+            <div class="iconos">
+              <i class="bi bi-person-circle"></i>
+
+              <i class="bi bi-chevron-up flecha"></i>
             </div>
           </div>
+        </div>
+        <!--Final de la card-->
+        <!--*Nombre-->
+        <div class="persona">
+          <!-- TARJETA DESPLEGABLE -->
+          <div class="collapse tarjeta-contenedor" id="perfilNombre2">
+            <div class="tarjeta">
+              <!-- PORTADA -->
+              <div class="portada"></div>
+
+              <!-- CONTENIDO -->
+              <div class="contenido">
+                <!-- FOTO -->
+                <div class="contenedor-avatar">
+                  <img src="https://i.pravatar.cc/200?img=12" class="avatar-grande" alt="Foto de Nombre" />
+
+                  <span class="estado"></span>
+                </div>
+
+                <!-- NOMBRE -->
+                <h4 class="nombre">Nombre</h4>
+
+                <span class="usuario"> @usuario </span>
+
+                <!-- DESCRIPCIÓN -->
+                <p class="descripcion">
+                  Describe aquí el rol y las responsabilidades de esta
+                  persona.
+                </p>
+
+                <!-- HABILIDADES -->
+                <div class="habilidades">
+                  <span>
+                    <i class="bi bi-filetype-html"></i>
+                    HTML
+                  </span>
+
+                  <span>
+                    <i class="bi bi-filetype-css"></i>
+                    CSS
+                  </span>
+
+                  <span>
+                    <i class="bi bi-bootstrap"></i>
+                    Bootstrap
+                  </span>
+
+                  <span>
+                    <i class="bi bi-filetype-js"></i>
+                    JavaScript
+                  </span>
+                </div>
+
+                <!-- REDES -->
+                <div class="redes">
+                  <a href="#">
+                    <i class="bi bi-github"></i>
+                  </a>
+
+                  <a href="#">
+                    <i class="bi bi-linkedin"></i>
+                  </a>
+
+                  <a href="#">
+                    <i class="bi bi-envelope"></i>
+                  </a>
           <!--Final de la card-->
           <!--*MAFER VAZQUEZ-->
           <div class="persona">
@@ -200,7 +342,15 @@
                 </div>
               </div>
             </div>
+          </div>
 
+          <!-- BARRA -->
+          <div class="barra-persona" data-bs-toggle="collapse" data-bs-target="#perfilNombre2" aria-expanded="false"
+            aria-controls="perfilNombre2">
+            <img src="https://i.pravatar.cc/200?img=12" class="avatar-barra" alt="Nombre" />
+
+            <div class="datos-barra">
+              <h5>Nombre</h5>
             <!-- BARRA -->
             <div
               class="barra-persona"
@@ -221,22 +371,117 @@
                 <span> Desarrolladora Frontend en Otter Clothes 🦦🌸 </span>
               </div>
 
-              <div class="iconos">
-                <i class="bi bi-person-circle"></i>
+              <span> Rubro o rol </span>
+            </div>
 
-                <i class="bi bi-chevron-up flecha"></i>
+            <div class="iconos">
+              <i class="bi bi-person-circle"></i>
+
+              <i class="bi bi-chevron-up flecha"></i>
+            </div>
+          </div>
+        </div>
+        <!--Final de la card-->
+
+
+
+        <!--? Victor Antonio Garcia Olachea-->
+        <div class="persona">
+          <!-- TARJETA DESPLEGABLE -->
+          <div class="collapse tarjeta-contenedor" id="perfilNombre1">
+            <div class="tarjeta">
+              <!-- PORTADA -->
+              <div class="portada"></div>
+
+              <!-- CONTENIDO -->
+              <div class="contenido">
+                <!-- FOTO -->
+                <div class="contenedor-avatar">
+                  <img src="https://i.pravatar.cc/200?img=12" class="avatar-grande" alt="Foto de Nombre" />
+
+                  <span class="estado"></span>
+                </div>
+
+                <!-- NOMBRE -->
+                <h4 class="nombre">Victor Antonio Garcia Olachea</h4>
+
+                <span class="usuario"> @victor.olachea01gmail.com </span>
+
+                <!-- DESCRIPCIÓN -->
+                <p class="descripcion">
+                  Desarrollador Java Junior enfocado en Backend, con conocimientos en Java, POO, SQL, MySQL y Spring
+                  Boot. Me apasiona crear soluciones funcionales, organizadas y orientadas a resolver problemas.
+                </p>
+
+                <!-- HABILIDADES -->
+                <div class="habilidades">
+                  <span>
+                    <i class="bi bi-filetype-html"></i>
+                    Java
+                  </span>
+
+                  <span>
+                    <i class="bi bi-filetype-css"></i>
+                    Frontend
+                  </span>
+
+                  <span>
+                    <i class="bi bi-bootstrap"></i>
+                    Backend
+                  </span>
+
+                  <span>
+                    <i class="bi bi-filetype-js"></i>
+                    Git
+                  </span>
+                </div>
+
+                <!-- REDES -->
+                <div class="redes">
+                  <a href="https://github.com/Victor-Antonio-Garcia-Olachea">
+                    <i class="bi bi-github"></i>
+                  </a>
+
+                  <a href="https://www.linkedin.com/in/victor-garcia-olachea/">
+                    <i class="bi bi-linkedin"></i>
+                  </a>
+
+                  <a href="#">
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-          <!--Final de la card-->
-        </section>
+
+          <!-- BARRA -->
+          <div class="barra-persona" data-bs-toggle="collapse" data-bs-target="#perfilNombre1" aria-expanded="false"
+            aria-controls="perfilNombre1">
+            <img src="https://i.pravatar.cc/200?img=12" class="avatar-barra" alt="Nombre" />
+
+            <div class="datos-barra">
+              <h5>Victor Antonio Garcia Olachea</h5>
+
+              <span> Desarrollador Java Backend </span>
+            </div>
+
+            <div class="iconos">
+              <i class="bi bi-person-circle"></i>
+
+              <i class="bi bi-chevron-up flecha"></i>
+            </div>
+          </div>
+        </div>
+
+
+
       </section>
-    </main>
-    <!--*Script bootstrap-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    </section>
+  </main>
+  <!--*Script bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
