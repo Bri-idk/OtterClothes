@@ -54,6 +54,18 @@ body {
     text-align: center;
 }
 
+.hero-about__brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.hero-about__logo {
+    width: clamp(90px, 12vw, 150px);
+    height: auto;
+}
+
 .hero-about__title {
     margin: 0;
 
@@ -76,6 +88,13 @@ body {
     background-color: var(--celeste);
 
     border-radius: 4px;
+}
+
+@media (max-width: 520px) {
+    .hero-about__brand {
+        flex-direction: column;
+        gap: 12px;
+    }
 }
 
 
@@ -198,6 +217,42 @@ body {
     justify-content: center;
 
     gap: 30px;
+}
+
+.equipo__grid .persona:has(#perfilBrian) {
+    order: 1;
+}
+
+.equipo__grid .persona:has(#perfilMafer) {
+    order: 2;
+}
+
+.equipo__grid .persona:has(#perfilMiguel) {
+    order: 3;
+}
+
+.equipo__grid .persona:has(#perfilVictor) {
+    order: 4;
+}
+
+.equipo__grid .persona:has(#perfilMarcela) {
+    order: 5;
+}
+
+.equipo__grid .persona:has(#perfilDaniela) {
+    order: 6;
+}
+
+.equipo__grid .persona:has(#perfilDaniel) {
+    order: 7;
+}
+
+.equipo__grid .persona:has(#perfilDavid) {
+    order: 8;
+}
+
+.equipo__grid .persona:has(#perfilCarlos) {
+    order: 9;
 }
 
 
