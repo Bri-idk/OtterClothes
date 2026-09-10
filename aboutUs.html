@@ -1,406 +1,666 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Equipo</title>
+
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      crossorigin="anonymous"
     />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Fuentes de reemplazo (la guía de marca pide Cooper BT / Rugrats Sans,
+         que no están disponibles como web font gratuita) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS propio -->
     <link rel="stylesheet" href="styles.css" />
-    <title>About Us</title>
   </head>
+
   <body>
-    <main class="equipo">
-      <section class="valoresObjetivos">
-        <h1>Valores y objetivos</h1>
-        <p>Texto de ejemplo</p>
-      </section>
+    <!-- ===========================
+         ABOUT US
+    ============================ -->
+    <header class="hero-about">
+      <h1 class="hero-about__title">About us</h1>
+      <div class="hero-about__linea"></div>
+    </header>
 
-      <section class="seccion-equipo">
-        <h2>Equipo</h2>
-        <section class="cards">
-          <!--?CARDS POR MIEMBRO DEL EQUIPO-->
-          <!--*Carlos-->
-          <div class="persona">
-            <div class="collapse tarjeta-contenedor" id="perfilBrian">
-              <div class="tarjeta">
-                <div class="portada"></div>
-                <div class="contenido">
-                  <div class="contenedor-avatar">
-                    <img
-                      src="./devs/Ing mecatronico.png"
-                      src="devs/brian.jpeg"
-                      class="avatar-grande"
-                      alt="Foto de Brian E. Pineda Martinez"
-                    />
-                    <span class="estado"></span>
-                  </div>
+    <!-- ===========================
+         MISIÓN, VISIÓN Y VALORES
+    ============================ -->
+    <section class="mvv">
+      <h2 class="mvv__heading">Misión, visión y valores</h2>
 
-                  <!-- NOMBRE -->
-                  <h4 class="nombre">Carlos Ceballos</h4>
-                  <h4 class="nombre">Miguel Angel Campos Hipolito</h4>
+      <div class="mvv__grid">
+        <article class="mvv__card mvv__card--mision">
+          <h3>Misión</h3>
+          <p>
+            Transformar la relación de las personas con su closet a través de la
+            curación de ropa personalizada en nuestro e-commerce intuitivo.
+            Ayudamos a que nuestra comunidad descubra su estilo y su expresión
+            de personalidad, ofreciéndoles prendas clave que vayan con su
+            identidad y complementen su confianza y autenticidad.
+          </p>
+        </article>
 
-                  <span class="usuario"> Carlos3460@gmail.com </span>
+        <article class="mvv__card mvv__card--vision">
+          <h3>Visión</h3>
+          <p>
+            Convertirnos en una plataforma de moda reconocida por su estilo y
+            por la confianza de nuestros clientes, ofreciendo una experiencia de
+            compra diferente que les permita remodelar su closet. Queremos ser
+            la marca favorita y de confianza, logrando que cada cliente se
+            sienta único y dueño de su imagen gracias a nuestro consejo
+            personalizado.
+          </p>
+        </article>
+      </div>
+    </section>
 
-                  <!-- DESCRIPCIÓN -->
-                  <p class="descripcion">
-                    Desarrollador Java jr fullstack, frontend y backend.
-                    Programador Java Full Stack con un ingrediente secreto: una formación previa en alta repostería que me dotó de una disciplina milimétrica. Diseño interfaces responsivas, asegurando la calidad del código, la optimización de recursos y la resiliencia en cada proyecto.
-                  <h4 class="nombre">Brian E. Pineda Martinez</h4>
-                  <span class="usuario">@Bri-idk</span>
-                  <p class="descripcion">
-                    Desarrollador y consultor del proyecto.
-                  </p>
-                  <div class="habilidades">
-                    <span>Java</span><span>HTML</span><span>CSS</span
-                    ><span>Bootstrap</span><span>JavaScript</span>
-                  </div>
-                  <div class="redes">
-                    <a href="https://github.com/Carlos3460">
-                      <i class="bi bi-github"></i>
-                    </a>
+    <!-- ===========================
+         EQUIPO
+    ============================ -->
+    <div class="equipo">
+      <h2 class="equipo__heading">Nuestro equipo</h2>
 
-                    <a href="https://www.linkedin.com/in/carlos-ceballos-santoyo/">
-                      <i class="bi bi-linkedin"></i>
-                    </a>
+      <div class="equipo__grid">
+        <!-- ================= CARLOS ================= -->
+        <div class="persona">
+          <div class="collapse tarjeta-contenedor" id="perfilCarlos">
+            <div class="tarjeta">
+              <div class="portada"></div>
 
-                    <a href="#">
-                      <i class="bi bi-github">https://github.com/angelcampos-dev</i>
-                    </a>
-
-                    <a href="#">
-                      <i class="bi bi-linkedin">https://www.linkedin.com/in/miguel-angel-campos-hipolito/</i>
-                    </a>
-
-                    <a href="#">
-                      <i class="bi bi-envelope"></i>
-                    </a>
-                    <a
-                      href="https://github.com/Bri-idk/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub</a
-                    ><a
-                      href="https://www.linkedin.com/in/brian-pineda-martinez-dev/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >LinkedIn</a
-                    ><a
-                      href="https://brian-dev-nine.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Portafolio</a
-                    >
-                  </div>
+              <div class="contenido">
+                <div class="contenedor-avatar">
+                  <img
+                    src="devs/Ing mecatronico.png"
+                    class="avatar-grande"
+                    alt="Foto de Carlos Ceballos"
+                  />
+                  <span class="estado"></span>
                 </div>
-              </div>
-            </div>
-            <div
-              class="barra-persona"
-              data-bs-toggle="collapse"
-              data-bs-target="#perfilBrian"
-              aria-expanded="false"
-              aria-controls="perfilBrian"
-            >
-              <img
-                src="./devs/Ing mecatronico.png"
-                src="devs/brian.jpeg"
-                class="avatar-barra"
-                alt="Brian E. Pineda Martinez"
-              />
-              <div class="datos-barra">
-                <h5>Carlos Ceballos</h5>
 
-                <span> Desarrollador Java Jr fullstack </span>
-                <h5>Miguel Angel Campos Hipolito</h5>
+                <h4 class="nombre">Carlos Ceballos</h4>
+                <span class="usuario">Carlos3460@gmail.com</span>
 
-                <span> Desarrollador </span>
-                <h5>Brian E. Pineda Martinez</h5>
-                <span>Desarrollador Fullstack en Otter Clothes</span>
-              </div>
-              <div class="iconos">
-                <i class="bi bi-person-circle"></i
-                ><i class="bi bi-chevron-up flecha"></i>
-              </div>
-            </div>
-          </div>
-          <!--Final de la card-->
-          
+                <p class="descripcion">
+                  Desarrollador Java jr fullstack, frontend y backend.
+                </p>
 
-          
-          <!--*DAVID-->
-          <div class="persona">
-            <!-- TARJETA DESPLEGABLE -->
-            <div class="collapse tarjeta-contenedor" id="perfilDavid">
-
-          <!--*DANIELA-->
-          <div class="persona">
-            <div class="collapse tarjeta-contenedor" id="perfilBrian">
-              <div class="tarjeta">
-                <div class="portada"></div>
-                <div class="contenido">
-                  <div class="contenedor-avatar">
-                    <img
-                      src="./devs/Fernandez_Brito_David_Java_Fullstack_Developer.jpeg"
-                      class="avatar-grande"
-                      alt="Foto de David"
-                      src="devs/Desarrolladora Jva Full Stack Jr. - Daniela Chagal - Profile.jfif"
-                      class="avatar-grande"
-                      alt="Daniela Chagal"
-                      src="devs/brian.jpeg"
-                      class="avatar-grande"
-                      alt="Foto de Brian E. Pineda Martinez"
-                    />
-                    <span class="estado"></span>
-                  </div>
-                  
-                  <!-- NOMBRE -->
-                  <h4 class="nombre">David Fernández Brito</h4>
-                  <h4 class="nombre">daniela</h4>
-
-                  <span class="usuario"> @david </span>
-
-                  <!-- DESCRIPCIÓN -->
-                  <p class="descripcion">
-                    Desarrollador Java Full Stack.
-                    Desarrolladora Java Full Stack Jr. con formación en Idiomas y experiencia práctica en JavaScript, HTML, CSS, Bootstrap, Git, GitHub y Scrum. 
-                  <h4 class="nombre">Brian E. Pineda Martinez</h4>
-                  <span class="usuario">@Bri-idk</span>
-                  <p class="descripcion">
-                    Desarrollador y consultor del proyecto.
-                  </p>
-                  <div class="habilidades">
-                    <span>
-                      <i class="bi bi-filetype-html"></i>
-                      HTML
-                    </span>
-
-                    <span>
-                      <i class="bi bi-filetype-css"></i>
-                      CSS
-                    </span>
-
-                    <span>
-                      <i class="bi bi-bootstrap"></i>
-                      Bootstrap
-                    </span>
-
-                    <span>
-                      <i class="bi bi-filetype-js"></i>
-                      JavaScript
-                    </span>
-
-                    <span>
-                      <i class="bi bi-filetype-js"></i>
-                      Git y GitHub
-                    </span>
-                    <span>Java</span><span>HTML</span><span>CSS</span
-                    ><span>Bootstrap</span><span>JavaScript</span>
-                  </div>
-                  <div class="redes">
-                    <a href="https://github.com/Monopolo-Magnetico">
-                      <i class="bi bi-github">GitHub</i>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/davidfernandezbrito/">
-                      <i class="bi bi-linkedin">LinkedIn</i>
-                    <a href="https://github.com/DanyLcs" target="_blank">GitHub
-                      <i class="bi bi-github"></i>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/daniela-chagal/" target="_blank">LinkedIn
-                      <i class="bi bi-linkedin"></i>
-                    </a>
-                    <a
-                      href="https://github.com/Bri-idk/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub</a
-                    ><a
-                      href="https://www.linkedin.com/in/brian-pineda-martinez-dev/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >LinkedIn</a
-                    ><a
-                      href="https://brian-dev-nine.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Portafolio</a
-                    >
-                  </div>
+                <div class="habilidades">
+                  <span><i class="bi bi-cup-hot"></i> Java</span>
+                  <span><i class="bi bi-filetype-html"></i> HTML</span>
+                  <span><i class="bi bi-filetype-css"></i> CSS</span>
+                  <span><i class="bi bi-bootstrap"></i> Bootstrap</span>
+                  <span><i class="bi bi-filetype-js"></i> JavaScript</span>
                 </div>
-              </div>
-            </div>
-            <div
-              class="barra-persona"
-              data-bs-toggle="collapse"
-              data-bs-target="#perfilDavid"
-              aria-expanded="false"
-              aria-controls="perfilDavid"
-            >
-              <img
-                src="./devs/Fernandez_Brito_David_Java_Fullstack_Developer.jpeg"
-                class="avatar-barra"
-                alt="David"
-              data-bs-target="#perfilBrian"
-              aria-expanded="false"
-              aria-controls="perfilBrian"
-            >
-              <img
-                src="devs/brian.jpeg"
-                class="avatar-barra"
-                alt="Brian E. Pineda Martinez"
-              />
-              <div class="datos-barra">
-                <h5>Brian E. Pineda Martinez</h5>
-                <span>Desarrollador Fullstack en Otter Clothes</span>
-              </div>
-              <div class="iconos">
-                <i class="bi bi-person-circle"></i
-                ><i class="bi bi-chevron-up flecha"></i>
+
+                <div class="redes">
+                  <a
+                    href="https://github.com/Carlos3460"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><i class="bi bi-github"></i
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/in/carlos-ceballos-santoyo/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="persona">
-            <div class="collapse tarjeta-contenedor" id="perfilMafer">
-              <div class="tarjeta">
-                <div class="portada"></div>
-                <div class="contenido">
-                  <div class="contenedor-avatar">
-                    <img
-                      src="devs/maf.jpg"
-                      class="avatar-grande"
-                      alt="Foto de Maria Fernanda Vazquez Jimenez"
-                    />
-                    <span class="estado"></span>
-                  </div>
-                  <h4 class="nombre">Maria Fernanda Vazquez Jimenez</h4>
-                  <span class="usuario">@Mafer-vazquez</span>
-                  <p class="descripcion">
-                    Desarrolladora Frontend en Otter Clothes. Diseño y construyo
-                    interfaces atractivas y funcionales.
-                  </p>
-                  <div class="habilidades">
-                    <span>HTML</span><span>CSS</span><span>Bootstrap</span
-                    ><span>JavaScript</span>
-                  </div>
-                  <div class="redes">
-                    <a
-                      href="https://github.com/Mafer-vazquez"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub</a
-                    ><a
-                      href="https://www.linkedin.com/in/maria-fernanda-vazquez-jimenez/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >LinkedIn</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="barra-persona"
-              data-bs-toggle="collapse"
-              data-bs-target="#perfilMafer"
-              aria-expanded="false"
-              aria-controls="perfilMafer"
-            >
-              <img
-                src="devs/maf.jpg"
-                class="avatar-barra"
-                alt="Maria Fernanda Vazquez Jimenez"
-              />
-              <div class="datos-barra">
-                <h5>David Fernández Brito</h5>
+          <div
+            class="barra-persona"
+            data-bs-toggle="collapse"
+            data-bs-target="#perfilCarlos"
+            aria-expanded="false"
+            aria-controls="perfilCarlos"
+          >
+            <img
+              src="devs/Ing mecatronico.png"
+              class="avatar-barra"
+              alt="Carlos Ceballos"
+            />
 
-                <span> Desarrollador Java Full Stack </span>
-                <h5>Mafer Vazquez</h5>
-                <span>Desarrolladora Frontend en Otter Clothes</span>
-              </div>
-              <div class="iconos">
-                <i class="bi bi-person-circle"></i
-                ><i class="bi bi-chevron-up flecha"></i>
+            <div class="datos-barra">
+              <h5>Carlos Ceballos</h5>
+              <span>Desarrollador Java Jr Full Stack</span>
+            </div>
+
+            <div class="iconos">
+              <i class="bi bi-person-circle"></i>
+              <i class="bi bi-chevron-up flecha"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= MIGUEL ANGEL ================= -->
+        <div class="persona">
+          <div class="collapse tarjeta-contenedor" id="perfilMiguel">
+            <div class="tarjeta">
+              <div class="portada"></div>
+
+              <div class="contenido">
+                <div class="contenedor-avatar">
+                  <img
+                    src="devs/IMG_20260826_191945_290.webp"
+                    class="avatar-grande"
+                    alt="Foto de Miguel Angel Campos Hipolito"
+                  />
+                  <span class="estado"></span>
+                </div>
+
+                <h4 class="nombre">Miguel Angel Campos Hipolito</h4>
+                <span class="usuario">@angelcampos-dev</span>
+
+                <p class="descripcion">
+                  Programador Java Full Stack con un ingrediente secreto: una
+                  formación previa en alta repostería que me dotó de una
+                  disciplina milimétrica. Diseño interfaces responsivas,
+                  asegurando la calidad del código, la optimización de recursos
+                  y la resiliencia en cada proyecto.
+                </p>
+
+                <div class="redes">
+                  <a
+                    href="https://github.com/angelcampos-dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><i class="bi bi-github"></i
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/in/miguel-angel-campos-hipolito/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="persona">
-            <div class="collapse tarjeta-contenedor" id="perfilVictor">
-              <div class="tarjeta">
-                <div class="portada"></div>
-                <div class="contenido">
-                  <div class="contenedor-avatar">
-                    <img
-                      src="https://i.pravatar.cc/200?img=12"
-                      class="avatar-grande"
-                      alt="Foto de Victor Antonio Garcia Olachea"
-                    />
-                    <span class="estado"></span>
-                  </div>
-                  <h4 class="nombre">Victor Antonio Garcia Olachea</h4>
-                  <span class="usuario">@victor.olachea</span>
-                  <p class="descripcion">
-                    Desarrollador Java Junior enfocado en Backend, con
-                    conocimientos en Java, POO, SQL, MySQL y Spring Boot.
-                  </p>
-                  <div class="habilidades">
-                    <span>Java</span><span>Frontend</span><span>Backend</span
-                    ><span>Git</span>
-                  </div>
-                  <div class="redes">
-                    <a
-                      href="https://github.com/Victor-Antonio-Garcia-Olachea"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub</a
-                    ><a
-                      href="https://www.linkedin.com/in/victor-garcia-olachea/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >LinkedIn</a
-                    >
-                  </div>
+          <div
+            class="barra-persona"
+            data-bs-toggle="collapse"
+            data-bs-target="#perfilMiguel"
+            aria-expanded="false"
+            aria-controls="perfilMiguel"
+          >
+            <img
+              src="devs/IMG_20260826_191945_290.webp"
+              class="avatar-barra"
+              alt="Miguel Angel Campos Hipolito"
+            />
+
+            <div class="datos-barra">
+              <h5>Miguel Angel Campos Hipolito</h5>
+              <span>Desarrollador</span>
+            </div>
+
+            <div class="iconos">
+              <i class="bi bi-person-circle"></i>
+              <i class="bi bi-chevron-up flecha"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= BRIAN ================= -->
+        <div class="persona">
+          <div class="collapse tarjeta-contenedor" id="perfilBrian">
+            <div class="tarjeta">
+              <div class="portada"></div>
+
+              <div class="contenido">
+                <div class="contenedor-avatar">
+                  <img
+                    src="devs/brian.jpeg"
+                    class="avatar-grande"
+                    alt="Foto de Brian E. Pineda Martinez"
+                  />
+                  <span class="estado"></span>
+                </div>
+
+                <h4 class="nombre">Brian E. Pineda Martinez</h4>
+                <span class="usuario">@Bri-idk</span>
+
+                <p class="descripcion">
+                  Desarrollador y consultor del proyecto.
+                </p>
+
+                <div class="habilidades">
+                  <span><i class="bi bi-cup-hot"></i> Java</span>
+                  <span><i class="bi bi-filetype-html"></i> HTML</span>
+                  <span><i class="bi bi-filetype-css"></i> CSS</span>
+                  <span><i class="bi bi-bootstrap"></i> Bootstrap</span>
+                  <span><i class="bi bi-filetype-js"></i> JavaScript</span>
+                </div>
+
+                <div class="redes">
+                  <a
+                    href="https://github.com/Bri-idk/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                  <a
+                    href="https://www.linkedin.com/in/brian-pineda-martinez-dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >LinkedIn</a
+                  >
+                  <a
+                    href="https://brian-dev-nine.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Portafolio</a
+                  >
                 </div>
               </div>
             </div>
-            <div
-              class="barra-persona"
-              data-bs-toggle="collapse"
-              data-bs-target="#perfilVictor"
-              aria-expanded="false"
-              aria-controls="perfilVictor"
-            >
-              <img
-                src="devs/Desarrolladora Jva Full Stack Jr. - Daniela Chagal - Profile.jfif"
-                class="avatar-barra"
-                alt="Daniela Chagal"
-                alt="Victor Antonio Garcia Olachea"
-              />
-              <div class="datos-barra">
-                <h5>Daniela Chagal</h5>
+          </div>
 
-                <span> Desarrolladora Java Full Stack Jr. </span>
-                <h5>Victor Antonio Garcia Olachea</h5>
-                <span>Desarrollador Java Backend</span>
-              </div>
-              <div class="iconos">
-                <i class="bi bi-person-circle"></i
-                ><i class="bi bi-chevron-up flecha"></i>
+          <div
+            class="barra-persona"
+            data-bs-toggle="collapse"
+            data-bs-target="#perfilBrian"
+            aria-expanded="false"
+            aria-controls="perfilBrian"
+          >
+            <img
+              src="devs/brian.jpeg"
+              class="avatar-barra"
+              alt="Brian E. Pineda Martinez"
+            />
+
+            <div class="datos-barra">
+              <h5>Brian E. Pineda Martinez</h5>
+              <span>Desarrollador Fullstack en Otter Clothes</span>
+            </div>
+
+            <div class="iconos">
+              <i class="bi bi-person-circle"></i>
+              <i class="bi bi-chevron-up flecha"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= DAVID ================= -->
+        <div class="persona">
+          <div class="collapse tarjeta-contenedor" id="perfilDavid">
+            <div class="tarjeta">
+              <div class="portada"></div>
+
+              <div class="contenido">
+                <div class="contenedor-avatar">
+                  <img
+                    src="devs/Fernandez_Brito_David_Java_Fullstack_Developer.jpeg"
+                    class="avatar-grande"
+                    alt="Foto de David Fernández Brito"
+                  />
+                  <span class="estado"></span>
+                </div>
+
+                <h4 class="nombre">David Fernández Brito</h4>
+                <span class="usuario">@david</span>
+
+                <p class="descripcion">Desarrollador Java Full Stack.</p>
+
+                <div class="habilidades">
+                  <span><i class="bi bi-cup-hot"></i> Java Full Stack</span>
+                </div>
+
+                <div class="redes">
+                  <a
+                    href="https://github.com/Monopolo-Magnetico"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                  <a
+                    href="https://www.linkedin.com/in/davidfernandezbrito/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >LinkedIn</a
+                  >
+                </div>
               </div>
             </div>
           </div>
-        </section>
-      </section>
-    </main>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
+          <div
+            class="barra-persona"
+            data-bs-toggle="collapse"
+            data-bs-target="#perfilDavid"
+            aria-expanded="false"
+            aria-controls="perfilDavid"
+          >
+            <img
+              src="devs/Fernandez_Brito_David_Java_Fullstack_Developer.jpeg"
+              class="avatar-barra"
+              alt="David Fernández Brito"
+            />
+
+            <div class="datos-barra">
+              <h5>David Fernández Brito</h5>
+              <span>Desarrollador Java Full Stack</span>
+            </div>
+
+            <div class="iconos">
+              <i class="bi bi-person-circle"></i>
+              <i class="bi bi-chevron-up flecha"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= DANIELA ================= -->
+        <div class="persona">
+          <div class="collapse tarjeta-contenedor" id="perfilDaniela">
+            <div class="tarjeta">
+              <div class="portada"></div>
+
+              <div class="contenido">
+                <div class="contenedor-avatar">
+                  <img
+                    src="devs/Desarrolladora Jva Full Stack Jr. - Daniela Chagal - Profile.jfif"
+                    class="avatar-grande"
+                    alt="Foto de Daniela Chagal"
+                  />
+                  <span class="estado"></span>
+                </div>
+
+                <h4 class="nombre">Daniela Chagal</h4>
+                <span class="usuario">@DanyLcs</span>
+
+                <p class="descripcion">
+                  Desarrolladora Java Full Stack Jr. con formación en Idiomas y
+                  experiencia práctica en JavaScript, HTML, CSS, Bootstrap, Git,
+                  GitHub y Scrum.
+                </p>
+
+                <div class="habilidades">
+                  <span><i class="bi bi-cup-hot"></i> Java</span>
+                  <span><i class="bi bi-filetype-html"></i> HTML</span>
+                  <span><i class="bi bi-filetype-css"></i> CSS</span>
+                  <span><i class="bi bi-bootstrap"></i> Bootstrap</span>
+                  <span><i class="bi bi-filetype-js"></i> JavaScript</span>
+                  <span><i class="bi bi-git"></i> Git y GitHub</span>
+                </div>
+
+                <div class="redes">
+                  <a
+                    href="https://github.com/DanyLcs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                  <a
+                    href="https://www.linkedin.com/in/daniela-chagal/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >LinkedIn</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="barra-persona"
+            data-bs-toggle="collapse"
+            data-bs-target="#perfilDaniela"
+            aria-expanded="false"
+            aria-controls="perfilDaniela"
+          >
+            <img
+              src="devs/Desarrolladora Jva Full Stack Jr. - Daniela Chagal - Profile.jfif"
+              class="avatar-barra"
+              alt="Daniela Chagal"
+            />
+
+            <div class="datos-barra">
+              <h5>Daniela Chagal</h5>
+              <span>Desarrolladora Java Full Stack Jr.</span>
+            </div>
+
+            <div class="iconos">
+              <i class="bi bi-person-circle"></i>
+              <i class="bi bi-chevron-up flecha"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= MAFER ================= -->
+        <div class="persona">
+          <div class="collapse tarjeta-contenedor" id="perfilMafer">
+            <div class="tarjeta">
+              <div class="portada"></div>
+
+              <div class="contenido">
+                <div class="contenedor-avatar">
+                  <img
+                    src="devs/maf.jpg"
+                    class="avatar-grande"
+                    alt="Foto de Maria Fernanda Vazquez Jimenez"
+                  />
+                  <span class="estado"></span>
+                </div>
+
+                <h4 class="nombre">Maria Fernanda Vazquez Jimenez</h4>
+                <span class="usuario">@Mafer-vazquez</span>
+
+                <p class="descripcion">
+                  Desarrolladora Frontend en Otter Clothes. Diseño y construyo
+                  interfaces atractivas y funcionales.
+                </p>
+
+                <div class="habilidades">
+                  <span><i class="bi bi-filetype-html"></i> HTML</span>
+                  <span><i class="bi bi-filetype-css"></i> CSS</span>
+                  <span><i class="bi bi-bootstrap"></i> Bootstrap</span>
+                  <span><i class="bi bi-filetype-js"></i> JavaScript</span>
+                </div>
+
+                <div class="redes">
+                  <a
+                    href="https://github.com/Mafer-vazquez"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                  <a
+                    href="https://www.linkedin.com/in/maria-fernanda-vazquez-jimenez/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >LinkedIn</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="barra-persona"
+            data-bs-toggle="collapse"
+            data-bs-target="#perfilMafer"
+            aria-expanded="false"
+            aria-controls="perfilMafer"
+          >
+            <img
+              src="devs/maf.jpg"
+              class="avatar-barra"
+              alt="Maria Fernanda Vazquez Jimenez"
+            />
+
+            <div class="datos-barra">
+              <h5>Mafer Vazquez</h5>
+              <span>Desarrolladora Frontend en Otter Clothes</span>
+            </div>
+
+            <div class="iconos">
+              <i class="bi bi-person-circle"></i>
+              <i class="bi bi-chevron-up flecha"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= MARCELA ================= -->
+        <div class="persona">
+          <div class="collapse tarjeta-contenedor" id="perfilMarcela">
+            <div class="tarjeta">
+              <div class="portada"></div>
+
+              <div class="contenido">
+                <div class="contenedor-avatar">
+                  <img
+                    src="devs/MARCELA COLLADO 10.jpg"
+                    class="avatar-grande"
+                    alt="Foto de Marcela Collado"
+                  />
+                  <span class="estado"></span>
+                </div>
+
+                <h4 class="nombre">Marcela Collado</h4>
+                <span class="usuario">@Marcela-Collado</span>
+
+                <p class="descripcion">
+                  Integrante del equipo de Otter Clothes.
+                </p>
+
+                <div class="habilidades">
+                  <span><i class="bi bi-code-slash"></i> Desarrollo</span>
+                  <span><i class="bi bi-people"></i> Trabajo en equipo</span>
+                </div>
+
+                <div class="redes">
+                  <a href="#" aria-label="GitHub de Marcela Collado">GitHub</a>
+                  <a href="#" aria-label="LinkedIn de Marcela Collado"
+                    >LinkedIn</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="barra-persona"
+            data-bs-toggle="collapse"
+            data-bs-target="#perfilMarcela"
+            aria-expanded="false"
+            aria-controls="perfilMarcela"
+          >
+            <img
+              src="devs/MARCELA COLLADO 10.jpg"
+              class="avatar-barra"
+              alt="Marcela Collado"
+            />
+            <div class="datos-barra">
+              <h5>Marcela Collado</h5>
+              <span>Integrante del equipo</span>
+            </div>
+            <div class="iconos">
+              <i class="bi bi-person-circle"></i>
+              <i class="bi bi-chevron-up flecha"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= VICTOR ================= -->
+        <div class="persona">
+          <div class="collapse tarjeta-contenedor" id="perfilVictor">
+            <div class="tarjeta">
+              <div class="portada"></div>
+
+              <div class="contenido">
+                <div class="contenedor-avatar">
+                  <img
+                    src="https://i.pravatar.cc/200?img=12"
+                    class="avatar-grande"
+                    alt="Foto de Victor Antonio Garcia Olachea"
+                  />
+                  <span class="estado"></span>
+                </div>
+
+                <h4 class="nombre">Victor Antonio Garcia Olachea</h4>
+                <span class="usuario">@victor.olachea</span>
+
+                <p class="descripcion">
+                  Desarrollador Java Junior enfocado en Backend, con
+                  conocimientos en Java, POO, SQL, MySQL y Spring Boot.
+                </p>
+
+                <div class="habilidades">
+                  <span><i class="bi bi-cup-hot"></i> Java</span>
+                  <span><i class="bi bi-layout-text-window"></i> Frontend</span>
+                  <span><i class="bi bi-hdd-network"></i> Backend</span>
+                  <span><i class="bi bi-git"></i> Git</span>
+                </div>
+
+                <div class="redes">
+                  <a
+                    href="https://github.com/Victor-Antonio-Garcia-Olachea"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                  <a
+                    href="https://www.linkedin.com/in/victor-garcia-olachea/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >LinkedIn</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="barra-persona"
+            data-bs-toggle="collapse"
+            data-bs-target="#perfilVictor"
+            aria-expanded="false"
+            aria-controls="perfilVictor"
+          >
+            <img
+              src="https://i.pravatar.cc/200?img=12"
+              class="avatar-barra"
+              alt="Victor Antonio Garcia Olachea"
+            />
+
+            <div class="datos-barra">
+              <h5>Victor Antonio Garcia Olachea</h5>
+              <span>Desarrollador Java Backend</span>
+            </div>
+
+            <div class="iconos">
+              <i class="bi bi-person-circle"></i>
+              <i class="bi bi-chevron-up flecha"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
