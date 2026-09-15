@@ -567,8 +567,46 @@ body {
     }
 
 }
-/*========================= fondo del Navbar =====*/
-.mi-navbar-fondo{
-    background-image: url('../assets otterdevs/fondo-otter.png');
 
+.mi-navbar-fondo {
+    background-color: #F8DFB7 !important;
+    
+    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    
+
+}
+
+
+/* Mafer index*/
+
+
+.carousel-item img {
+    height: 1000px;      /* ajusta a la altura que quieras */
+    object-fit: cover;  /* evita que la imagen se deforme */
+    width: 10%;        /* mantiene el ancho completo, como ya lo tenías */
+}
+
+body {
+  background-color: var(--naranja);
+  font-family: 'Fredoka', sans-serif;
+  margin: 0;
+}
+
+.precio {
+  color: var(--naranja);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.btn-comprar {
+  background-color: var(--naranja);
+  border-color: var(--naranja);
+  color: #fff;
+}
+
+.btn-comprar:hover {
+  background-color: #e07b30; /* un tono un poco más oscuro que --naranja */
+  border-color: #e07b30;
 }
