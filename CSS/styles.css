@@ -556,26 +556,29 @@ body {
 }
 
 
-/* =========================
+//* =========================
    RESPONSIVE
 ========================= */
 
 @media (max-width: 400px) {
-
     .persona {
         width: 100%;
     }
-
 }
+
+
+/* =========================
+   NAVBAR
+========================= */
 
 .mi-navbar-fondo {
     background-color: #F8DFB7 !important;
-    
-    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    
 
+    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+
+    font-weight: 600;
+
+    font-size: 24px;
 }
 
 
