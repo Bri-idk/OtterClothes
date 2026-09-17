@@ -400,11 +400,9 @@ body {
 .portada {
     height: 105px;
 
-    background: linear-gradient(
-        135deg,
-        var(--naranja),
-        var(--cafe)
-    );
+    background: linear-gradient(135deg,
+            var(--naranja),
+            var(--cafe));
 }
 
 
@@ -556,10 +554,8 @@ body {
 }
 
 
-//* =========================
-   RESPONSIVE
-========================= */
-
+/* =========================
+RESPONSIVE=========================*/
 @media (max-width: 400px) {
     .persona {
         width: 100%;
@@ -581,35 +577,54 @@ body {
     font-size: 24px;
 }
 
+.custom-navbar {
+    background-color: var(--crema);
+    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+}
+
+.custom-navbar .navbar-brand span,
+.custom-navbar .nav-link {
+    color: var(--cafe);
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+    color: var(--naranja);
+}
+
 
 /* Mafer index*/
 
 
 .carousel-item img {
-    height: 1000px;      /* ajusta a la altura que quieras */
-    object-fit: cover;  /* evita que la imagen se deforme */
-    width: 10%;        /* mantiene el ancho completo, como ya lo tenías */
+    height: 1000px;
+    /* ajusta a la altura que quieras */
+    object-fit: cover;
+    /* evita que la imagen se deforme */
+    width: 10%;
+    /* mantiene el ancho completo, como ya lo tenías */
 }
 
 body {
-  background-color: var(--naranja);
-  font-family: 'Fredoka', sans-serif;
-  margin: 0;
+    background-color: var(--naranja);
+    font-family: 'Fredoka', sans-serif;
+    margin: 0;
 }
 
 .precio {
-  color: var(--naranja);
-  font-weight: 700;
-  font-size: 1.1rem;
+    color: var(--naranja);
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 .btn-comprar {
-  background-color: var(--naranja);
-  border-color: var(--naranja);
-  color: #fff;
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: #fff;
 }
 
 .btn-comprar:hover {
-  background-color: #e07b30; /* un tono un poco más oscuro que --naranja */
-  border-color: #e07b30;
+    background-color: #e07b30;
+    /* un tono un poco más oscuro que --naranja */
+    border-color: #e07b30;
 }
