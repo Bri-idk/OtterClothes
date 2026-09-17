@@ -17,6 +17,7 @@
     --naranja: #FA4E02;
     --cafe: #49261E;
     --celeste: #C9E7F6;
+    --azul: #35509a;
 
     --oscuro: #101114;
     --oscuro-2: #18191d;
@@ -47,7 +48,7 @@ body {
 ========================= */
 
 .hero-about {
-    background-color: var(--cafe);
+    background-color: var(--crema);
 
     padding: 70px 20px 60px;
 
@@ -74,7 +75,7 @@ body {
     font-size: clamp(48px, 8vw, 96px);
     letter-spacing: 2px;
 
-    color: var(--naranja);
+    color: var(--azul);
 
     text-transform: uppercase;
 }
@@ -116,10 +117,10 @@ body {
 
     text-align: center;
 
-    font-family: 'Anton', Arial, Helvetica, sans-serif;
+    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
     font-size: clamp(28px, 4vw, 42px);
 
-    color: var(--cafe);
+    color: var(--naranja);
 }
 
 .mvv__grid {
@@ -202,7 +203,7 @@ body {
     letter-spacing: 1px;
     text-transform: uppercase;
 
-    color: white;
+    color: var(--crema);
 }
 
 .equipo__grid {
