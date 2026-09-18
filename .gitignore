@@ -1,0 +1,31 @@
+# ============================================================
+#  OtterClothes — .gitignore
+# ============================================================
+
+# ── En desarrollo / no listos para subir aún ─────────────────
+# Página del carrito (nueva, pendiente de revisión final)
+HTML/carrito.html
+
+# Hoja de estilos propia del carrito
+CSS/carrito.css
+
+# Lógica JS del carrito
+JS/carrito.js
+
+# Archivo original del carrito en raíz (legado, sin adaptar)
+shopping_cart_summary.html
+
+# ── Sistema operativo ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editores ─────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.user
+
+# ── Logs / temporales ────────────────────────────────────────
+*.log
+*.tmp
