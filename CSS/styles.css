@@ -629,3 +629,40 @@ body {
     /* un tono un poco más oscuro que --naranja */
     border-color: #e07b30;
 }
+
+/*botones carlos vaciar outfit y mioutfit*/
+.btn-success mt-2r {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: #fff;
+}
+
+.btn-success {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: #fff;
+}
+
+/* =========================
+   CONTACTANOS
+========================= */
+
+#titulo-contact {
+    margin-top: 5rem;
+}
+
+#subtitulo-contact {
+    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.contenedor-img-contact {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+#btn-enviar-contact {
+    font-family: 'Fredoka', sans-serif;
+    color: white;
+}

@@ -77,6 +77,12 @@ async function envioDatos(e) {
      */
     const datos = new FormData(form);
 
+    // Usamos la información procesada con trim de los regex para enviarlos en el FormData
+    datos.set("nombre", nombre);
+    datos.set("correo", correo);
+    datos.set("telefono", telefono);
+    datos.set("mensaje", mensaje);
+
     try {
         const respuestaSv = await fetch(FORMSPREE_URL, {
             method: "POST",
@@ -90,9 +96,10 @@ async function envioDatos(e) {
         } else {
             aviso.textContent = "Error al enviar. Intente de nuevo.";
         }
-    } catch (e) {
-        console.e("Información del error: ", e);
-        aviso.textContent = "Error de conexión"; // Mensaje de error, antes e
+    } catch (error) {
+        console.error("Información del error: ", error);
+        aviso.textContent = "Error de conexión"; // Mensaje de error
     }
+
 
 }
