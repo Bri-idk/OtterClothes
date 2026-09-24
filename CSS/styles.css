@@ -630,6 +630,7 @@ body {
     border-color: #e07b30;
 }
 
+
 /* =========================
    CONTACTANOS
 ========================= */
@@ -652,4 +653,18 @@ body {
 #btn-enviar-contact {
     font-family: 'Fredoka', sans-serif;
     color: white;
+}
+
+
+/*botones carlos vaciar outfit y mioutfit*/
+.btn-success mt-2r {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: #fff;
+}
+
+.btn-success {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: #fff;
 }
