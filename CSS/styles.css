@@ -648,7 +648,7 @@ body {
 ========================= */
 
 #titulo-contact {
-    margin-top: 5rem;
+    margin-top: 8rem;
 }
 
 #subtitulo-contact {
@@ -657,12 +657,70 @@ body {
     text-align: center;
 }
 
-.contenedor-img-contact {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+.texto-bienvenida {
+    text-align: center;
+    max-width: 650px;
+    margin: 20px auto 35px;
+    padding: 15px;
+}
+
+#formContacto {
+    padding: 30px;
+    background-color: #FFF8ED;
+    border-radius: 15px;
+}
+
+.campo-obligatorio {
+    color: #F04405;
+    font-weight: bold;
 }
 
 #btn-enviar-contact {
     font-family: 'Fredoka', sans-serif;
+    color: white;
+    border-radius: 8px;
+    padding: 12px;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.confirmacion {
+    text-align: center;
+    background-color: #FFF8ED;
+    padding: 40px 25px;
+    border-radius: 15px;
+    margin-top: 25px;
+}
+
+.confirmacion__icono {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.confirmacion h2 {
+    color: #49261E;
+    margin-bottom: 20px;
+}
+
+.confirmacion p {
+    color: #49261E;
+    margin-bottom: 10px;
+}
+
+.btn-inicio {
+    display: inline-block;
+    background-color: #49261E;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.btn-inicio:hover {
+    background-color: #65382D;
     color: white;
 }

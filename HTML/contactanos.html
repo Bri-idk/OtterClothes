@@ -31,49 +31,111 @@
   <!--!Navbar-->
   <div id="navbar-placeholder"></div>
 
-  <h1 id="titulo-contact" class="equipo__heading">Contáctanos</h1>
-  <h2 id="subtitulo-contact">¿Tienes comentarios? ¡Déjanos un mensaje!</h2>
+  <!--! Encabezado-->
+  <div class="titulo-contacto">
+    <span class="decoracion"></span>
+    <h1 id="titulo-contact" class="equipo__heading">Contáctanos</h1>
+    <span class="decoracion"></span>
+  </div>
+
+  <h2 id="subtitulo-contact">¡Tu voz también forma parte de nuestro estilo!</h2>
+
+  <p class="texto-bienvenida">
+    En Otterclothes queremos escucharte. Cuéntanos tus dudas,
+    ideas o sugerencias. 💗
+  </p>
 
   <!--Inicio form-->
-  <!--! Imagen del formulario-->
-  <div class="contenedor-img-contact" style="display: flex; justify-content: center; ">
-      <img src="../assets otterdevs/mockup-anuncio-otter.jpg" alt="mockup-anuncio-otter" width="600" height="300" style="border-radius: 15px;">
-  </div>  
-
   <!--! Contenedor-->
   <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6">
 
-  <!--! Formulario-->      
+  <!--! Formulario--> 
   <form id="formContacto">
     <div class="mb-3">
-      <label for="nombre" class="form-label">Nombre</label>
+      <label for="nombre" class="form-label" style="color: black;">Nombre
+        <span class="campo-obligatorio">*</span>
+      </label>
       <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
     </div>
 
     <div class="mb-3">
-      <label for="correo" class="form-label">Correo electrónico</label>
+      <label for="correo" class="form-label" style="color: black;">Correo electrónico
+        <span class="campo-obligatorio">*</span>
+      </label>
       <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo electrónico">
     </div>
 
+    <!--todo: Motivo de contacto-->
     <div class="mb-3">
-      <label for="telefono" class="form-label">Teléfono</label>
+      <label for="motivo" class="form-label" style="color: black;">Motivo de contacto
+        <span class="campo-obligatorio">*</span>
+      </label>
+
+      <select
+        class="form-select" id="motivo" name="motivo" required>
+        <option value="" selected disabled>
+          Selecciona una opción
+        </option>
+
+        <option value="productos">
+          Dudas sobre productos
+        </option>
+
+        <option value="pedidos">
+          Información sobre pedidos
+        </option>
+
+        <option value="devoluciones">
+          Cambios y devoluciones
+        </option>
+
+        <option value="compra">
+          Problemas con mi compra
+        </option>
+
+        <option value="sugerencias">
+          Sugerencias
+        </option>
+
+        <option value="otros">
+          Otros
+        </option>
+
+      </select>
+
+    </div>
+    <!--todo: Fin de motivo de contacto-->
+  
+    <div class="mb-3">
+      <label for="telefono" class="form-label" style="color: black;">Teléfono</label>
       <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
     </div>
 
     <div class="mb-3">
-      <label for="mensaje" class="form-label">Mensaje</label>
+      <label for="mensaje" class="form-label" style="color: black;">Mensaje</label>
       <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Mensaje"></textarea>
     </div>
 
     <!--! Botón-->
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button id="btn-enviar-contact" class="btn" style="background-color: #49261E" type="submit">Enviar</button>
+      <button id="btn-enviar-contact" class="btn" style="background-color: #49261E" type="submit"><i class="bi bi-send"></i>Enviar</button>
     </div>
   
     <p id="aviso" class="mt-3"></p> <!--Aqui se despliega información respecto al envío de datos-->
   </form>
+
+  <!--! Mensaje de confirmación -->
+    <section id="confirmacion" class="confirmacion" style="display: none;" aria-live="polite">
+      <div class="confirmacion__icono">
+         🦦💗
+      </div>
+      <h2>¡Gracias por escribirnos!</h2>
+      <p> Tu formulario ha sido validado correctamente.</p>
+      <a href="index.html" class="btn btn-inicio">Volver al inicio</a>
+
+    </section>
 
     <!--Fin form-->
     <script src = "../JS/navbar.js"></script>
