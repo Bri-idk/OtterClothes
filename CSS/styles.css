@@ -629,3 +629,16 @@ body {
     /* un tono un poco más oscuro que --naranja */
     border-color: #e07b30;
 }
+
+/*botones carlos vaciar outfit y mioutfit*/
+.btn-success mt-2r {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: #fff;
+}
+
+.btn-success {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: #fff;
+}

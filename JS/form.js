@@ -101,4 +101,5 @@ async function envioDatos(e) {
         aviso.textContent = "Error de conexión"; // Mensaje de error
     }
 
+
 }
