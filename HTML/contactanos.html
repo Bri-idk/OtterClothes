@@ -18,13 +18,21 @@
     <!--CSS-->
     <link rel="stylesheet" href="../CSS/styles.css">  
 
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;600&display=swap"
+      rel="stylesheet" />
+
     <title>Contactanos Otters</title>
 </head>
 <body>
   <!--!Navbar-->
   <div id="navbar-placeholder"></div>
   
- <!--! Botones de contáctanos y acerca de nosotros-->
+  <!--TODO: Botones Invisibles-->
+  <!--! Botones de contáctanos y acerca de nosotros-->
   <div class="d-flex justify-content-center gap-3 my-3">
     <a href="aboutUs.html" target="_blank" class="btn btn-primary" style="background-color: #49261E; font-family: Rugrats Sans;" role="button">
     Acerca de nosotros
@@ -33,10 +41,14 @@
     Contáctanos
     </a>
   </div>
+  <!--TODO: Botones Invisibles-->
+
+  <h1 id="titulo-contact" class="equipo__heading">Contáctanos</h1>
+  <h2 id="subtitulo-contact">¿Tienes comentarios? ¡Déjanos un mensaje!</h2>
 
   <!--Inicio form-->
   <!--! Imagen del formulario-->
-  <div style="display: flex; justify-content: center; ">
+  <div class="contenedor-img-contact" style="display: flex; justify-content: center; ">
       <img src="../assets otterdevs/mockup-anuncio-otter.jpg" alt="mockup-anuncio-otter" width="600" height="300" style="border-radius: 15px;">
   </div>  
 
@@ -69,7 +81,7 @@
 
     <!--! Botón-->
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button class="btn btn-primary" style="background-color: #49261E;  font-family: Rugrats Sans" type="submit">Enviar</button>
+      <button id="btn-enviar-contact" class="btn" style="background-color: #49261E" type="submit">Enviar</button>
     </div>
   
     <p id="aviso" class="mt-3"></p> <!--Aqui se despliega información respecto al envío de datos-->
