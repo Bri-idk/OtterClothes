@@ -49,7 +49,7 @@
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
-    </button>
+
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
@@ -58,97 +58,114 @@
 
 
   <!--!cards-->
-  <div class="container"
-    style="background-color: var(--naranja); font-family: 'Fredoka', sans-serif; padding: 3rem 1rem; border-radius: 12px;">
-    <div class="row g-4">
 
-      <div class="col-12 col-sm-6 col-lg-4">
-        <div class="card h-100">
-          <img src="assets%20otterdevs/casual-1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Casual Blue - Outfit completo</h5>
-            <p class="precio">$299 MXN</p>
-            <p class="card-text">
-              Tallas: S, M y L .
-              Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-            <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          </div>
+<div class="container" style="background-color: var(--naranja); font-family: 'Fredoka', sans-serif; padding: 3rem 1rem; border-radius: 12px;">
+  <div class="row g-4">
+
+    <!-- Tarjeta 1 -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100">
+        <img src="assets%20otterdevs/casual-1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Casual Blue - Outfit completo</h5>
+          <p class="precio">$299 MXN</p>
+          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
+          <a href="#" class="btn btn-comprar">Comprar ahora</a>
+          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Casual Blue', 'assets%20otterdevs/casual-1.jpg')">+ Mi Outfit</button>
         </div>
       </div>
-
-      <div class="col-12 col-sm-6 col-lg-4">
-        <div class="card h-100">
-          <img src="assets%20otterdevs/casual-men-1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Casual Playa - Outfit completo</h5>
-            <p class="precio">$299 MXN</p>
-            <p class="card-text">
-              Tallas: S, M y L .
-              Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-            <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-12 col-sm-6 col-lg-4">
-        <div class="card h-100">
-          <img src="assets%20otterdevs/kpop-idol-1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Kpop Idol "Pink Punk" - Outfit Completo </h5>
-            <p class="precio">$299 MXN</p>
-            <p class="card-text">
-              Tallas: S, M y L .
-              Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-            <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-lg-4">
-        <div class="card h-100">
-          <img src="assets%20otterdevs/kpopmen-idol-1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">K-Pop Men Idol "Cyber Grunge" - Outfit completo</h5>
-            <p class="precio">$299 MXN</p>
-            <p class="card-text">
-              Tallas: S, M y L .
-              Ideal para: Conciertos, dance covers o outfits urbanos</p>
-            <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-lg-4">
-        <div class="card h-100">
-          <img src="assets%20otterdevs/vintage-men-21.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Vintage Men - Comfy chill dude</h5>
-            <p class="precio">$299 MXN</p>
-            <p class="card-text">
-              Tallas: S, M y L .
-              Ideal para: Conciertos, dance covers o outfits urbanos</p>
-            <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-lg-4">
-        <div class="card h-100">
-          <img src="assets%20otterdevs/y2k-1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Y2K PINK GIRL - Outfit completo</h5>
-            <p class="precio">$299 MXN</p>
-            <p class="card-text">
-              Tallas: S, M y L .
-              Ideal para: Conciertos, dance covers o outfits urbanos</p>
-            <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          </div>
-        </div>
-      </div>
-
     </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100">
+        <img src="assets%20otterdevs/casual-men-1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Casual Playa - Outfit completo</h5>
+          <p class="precio">$299 MXN</p>
+          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
+          <a href="#" class="btn btn-comprar">Comprar ahora</a>
+          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Casual Playa', 'assets%20otterdevs/casual-men-1.jpg')">+ Mi Outfit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100">
+        <img src="assets%20otterdevs/kpop-idol-1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Kpop Idol "Pink Punk" - Outfit Completo</h5>
+          <p class="precio">$299 MXN</p>
+          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
+          <a href="#" class="btn btn-comprar">Comprar ahora</a>
+          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Kpop Pink Punk', 'assets%20otterdevs/kpop-idol-1.jpg')">+ Mi Outfit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 4 -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100">
+        <img src="assets%20otterdevs/kpopmen-idol-1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">K-Pop Men Idol "Cyber Grunge" - Outfit completo</h5>
+          <p class="precio">$299 MXN</p>
+          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
+          <a href="#" class="btn btn-comprar">Comprar ahora</a>
+          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Cyber Grunge', 'assets%20otterdevs/kpopmen-idol-1.jpg')">+ Mi Outfit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 5 -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100">
+        <img src="assets%20otterdevs/vintage-men-21.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Vintage Men - Comfy chill dude</h5>
+          <p class="precio">$299 MXN</p>
+          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
+          <a href="#" class="btn btn-comprar">Comprar ahora</a>
+          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Vintage Men', 'assets%20otterdevs/vintage-men-21.jpg')">+ Mi Outfit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 6 -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100">
+        <img src="assets%20otterdevs/y2k-1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Y2K PINK GIRL - Outfit completo</h5>
+          <p class="precio">$299 MXN</p>
+          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
+          <a href="#" class="btn btn-comprar">Comprar ahora</a>
+          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Y2K Pink Girl', 'assets%20otterdevs/y2k-1.jpg')">+ Mi Outfit</button>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- Cierre de row g-4 -->
+
+  <!-- PANEL DONDE EL USUARIO ARMA SU PROPIO OUTFIT -->
+<div class="mt-5 p-4 bg-white rounded shadow text-dark text-center">
+  <h3> Tu Outfit Personalizado</h3>
+  <p>Selecciona prendas con el botón <strong>"+ Mi Outfit"</strong> para combinar el outfit.</p>
+
+  <!-- Lazo  -->
+  <div class="position-relative mx-auto my-4" style="width: 280px; height: 420px; background-color: #f8f9fa; border-radius: 16px; border: 2px dashed #dee2e6; overflow: hidden;">
+    
+
+    <!-- Capa receptora donde se apilarán las prendas en encimado -->
+    <div id="contenedor-mi-outfit" class="width: 100%; max-width: 380px; min-height: 200px; height: auto; border: 2px dashed #dee2e6; border-radius: 16px;">
+      <!-- El JS colocará las imágenes aquí -->
+    </div>
+
   </div>
+
+  <button class="btn btn-success mt-2" onclick="miOutfit.limpiar()">Vaciar mi outfit</button>
+</div>
 
 
   <!-- Footer mafer-->
@@ -197,6 +214,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
+  <script src="JS/outFitSelector.js"></script>
 </body>
 
 </html>
