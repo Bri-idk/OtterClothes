@@ -1,11 +1,559 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Items Otters</title>
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Outfits | OtterClothes</title>
+
+
+    <!-- =========================
+         BOOTSTRAP
+    ========================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- =========================
+         BOOTSTRAP ICONS
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- =========================
+         FUENTE
+    ========================== -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- =========================
+         CSS PROPIO
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="../CSS/styleLista.css">
+
 </head>
+
+
 <body>
-    
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <div id="navbar-placeholder"></div>
+
+
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================== -->
+
+    <main class="container py-5">
+
+
+        <!-- =========================
+             ENCABEZADO
+        ========================== -->
+
+        <section class="encabezado-lista">
+
+
+            <div>
+
+                <h1 class="titulo-seccion">
+                    Outfits completos
+                </h1>
+
+
+                <p class="subtitulo-seccion">
+                    Encuentra un look completo que combine con tu estilo.
+                </p>
+
+            </div>
+
+
+
+            <!-- =========================
+                 FAVORITOS Y CARRITO
+            ========================== -->
+
+            <div class="acciones-tienda">
+
+
+                <!-- FAVORITOS -->
+
+                <button
+                    class="btn-accion"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasFavoritos">
+
+                    <i class="bi bi-heart"></i>
+
+                    Favoritos
+
+                    <span
+                        id="contadorFavoritos"
+                        class="contador">
+
+                        0
+
+                    </span>
+
+                </button>
+
+
+
+                <!-- CARRITO -->
+
+                <button
+                    class="btn-accion"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasCarrito">
+
+                    <i class="bi bi-bag"></i>
+
+                    Carrito
+
+                    <span
+                        id="contadorCarrito"
+                        class="contador">
+
+                        0
+
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             TODOS LOS CARRUSELES
+        ========================== -->
+
+        <div id="seccionesOutfits">
+
+            <!--
+                JavaScript agrega:
+
+                Lo más visto
+                Y2K
+                Casual
+                Streetwear
+                Minimalista
+                Elegante
+                Vintage
+            -->
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         MODAL VER OUTFIT
+    =================================================== -->
+
+    <div
+        class="modal fade"
+        id="modalOutfit"
+        tabindex="-1"
+        aria-hidden="true">
+
+
+        <div
+            class="modal-dialog modal-xl modal-dialog-centered">
+
+
+            <div class="modal-content modal-outfit">
+
+
+                <!-- BOTÓN CERRAR -->
+
+                <button
+                    type="button"
+                    class="btn-close cerrar-modal"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+                </button>
+
+
+
+                <div class="modal-body p-0">
+
+
+                    <div class="row g-0">
+
+
+                        <!-- =========================
+                             IMAGEN
+                        ========================== -->
+
+                        <div class="col-12 col-md-6">
+
+                            <img
+                                id="modalImagen"
+                                class="imagen-modal"
+                                src=""
+                                alt="Outfit">
+
+                        </div>
+
+
+
+                        <!-- =========================
+                             INFORMACIÓN
+                        ========================== -->
+
+                        <div class="col-12 col-md-6">
+
+
+                            <div class="informacion-modal">
+
+
+                                <span
+                                    id="modalEstilo"
+                                    class="categoria">
+                                </span>
+
+
+                                <h2 id="modalNombre">
+                                </h2>
+
+
+                                <p
+                                    id="modalDescripcion"
+                                    class="descripcion-modal">
+                                </p>
+
+
+
+                                <hr>
+
+
+
+                                <!-- PRENDAS -->
+
+                                <h5>
+                                    Este outfit incluye
+                                </h5>
+
+
+                                <ul
+                                    id="modalIncluye"
+                                    class="lista-incluye">
+                                </ul>
+
+
+
+                                <hr>
+
+
+
+                                <!-- TALLAS -->
+
+                                <h5>
+                                    Selecciona una talla
+                                </h5>
+
+
+                                <div
+                                    id="modalTallas"
+                                    class="tallas-modal">
+                                </div>
+
+
+
+                                <!-- PRECIO -->
+
+                                <div
+                                    id="modalPrecio"
+                                    class="precio-modal">
+                                </div>
+
+
+
+                                <!-- CARRITO -->
+
+                                <button
+                                    id="btnAgregarCarrito"
+                                    class="btn btn-agregar-carrito">
+
+                                    <i class="bi bi-bag-plus"></i>
+
+                                    Agregar al carrito
+
+                                </button>
+
+
+
+                                <!-- FAVORITOS -->
+
+                                <button
+                                    id="btnFavoritoModal"
+                                    class="btn btn-favorito-modal">
+
+                                    <i class="bi bi-heart"></i>
+
+                                    Agregar a favoritos
+
+                                </button>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         FAVORITOS
+    =================================================== -->
+
+    <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasFavoritos">
+
+
+        <div class="offcanvas-header">
+
+
+            <h5 class="offcanvas-title">
+
+                <i class="bi bi-heart"></i>
+
+                Mis favoritos
+
+            </h5>
+
+
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas">
+            </button>
+
+
+        </div>
+
+
+
+        <div class="offcanvas-body">
+
+
+            <div id="listaFavoritos">
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         CARRITO
+    =================================================== -->
+
+    <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasCarrito">
+
+
+        <div class="offcanvas-header">
+
+
+            <h5 class="offcanvas-title">
+
+                <i class="bi bi-bag"></i>
+
+                Mi carrito
+
+            </h5>
+
+
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas">
+            </button>
+
+
+        </div>
+
+
+
+        <div class="offcanvas-body carrito-contenido">
+
+
+            <!-- PRODUCTOS -->
+
+            <div id="listaCarrito">
+            </div>
+
+
+
+            <!-- TOTAL -->
+
+            <div class="resumen-carrito">
+
+
+                <hr>
+
+
+                <div class="total-linea">
+
+
+                    <span>
+                        Total
+                    </span>
+
+
+                    <strong id="totalCarrito">
+
+                        $0 MXN
+
+                    </strong>
+
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    class="btn btn-finalizar">
+
+                    Finalizar compra
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         MENSAJES
+    =================================================== -->
+
+    <div
+        class="toast-container position-fixed bottom-0 end-0 p-3">
+
+
+        <div
+            id="toastMensaje"
+            class="toast"
+            role="alert">
+
+
+            <div
+                id="textoToast"
+                class="toast-body">
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         BOOTSTRAP JS
+    ========================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <script src="../JS/navbar.js"></script>
+
+
+
+    <!-- =========================
+         PRODUCTOS
+
+         IMPORTANTE:
+         productos.js va ANTES
+         de lista.js
+    ========================== -->
+
+    <script src="../JS/productos.js"></script>
+
+
+
+    <!-- =========================
+         FUNCIONALIDAD
+    ========================== -->
+
+    <script src="../JS/lista.js"></script>
+
+
 </body>
+
 </html>
