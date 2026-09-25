@@ -50,7 +50,7 @@ async function envioDatos(e) {
     const telefono = document.getElementById("telefono").value.trim();
     const mensaje = document.getElementById("mensaje").value.trim();
 
-    if ((nombre === "" || correo === "") || (telefono === "" || mensaje === "")) { // Validación básica, sería bueno implementar regex
+    if ((nombre === "" || correo === "") || (telefono === "" || mensaje === "")) {
         aviso.textContent = "Por favor, complete todos los campos."
         return; // Si alguno de los campos no es llenado entonces se retorna para que no se envíe nada.
     }
