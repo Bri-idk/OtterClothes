@@ -2,6 +2,8 @@
 const form = document.querySelector("form");
 // Aviso es un elemento auxiliar de HTML, una etiqueta <p> que por defecto está vacía pero que mostrará texto si el usuario no llena correctamente todos los campos o mensaje respecto al estado del envío de datos
 const aviso = document.getElementById("aviso");
+// El recuadro de confirmación de envío exitoso, que solo se muestra si efectivamente el envío fue exitoso
+const confirmacion = document.getElementById("confirmacion");
 
 // Expresiones regulares para validar los datos de los campos
 /**
@@ -44,6 +46,7 @@ async function envioDatos(e) {
     // Capturamos los valores de los campos del formulario y nos aseguramos de que no tengan espacios o tabulaciones al inicio y al final con trim()
     const nombre = document.getElementById("nombre").value.trim();
     const correo = document.getElementById("correo").value.trim();
+    const motivo = document.getElementById("motivo").value; // Al ser opción múltiple no hace falta el trim()
     const telefono = document.getElementById("telefono").value.trim();
     const mensaje = document.getElementById("mensaje").value.trim();
 
@@ -53,7 +56,7 @@ async function envioDatos(e) {
     }
 
     if (!regexNombre.test(nombre)) {
-        aviso.textContent = "El nombre debe contener mínimo 2 letras."
+        aviso.textContent = "El nombre debe contener mínimo 2 letras y solo caracteres alfabéticos."
         return;
     }
 
@@ -80,6 +83,7 @@ async function envioDatos(e) {
     // Usamos la información procesada con trim de los regex para enviarlos en el FormData
     datos.set("nombre", nombre);
     datos.set("correo", correo);
+    datos.set("motivo", motivo);
     datos.set("telefono", telefono);
     datos.set("mensaje", mensaje);
 
@@ -91,14 +95,15 @@ async function envioDatos(e) {
         });
 
         if (respuestaSv.ok) {
-            aviso.textContent = "Datos enviados con éxito.";
+            confirmacion.hidden = false;
+            aviso.textContent = "";
             form.reset(); // Limpiamos el formulario
         } else {
             aviso.textContent = "Error al enviar. Intente de nuevo.";
         }
     } catch (error) {
-        console.error("Información del error: ", error);
-        aviso.textContent = "Error de conexión"; // Mensaje de error
+        console.error("Información del error: ", error); // Mensaje de error en la consola para el programador
+        aviso.textContent = "Error de conexión"; // Mensaje de error para el usuario
     }
 
 
