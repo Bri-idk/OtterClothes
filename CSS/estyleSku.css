@@ -1,0 +1,117 @@
+/* Control total del fondo de la página */
+body {
+    background-color: #f8dfb7; /*fondo de la pagina*/
+    color: #2b2d31; /* Un color de texto oscuro base para la página */
+    padding-bottom: 60px; /* Espacio al final para que no se vea todo pegado abajo */
+}
+/*  El contenedor del formulario  */
+.card {
+    background-color: #fa4e02 ; /* */
+    border: 1px solid rgba(255, 255, 255, 0.1) ; /* Un borde sutil para delimitarlo */
+    box-shadow: 0 10px 30px rgba(73, 38, 30, 0.15) ; /* Sombra suave para dar volumen */
+}
+/* Títulos principales  */
+h2, h4 {
+    color: #000000 ;
+    font-weight: 700;
+}
+/* Etiquetas de los inputs y checkboxes  */
+.form-label, .form-check-label {
+    color: #060000 ;
+}
+/*  Cajas de texto, menús de selección y checkboxes */
+
+/* Estilo base para inputs y selectores */
+.form-control, .form-select {
+    background-color: rgba(254, 254, 254, 0.25) ; /*  */
+    color: #464242 ; /* Texto blanco al escribir */
+    padding: 10px 14px; /* Espaciado interno para que no se vea apretado */
+}
+
+
+/* Cuando seleccionas una talla  */
+.form-check-input:checked {
+    background-color: #000000 ;
+    
+}
+/*  Estilo fijo para el Botón de Guardar */
+/* 1. Estado normal del botón */
+body .btn {
+    background-color: #f98b5c; /* COLOR DE FONDO*/
+    color: #2b2d31 ;            /* COLOR DE LA LETRA*/
+    
+    /* Forma y estructura */
+    border: 2px solid transparent ; /* 'transparent' por un color en dado caso */
+    border-radius: 8px ;            /* Redondeado de las esquinas (más alto = más redondo) */
+    padding: 12px 24px;            /* Espaciado interno (arriba/abajo y lados) */
+    font-weight: bold ;
+    text-transform: uppercase ;
+    
+    /* Espacio exterior */
+    display: block;
+    width: 95% ;                   /* Ancho del botón dentro del formulario */
+    margin: 25px auto 10px auto ;  /* Centrado automático y espacio arriba/abajo */
+}
+
+/*  Estado cuando pasas el mouse por encima (Hover) */
+body .btn:hover {
+    background-color: #d13f00 ; /* COLOR DE FONDO AL PASAR EL MOUSE */
+    color: #ffffff ;            /* COLOR DE LETRA AL PASAR EL MOUSE */
+    border-color: transparent;
+}
+
+/*  Estado cuando haces clic (Quita el marco negro del navegador) */
+body .btn:focus, 
+body .btn:active {
+    outline: none !important; /* Borra el borde negro nativo */
+    box-shadow: 0 0 0 0.25rem rgba(250, 78, 2, 0.4) !important; /* Resplandor de clic */
+}
+
+/*boton despliegue*/
+
+.seccion-inventario {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: center;
+}
+
+/* boton en general */
+.btn-principal {
+    /* Colores  */
+    background-color: #e96214; /* contenedor del boton */
+    color: #FFFFFF;            /* texto en el boton */
+    
+    /* Espaciado y Tamaño */
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    
+    /* Bordes y Silueta */
+    border: none;
+    border-radius: 6px;        /* Esquinas sutilmente redondeadas */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar volumen */
+    
+    /* Animación al pasar el mouse */
+    transition: all 0.3s ease;
+    /*Posicionamiento*/
+    position: fixed;
+    bottom: 20px; /* 20 píxeles despegado de abajo */
+    right: 20px;  /* 20 píxeles despegado de la derecha */
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+.btn-principal:hover {
+    background-color: #e98622; /* Un azul un poco más oscuro */
+    transform: translateY(-2px); /* Se eleva ligeramente */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* La sombra se intensifica */
+}
+
+/* Efecto al hacer clic */
+.btn-principal:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
