@@ -95,6 +95,28 @@ async function envioDatos(e) {
         });
 
         if (respuestaSv.ok) {
+            //de la 98 a 106 para el mensaje 
+            // Dispara la animación emergente (Toast) de Bootstrap no toque mas de tu js solo las lineas que menciona
+             aviso.textContent = "";
+             const elToast = document.getElementById('toastNutria');
+            if (elToast) {
+                const bootstrapToast = new bootstrap.Toast(elToast, {
+                    delay: 5000
+                });
+                bootstrapToast.show();
+            }
+
+            // 3. Opcional: si usas la etiqueta de confirmación, verifica que exista
+            if (confirmacion) {
+                confirmacion.hidden = false;
+            }
+
+            // 4. Limpiamos los campos del formulario
+            form.reset();
+        
+
+
+
             confirmacion.hidden = false;
             aviso.textContent = "";
             form.reset(); // Limpiamos el formulario
@@ -105,6 +127,4 @@ async function envioDatos(e) {
         console.error("Información del error: ", error); // Mensaje de error en la consola para el programador
         aviso.textContent = "Error de conexión"; // Mensaje de error para el usuario
     }
-
-
 }
