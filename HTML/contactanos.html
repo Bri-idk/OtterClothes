@@ -26,6 +26,7 @@
       rel="stylesheet" />
 
     <title>Contactanos Otters</title>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">-->
 </head>
 <body>
   <!--!Navbar-->
@@ -127,18 +128,23 @@
   </form>
 
   <!--! Mensaje de confirmación -->
-    <section id="confirmacion" class="confirmacion" hidden aria-live="polite">
-      <div class="confirmacion__icono">
+    <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+          <div class="confirmacion__icono">
          🦦💗
+          </div>
+          <h2>¡Gracias por escribirnos!</h2>
+          <p> Tu formulario ha sido enviado correctamente.</p>
+          <a href="../index.html" class="btn btn-inicio">Volver al inicio</a>
+          <button type="button" class="btn btn-inicio" data-bs-dismiss="modal">Cerrar</button>
+        </div>
       </div>
-      <h2>¡Gracias por escribirnos!</h2>
-      <p> Tu formulario ha sido enviado correctamente.</p>
-      <a href="../index.html" class="btn btn-inicio">Volver al inicio</a>
-
-    </section>
-
+    </div>
     <!--Fin form-->
+    
     <script src = "../JS/navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="../JS/form.js"></script>
 </body>
 </html>

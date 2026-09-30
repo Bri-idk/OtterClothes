@@ -4,6 +4,8 @@ const form = document.querySelector("form");
 const aviso = document.getElementById("aviso");
 // El recuadro de confirmación de envío exitoso, que solo se muestra si efectivamente el envío fue exitoso
 const confirmacion = document.getElementById("confirmacion");
+// Modal de confirmación
+const modalConfirmacion = new bootstrap.Modal(document.getElementById("modalConfirmacion"));
 
 // Expresiones regulares para validar los datos de los campos
 /**
@@ -95,7 +97,7 @@ async function envioDatos(e) {
         });
 
         if (respuestaSv.ok) {
-            confirmacion.hidden = false;
+            modalConfirmacion.show();
             aviso.textContent = "";
             form.reset(); // Limpiamos el formulario
         } else {
