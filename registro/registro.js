@@ -6,6 +6,8 @@ formulario.addEventListener("submit", function (evento) {
   
 const nombre = document.getElementById("nombre").value.trim();
 const email = document.getElementById("email").value.trim();
+const telefono = document.getElementById("telefono").value.trim();
+
 
 if (nombre === "") {
     console.log("Error: El nombre es obligatorio");
@@ -26,5 +28,18 @@ if (email === "") {
 } else {
     console.log("Email válido:");
 }
+
+const formatoTelefono = /^\d{10}$/;
+
+  if (telefono === "") {
+    console.log("Error: el teléfono es obligatorio");
+  } else if (!formatoTelefono.test(telefono)) {
+    console.log("Error: el teléfono debe tener 10 dígitos numéricos");
+  } else {
+    console.log("Teléfono válido");
+  }
+
+  
+
 
 });
