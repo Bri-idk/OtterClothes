@@ -95,7 +95,10 @@ formulario.addEventListener("submit", function (evento) {
 
     const usuarioJSON = JSON.stringify(usuario, null, 2);
     console.log(usuarioJSON);
+
+    formulario.reset();
   } else {
     console.log("Hay errores en el formulario");
+    formulario.reset();
   }
 });
