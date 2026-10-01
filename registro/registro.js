@@ -85,8 +85,16 @@ formulario.addEventListener("submit", function (evento) {
     mostrarError("errorConfirmar", "");
   }
 
-  if (formularioValido) {
-    console.log("Formulario válido, listo para crear el JSON");
+ if (formularioValido) {
+    const usuario = {
+      nombreCompleto: nombre,
+      telefono: telefono,
+      email: email,
+      password: password
+    };
+
+    const usuarioJSON = JSON.stringify(usuario, null, 2);
+    console.log(usuarioJSON);
   } else {
     console.log("Hay errores en el formulario");
   }
