@@ -63,8 +63,9 @@ function limpiarTodo() {
     aviso.textContent = "";
 }
 
-// Se crea un event listener desde que carga la página para cada campo por medio del array campos
-// Esto es para que cuando el usuario cambie el contenido del campo el mensaje de error se borre hasta que se vuelva a validar
+/** Se crea un event listener desde que carga la página para cada campo por medio del array campos
+* Esto es para que cuando el usuario cambie el contenido del campo el mensaje de error se borre hasta que se vuelva a validar
+*/
 campos.forEach((id) => {
     document.getElementById(id).addEventListener("input", () =>
     limpiarError(id));
@@ -85,30 +86,35 @@ async function envioDatos(e) {
     const telefono = document.getElementById("telefono").value.trim();
     const mensaje = document.getElementById("mensaje").value.trim();
 
+    let errorBool = false; // Bandera para indicar error de datos inválidos 
+
     if ((nombre === "" || correo === "") || (telefono === "" || mensaje === "")) {
         aviso.textContent = "Por favor, complete todos los campos.";
-        return; // Si alguno de los campos no es llenado entonces se retorna para que no se envíe nada.
+        errorBool = true;
+        
     }
 
     if (!regexNombre.test(nombre)) {
         mostrarError("nombre", "El nombre debe contener mínimo 2 letras y solo caracteres alfabéticos.");
-        return;
+        errorBool = true;
     }
 
     if (!regexCorreo.test(correo)) {
         mostrarError("correo", "Ingresa un correo válido (ejemplo usuario@dominio.com).");
-        return;
+        errorBool = true;
     }
 
     if (!regexTelefono.test(telefono)) {
         mostrarError("telefono", "Ingresa un teléfono válido (de 7 a 15 dígitos).");
-        return;
+        errorBool = true;
     }
 
     if (mensaje.length < 10) {
         mostrarError("mensaje", "El mensaje debe tener al menos 10 caracteres.");
-        return;
+        errorBool = true;
     }
+
+    if (errorBool) return; // Si alguno de los campos es inválido entonces se retorna para que no se envíe nada.
 
     /**
      * Creamos un objeto FormData que captura todos los campos con atributo name de un formulario HTML especificado en el argumento (form, declarado al inicio del script), convirtiendo sus valores en pares clave-valor.
