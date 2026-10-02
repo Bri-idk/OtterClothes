@@ -1,4 +1,4 @@
-// Función global que se activa al dar clic en el botón de guardar
+// Función
 document.addEventListener('DOMContentLoaded', () => {
     const btnAgregarPrenda = document.getElementById('btnAgregarPrenda');
     const contenedorFormulario = document.getElementById('contenedorFormulario');
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedSizes.push(cb.value);
     });
 
-    // VALIDACIÓN JAVASCRIPT
+    // validacion por espacios del formulario
     if (name === "") return mostrarAlertaError("El nombre de la prenda es requerido.");
     if (category === "") return mostrarAlertaError("Por favor selecciona una categoría de ropa.");
     if (gender === "") return mostrarAlertaError("Debes asignar un género para el catálogo.");
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Se convierte el objeto a una cadena JSON formal y se manda a la consola (F12)
-    console.log("=== NUEVO MODELO JSON GENERADO ===");
+    console.log("= NUEVO MODELO JSON GENERADO =");
     console.log(JSON.stringify(productoModelo, null, 2));
 
       // Guardamos el producto en la memoria compartida del navegador
@@ -94,5 +94,5 @@ document.addEventListener("DOMContentLoaded", () => {
             btnAbrir.style.display = 'none';        // Oculta el botón "Agregar Nueva Prenda"
         });
     }
-});// <-- ESTO CIERRA el btnGuardar.addEventListener('click', ...)
-});// <-- ESTO CIERRA el document.addEventListener('DOMContentLoaded', ...)
+});// Esto cierra el btnGuardar.addEventListener('click', ...)
+});//  Esto cierra el document.addEventListener('DOMContentLoaded', ...)

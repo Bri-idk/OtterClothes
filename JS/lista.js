@@ -1654,7 +1654,7 @@ function cargarProductosDesdeFormulario() {
 
         const htmlTallas = producto.tallas.map(talla => `<span>${talla}</span>`).join("");
 
-        // Inyectamos tus variables del formulario en el esquema HTML de la tarjeta
+        // colocamos las variables del formulario en el esquema HTML de la tarjeta
         htmlContenido += `
             <div class="col-12 col-md-6 col-lg-4">
                 <article class="card outfit-card h-100">
@@ -1682,15 +1682,15 @@ function cargarProductosDesdeFormulario() {
     });
 
     htmlContenido += `</div></section>`;
-    contenedor.innerHTML += htmlContenido; // Inyectamos las tarjetas en el div de Outfits
+    contenedor.innerHTML += htmlContenido; // coloca las tarjetas en el div de Outfits pero abajo
 }
 
 // Escuchador para que la función corra en cuanto cargue la página
 document.addEventListener("DOMContentLoaded", cargarProductosDesdeFormulario);
 
-//sefundo 
+//segundo 
 
-//   CONTROL DEL MODAL DETALLADO 
+//   el modal su control 
 
 window.abrirOutfitSimulado = function(id) {
     const productos = JSON.parse(localStorage.getItem('misProductosFormulario')) || [];
@@ -1728,7 +1728,7 @@ window.abrirOutfitSimulado = function(id) {
         }).format(productoEncontrado.precio);
     }
 
-    // Levantamos el modal usando la librería global de Bootstrap 5
+    // Levantamos el modal 
     const miModalHTML = document.getElementById('modalOutfit');
     if (miModalHTML) {
         const instanciaModal = new bootstrap.Modal(miModalHTML);
