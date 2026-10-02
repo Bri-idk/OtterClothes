@@ -1,7 +1,19 @@
-// Función global que se activa al dar clic en el botón de guardar
-window.validarFormulario = function() {
-    const errorAlert = document.getElementById('errorAlert');
-    const successAlert = document.getElementById('pageSuccessAlert');
+// Función
+document.addEventListener('DOMContentLoaded', () => {
+    const btnAgregarPrenda = document.getElementById('btnAgregarPrenda');
+    const contenedorFormulario = document.getElementById('contenedorFormulario');
+    const btnGuardar = document.getElementById('btnGuardar');
+    
+    btnAgregarPrenda.addEventListener('click', () => {
+
+        contenedorFormulario.style.display = 'block';
+        contenedorFormulario.scrollIntoView({behavior:'smooth'});
+    });//cerramos formulaior
+    btnGuardar.addEventListener('click', (event) => {
+        event.preventDefault();//evita que se recargue al guardar
+
+        const errorAlert = document.getElementById('errorAlert');
+        const successAlert = document.getElementById('pageSuccessAlert');
     
     // REINICIO: Escondemos las alertas antes de iniciar una nueva validación
     errorAlert.classList.add('d-none');
@@ -21,7 +33,7 @@ window.validarFormulario = function() {
         selectedSizes.push(cb.value);
     });
 
-    // VALIDACIÓN JAVASCRIPT
+    // validacion por espacios del formulario
     if (name === "") return mostrarAlertaError("El nombre de la prenda es requerido.");
     if (category === "") return mostrarAlertaError("Por favor selecciona una categoría de ropa.");
     if (gender === "") return mostrarAlertaError("Debes asignar un género para el catálogo.");
@@ -32,6 +44,7 @@ window.validarFormulario = function() {
 
     // CREACIÓN DEL MODELO DE DATOS EN FORMATO JSON
     const productoModelo = {
+        id: "prod-" + Date.now(), //es el id 
         nombre: name,
         categoria: category,
         genero: gender,
@@ -43,38 +56,43 @@ window.validarFormulario = function() {
     };
 
     // Se convierte el objeto a una cadena JSON formal y se manda a la consola (F12)
-    console.log("=== NUEVO MODELO JSON GENERADO ===");
+    console.log("= NUEVO MODELO JSON GENERADO =");
     console.log(JSON.stringify(productoModelo, null, 2));
+
+      // Guardamos el producto en la memoria compartida del navegador
+    let productosGuardados = JSON.parse(localStorage.getItem('misProductosFormulario')) || [];
+    productosGuardados.push(productoModelo);
+    localStorage.setItem('misProductosFormulario', JSON.stringify(productosGuardados));
     
-    // ACTIVACIÓN VISUAL: Mostramos la alerta verde de éxito en la interfaz principal
+    // ACTIVACIÓN VISUAL: Mostramos la alerta verde de éxito
     successAlert.classList.remove('d-none'); 
     
-    // Limpiar los campos del formulario para el siguiente registro de prenda
+    // Limpiar los campos del formulario para el siguiente registro
     document.getElementById('clothingForm').reset();
-};
+
+});
 
 // Función auxiliar para inyectar el mensaje y mostrar la alerta roja
 function mostrarAlertaError(mensaje) {
     const errorAlert = document.getElementById('errorAlert');
     document.getElementById('errorMessage').textContent = mensaje;
     errorAlert.classList.remove('d-none');
+    return;
 }
-//div del boton
-// Seleccionamos el botón de apertura y el contenedor del formulario
-const btnAbrir = document.getElementById('btnAbrirFormulario');
-const contenedorForm = document.getElementById('contenedorFormulario');
 
-// Al dar clic en el botón principal...
-btnAbrir.addEventListener('click', () => {
-    contenedorForm.style.display = 'block'; // Mostramos el formulario
-    btnAbrir.style.display = 'none';        // Ocultamos este botón para limpiar la pantalla
-});
 
-// OPCIONAL: Si quieres que al enviar el formulario el botón vuelva a aparecer:
-document.getElementById('tuFormularioActual').addEventListener('submit', (e) => {
-    // Aquí ya debes tener tu código para guardar el SKU...
-    
-    // Al terminar de guardar, puedes limpiar el formulario y regresar al botón inicial:
-    contenedorForm.style.display = 'none';
-    btnAbrir.style.display = 'block';
-});
+// 2. CONTROL DE APERTURA DEL FORMULARIO 
+
+// Encapsulamos esto para esperar a que el HTML cargue por completo antes de buscar el botón
+document.addEventListener("DOMContentLoaded", () => {
+    const btnAbrir = document.getElementById('btnAbrirFormulario');
+    const contenedorForm = document.getElementById('contenedorFormulario');
+
+    if (btnAbrir && contenedorForm) {
+        btnAbrir.addEventListener('click', () => {
+            contenedorForm.style.display = 'block'; // Muestra el formulario
+            btnAbrir.style.display = 'none';        // Oculta el botón "Agregar Nueva Prenda"
+        });
+    }
+});// Esto cierra el btnGuardar.addEventListener('click', ...)
+});//  Esto cierra el document.addEventListener('DOMContentLoaded', ...)
