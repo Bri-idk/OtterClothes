@@ -647,6 +647,17 @@ body {
    CONTACTANOS
 ========================= */
 
+.body-contactanos {
+    background: linear-gradient(
+    to bottom,
+    var(--naranja) 0%,
+    var(--naranja) 30%,
+    var(--crema) 75%,
+    var(--celeste) 100%
+  );
+  background-attachment: fixed;
+}
+
 #titulo-contact {
     margin-top: 8rem;
 }
