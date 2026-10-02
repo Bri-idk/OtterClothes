@@ -1626,3 +1626,113 @@ document.addEventListener(
 
     }
 );
+
+
+
+//  NUEVo producto
+
+function cargarProductosDesdeFormulario() {
+    const contenedor = document.querySelector("#seccionesOutfits");
+    if (!contenedor) return; // Si no encuentra el div, se detiene para no dar error
+    
+    // Leemos los productos que guardó el formulario en el navegador
+    const productos = JSON.parse(localStorage.getItem('misProductosFormulario')) || [];
+    
+    // Si la memoria está vacía, mostramos un mensaje amigable
+    if (productos.length === 0) {
+        contenedor.innerHTML = `<p class="text-muted text-center py-4">No hay productos agregados desde el formulario todavía.</p>`;
+        return;
+    }
+
+    let htmlContenido = `<div class="row g-4 justify-content-start">`;
+
+    productos.forEach(producto => {
+        // Formateamos el precio del JSON a pesos de forma dinámica
+        const precioFormateado = new Intl.NumberFormat("es-MX", {
+            style: "currency", currency: "MXN", maximumFractionDigits: 0
+        }).format(producto.precio);
+
+        const htmlTallas = producto.tallas.map(talla => `<span>${talla}</span>`).join("");
+
+        // Inyectamos tus variables del formulario en el esquema HTML de la tarjeta
+        htmlContenido += `
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card outfit-card h-100">
+                    <div class="imagen-outfit">
+                        <img src="${producto.imagen}" alt="${producto.nombre}" class="card-img-top">
+                        <button type="button" class="favorito">
+                            <i class="bi bi-heart"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <span class="categoria text-uppercase">${producto.categoria}</span>
+                        <h2 class="nombre-outfit">${producto.nombre}</h2>
+                        <p class="descripcion">SKU: ${producto.sku} | Género: ${producto.genero}</p>
+                        <div class="tallas mb-3">${htmlTallas}</div>
+                        <div class="precio mb-3">${precioFormateado}</div>
+                        
+                        <!--  aquí le pasamos el ID real de tu JSON al hacer clic -->
+                        <button type="button" class="btn btn-outfit" onclick="abrirOutfitSimulado('${producto.id}')">
+                            Ver outfit
+                        </button>
+                    </div>
+                </article>
+            </div>
+        `;
+    });
+
+    htmlContenido += `</div></section>`;
+    contenedor.innerHTML += htmlContenido; // Inyectamos las tarjetas en el div de Outfits
+}
+
+// Escuchador para que la función corra en cuanto cargue la página
+document.addEventListener("DOMContentLoaded", cargarProductosDesdeFormulario);
+
+//sefundo 
+
+//   CONTROL DEL MODAL DETALLADO 
+
+window.abrirOutfitSimulado = function(id) {
+    const productos = JSON.parse(localStorage.getItem('misProductosFormulario')) || [];
+    const productoEncontrado = productos.find(p => p.id === id);
+    
+    // Si por alguna razón el ID viene vacío o no coincide, nos avisa en la consola
+    if (!productoEncontrado) {
+        console.error("No se encontró el producto con ID:", id);
+        return;
+    }
+
+    // Mapeamos los datos del JSON dentro de los elementos de tu modal de Bootstrap
+    document.getElementById('modalImagen').src = productoEncontrado.imagen;
+    document.getElementById('modalImagen').alt = productoEncontrado.nombre;
+    document.getElementById('modalEstilo').textContent = productoEncontrado.categoria;
+    document.getElementById('modalNombre').textContent = productoEncontrado.nombre;
+    document.getElementById('modalDescripcion').textContent = `SKU: ${productoEncontrado.sku} | Género: ${productoEncontrado.genero}. Prenda en inventario local.`;
+
+    const listaIncluye = document.getElementById('modalIncluye');
+    if (listaIncluye) {
+        listaIncluye.innerHTML = `<li><i class="bi bi-check2-circle me-2"></i>1x ${productoEncontrado.nombre}</li>`;
+    }
+
+    const contenedorTallas = document.getElementById('modalTallas');
+    if (contenedorTallas) {
+        contenedorTallas.innerHTML = productoEncontrado.tallas.map(talla => 
+            `<button type="button" class="btn btn-outline-dark btn-talla-modal">${talla}</button>`
+        ).join("");
+    }
+
+    const precioModal = document.getElementById('modalPrecio');
+    if (precioModal) {
+        precioModal.textContent = new Intl.NumberFormat("es-MX", {
+            style: "currency", currency: "MXN", maximumFractionDigits: 0
+        }).format(productoEncontrado.precio);
+    }
+
+    // Levantamos el modal usando la librería global de Bootstrap 5
+    const miModalHTML = document.getElementById('modalOutfit');
+    if (miModalHTML) {
+        const instanciaModal = new bootstrap.Modal(miModalHTML);
+        instanciaModal.show();
+    }
+};
+

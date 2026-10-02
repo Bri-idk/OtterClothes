@@ -95,16 +95,6 @@ async function envioDatos(e) {
         });
 
         if (respuestaSv.ok) {
-            //de la 98 a 106 para el mensaje 
-            // Dispara la animación emergente (Toast) de Bootstrap no toque mas de tu js solo las lineas que menciona
-             aviso.textContent = "";
-             const elToast = document.getElementById('toastNutria');
-            if (elToast) {
-                const bootstrapToast = new bootstrap.Toast(elToast, {
-                    delay: 5000
-                });
-                bootstrapToast.show();
-            }
 
             // 3. Opcional: si usas la etiqueta de confirmación, verifica que exista
             if (confirmacion) {
@@ -113,9 +103,6 @@ async function envioDatos(e) {
 
             // 4. Limpiamos los campos del formulario
             form.reset();
-        
-
-
 
             confirmacion.hidden = false;
             aviso.textContent = "";
