@@ -147,6 +147,4 @@ async function envioDatos(e) {
         console.error("Información del error: ", error); // Mensaje de error en la consola para el programador
         aviso.textContent = "Error de conexión"; // Mensaje de error para el usuario
     }
-
-
 }
