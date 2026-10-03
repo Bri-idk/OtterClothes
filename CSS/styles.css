@@ -763,6 +763,10 @@ body.mi-perfil {
   background-attachment: fixed;
 }
 
+.bienvenida {
+    margin-top: 5rem;
+}
+
 /* Estilo general para todas las cards */
 .card {
   background-color: #FAF6F0 !important;

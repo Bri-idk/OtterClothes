@@ -95,6 +95,8 @@ formulario.addEventListener("submit", function (evento) {
 
     const usuarioJSON = JSON.stringify(usuario, null, 2);
     console.log(usuarioJSON);
+    sessionStorage.setItem("usuario", usuarioJSON);
+    window.location.href="../HTML/miPerfil.html";
 
     formulario.reset();
   } else {
