@@ -647,6 +647,17 @@ body {
    CONTACTANOS
 ========================= */
 
+.body-contactanos {
+    background: linear-gradient(
+    to bottom,
+    var(--naranja) 0%,
+    var(--naranja) 30%,
+    var(--crema) 75%,
+    var(--celeste) 100%
+  );
+  background-attachment: fixed;
+}
+
 #titulo-contact {
     margin-top: 8rem;
 }
@@ -723,4 +734,16 @@ body {
 .btn-inicio:hover {
     background-color: #65382D;
     color: white;
+}
+
+.mensaje-error { /* Globos de aviso de datos inválidos*/
+    display: none;
+    color: #dc3545;
+    font-size: 0.875rem;
+    font-weight: 600; /*Ancho de letra, 400 normal, 700 bold*/
+    margin-bottom: 0.25rem;
+}
+
+.mensaje-error.visible {
+    display: block; /*Empuja el contenido al desplegar, evita solapamiento*/
 }
