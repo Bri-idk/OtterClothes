@@ -127,29 +127,6 @@
 
 
 
-                <!-- CARRITO -->
-
-                <button
-                    class="btn-accion"
-                    type="button"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasCarrito">
-
-                    <i class="bi bi-bag"></i>
-
-                    Carrito
-
-                    <span
-                        id="contadorCarrito"
-                        class="contador">
-
-                        0
-
-                    </span>
-
-                </button>
-
-
             </div>
 
 
@@ -294,6 +271,12 @@
                                     class="tallas-modal">
                                 </div>
 
+                                <p
+                                    id="modalDisponibilidad"
+                                    class="disponibilidad-producto d-none"
+                                    aria-live="polite">
+                                </p>
+
 
 
                                 <!-- PRECIO -->
@@ -402,95 +385,6 @@
 
 
     <!-- ==================================================
-         CARRITO
-    =================================================== -->
-
-    <div
-        class="offcanvas offcanvas-end"
-        tabindex="-1"
-        id="offcanvasCarrito">
-
-
-        <div class="offcanvas-header">
-
-
-            <h5 class="offcanvas-title">
-
-                <i class="bi bi-bag"></i>
-
-                Mi carrito
-
-            </h5>
-
-
-            <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="offcanvas">
-            </button>
-
-
-        </div>
-
-
-
-        <div class="offcanvas-body carrito-contenido">
-
-
-            <!-- PRODUCTOS -->
-
-            <div id="listaCarrito">
-            </div>
-
-
-
-            <!-- TOTAL -->
-
-            <div class="resumen-carrito">
-
-
-                <hr>
-
-
-                <div class="total-linea">
-
-
-                    <span>
-                        Total
-                    </span>
-
-
-                    <strong id="totalCarrito">
-
-                        $0 MXN
-
-                    </strong>
-
-
-                </div>
-
-
-
-                <button
-                    type="button"
-                    class="btn btn-finalizar">
-
-                    Finalizar compra
-
-                </button>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-
-    <!-- ==================================================
          MENSAJES
     =================================================== -->
 
@@ -508,8 +402,12 @@
                 id="textoToast"
                 class="toast-body">
             </div>
-
-
+            <a
+                id="toastCartLink"
+                class="d-none px-3 pb-3 text-decoration-none fw-semibold"
+                href="carrito.html">
+                Ir a Mi carrito <i class="bi bi-arrow-right"></i>
+            </a>
         </div>
 
 

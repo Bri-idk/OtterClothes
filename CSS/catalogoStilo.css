@@ -1,0 +1,50 @@
+/* primera parte o blque 1 fondo en general */
+
+body {
+    /*  degradado de arriba hacia abajo (to bottom) */
+    background: linear-gradient(to bottom, 
+        #FA4E02 0%,   
+        #FA4E02 20%,   
+        #F8DFB7 65%,   
+        #C9E7F6 100%   
+
+    );
+    
+    /* cubrae toda la altura de la pantalla sin cortarse */
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* segunda parte o bloque 2 la card hace zoom centrado */
+.contenedor-imagen-card {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden; /* Oculta el sobrante de la foto al crecer */
+}
+
+.contenedor-imagen-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Centra y ajusta proporcionalmente sin deformar */
+    transition: transform 0.5s ease; /* Zoom suave */
+}
+
+.contenedor-imagen-card:hover img {
+    transform: scale(1.08); /* Zoom sutil del 8% al pasar el cursor */
+}
+
+/* tercera parte o bloque 3 boton de agregar */
+.btn-naranja {
+    background-color: #FA4E02; /* Tu color naranja vivo en código directo */
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-naranja:hover {
+    background-color: #49261E; /* Cambia a tu color café al pasar el mouse */
+    color: #ffffff;
+}
+
