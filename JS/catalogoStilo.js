@@ -162,84 +162,100 @@ const listaProductos = [
 // Lee la categoría que viene en el enlace (ej: ?categoria=Y2K)
 const parametrosURL = new URLSearchParams(window.location.search);
 const estiloSeleccionado = parametrosURL.get('categoria');
+const mensajesPorEstilo = {
+    "kpop idol": {
+        nombre: "Kpop Idol",
+        mensaje: "Descubre outfits inspirados en el estilo K-pop. 💖"
+    },
+    "y2k": {
+        nombre: "Y2K",
+        mensaje: "Explora la colección con toda la vibra Y2K. ✨"
+    },
+    "casual": {
+        nombre: "Casual",
+        mensaje: "Encuentra tu próximo look casual favorito. ☀️"
+    },
+    "streetwear": {
+        nombre: "Streetwear",
+        mensaje: "Descubre outfits urbanos con mucha actitud. 🧢"
+    },
+    "vintage": {
+        nombre: "Vintage",
+        mensaje: "Explora prendas con inspiración vintage. 📼"
+    }
+};
 
 // Vincula las etiquetas de tu HTML donde pintaremos los datos
 const tituloCategoria = document.getElementById('tituloCategoria');
 const contenedorCatalogo = document.getElementById('seccionesOutfits');
 
-
 // BLOC 3: FILTRADO DE PRODUCTOS
 
-if (estiloSeleccionado) {
-    // Decodifica y limpia los espacios de la URL
-    const estiloLimpio = decodeURIComponent(estiloSeleccionado);
+if (!estiloSeleccionado?.trim()) {
+    tituloCategoria.textContent = "Selecciona un estilo en la navbar para descubrir su colección. 💖";
+} else {
+    const estiloLimpio = estiloSeleccionado.trim();
+    const filtro = mensajesPorEstilo[estiloLimpio.toLowerCase()];
 
-    // Filtra la lista general y solo deja los que coincidan con el estilo del Navbar
-    const productosFiltrados = listaProductos.filter(
-        prod => prod.estilo.toLowerCase() === estiloLimpio.toLowerCase()
-    );
+    if (!filtro) {
+        tituloCategoria.textContent = `No encontramos el estilo "${estiloLimpio}". Elige uno desde la navbar.`;
+        contenedorCatalogo.innerHTML = "";
+    } else {
+        tituloCategoria.textContent = filtro.mensaje;
 
+        // Filtra la lista general y solo deja los que coincidan con el estilo seleccionado.
+        const productosFiltrados = listaProductos.filter(
+            prod => prod.estilo.toLowerCase() === filtro.nombre.toLowerCase()
+        );
 
-    // BLOC 4: DIBUJAR LAS CARDS EN PANTALLA
+        // BLOC 4: DIBUJAR LAS CARDS EN PANTALLA
+        if (productosFiltrados.length > 0) {
+            contenedorCatalogo.innerHTML = "";
 
-    if (productosFiltrados.length > 0) {
-        contenedorCatalogo.innerHTML = ""; // Limpia el contenedor principal
-        
-        productosFiltrados.forEach(producto => {
-            // mapea y transforma el Array "incluye" en elementos de lista <li> individuales
-            const listaPrendasHTML = producto.incluye.map(prenda => `<li>${prenda}</li>`).join("");
-            
-            // mapea y transforma el Array "tallas" en botones 
-            const botonesTallasHTML = producto.tallas.map(talla => `<button class="btn btn-outline-dark btn-xs mx-1">${talla}</button>`).join("");
+            productosFiltrados.forEach(producto => {
+                const listaPrendasHTML = producto.incluye
+                    .map(prenda => `<li>${prenda}</li>`)
+                    .join("");
+                const botonesTallasHTML = producto.tallas
+                    .map(talla => `<button class="btn btn-outline-dark btn-xs mx-1">${talla}</button>`)
+                    .join("");
 
-            // Plantilla de tu Card Completa con todos los detalles integrados
-            const cardHTML = `
-               <div class="col">
-                    <div class="card h-100 shadow-sm border-0 bg-white">
-                        
-                        <!-- Contenedor para tu imagen con efecto Zoom -->
-                        <div class="contenedor-imagen-card">
-                            <img src="${producto.imagen}" class="w-100 h-100" alt="${producto.nombre}">
-                        </div>
-
-                        <!-- Contenedor del texto de la Card -->
-                        <div class="card-body p-4 bg-white d-flex flex-column justify-content-between">
-                            <div>
-                                <span class="badge bg-light text-dark mb-2 border-crema">${producto.estilo}</span>
-                                <h4 class="fw-bold m-0 text-cafe">${producto.nombre}</h4>
-                                <p class="text-muted my-2 small">${producto.descripcion}</p>
-                                
-                                <hr class="linea-separadora">
-                                
-                                <!-- Descripción de las prendas incluidas -->
-                                <h6 class="fw-bold mb-1 texto-seccion-card">Este outfit incluye:</h6>
-                                <ul class="small mb-3 lista-prendas-card">
-                                    ${listaPrendasHTML}
-                                </ul>
-
-                                <h6 class="fw-bold mb-2 texto-seccion-card">Tallas disponibles:</h6>
-                                <div class="tallas-card mb-2">
-                                    ${botonesTallasHTML}
-                                </div>
+                const cardHTML = `
+                   <div class="col">
+                        <div class="card h-100 shadow-sm border-0 bg-white">
+                            <div class="contenedor-imagen-card">
+                                <img src="${producto.imagen}" class="w-100 h-100" alt="${producto.nombre}">
                             </div>
-
-                            <hr class="linea-separadora">
-
-                            <!-- Sección final: Precio y Botón de compra directo -->
-                            <div class="d-flex align-items-center justify-content-between mt-1">
-                                <span class="fw-bold fs-5 text-naranja">${producto.precio}</span>
-                                <button class="btn text-white fw-bold px-3 btn-sm btn-naranja">
-                                    <i class="bi bi-bag-plus me-1"></i> Agregar
-                                </button>
+                            <div class="card-body p-4 bg-white d-flex flex-column justify-content-between">
+                                <div>
+                                    <span class="badge bg-light text-dark mb-2 border-crema">${producto.estilo}</span>
+                                    <h4 class="fw-bold m-0 text-cafe">${producto.nombre}</h4>
+                                    <p class="text-muted my-2 small">${producto.descripcion}</p>
+                                    <hr class="linea-separadora">
+                                    <h6 class="fw-bold mb-1 texto-seccion-card">Este outfit incluye:</h6>
+                                    <ul class="small mb-3 lista-prendas-card">
+                                        ${listaPrendasHTML}
+                                    </ul>
+                                    <h6 class="fw-bold mb-2 texto-seccion-card">Tallas disponibles:</h6>
+                                    <div class="tallas-card mb-2">
+                                        ${botonesTallasHTML}
+                                    </div>
+                                </div>
+                                <hr class="linea-separadora">
+                                <div class="d-flex align-items-center justify-content-between mt-1">
+                                    <span class="fw-bold fs-5 text-naranja">${producto.precio}</span>
+                                    <button class="btn text-white fw-bold px-3 btn-sm btn-naranja">
+                                        <i class="bi bi-bag-plus me-1"></i> Agregar
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            `;
-            // agrega físicamente la card al HTML
-            contenedorCatalogo.innerHTML += cardHTML;
-        });
-    } else {
-        contenedorCatalogo.innerHTML = `<p class="text-center w-100 text-muted my-5">Próximamente añadiremos más outfits en este estilo.</p>`;
+                `;
+                contenedorCatalogo.innerHTML += cardHTML;
+            });
+        } else {
+            contenedorCatalogo.innerHTML = `<p class="text-center w-100 text-muted my-5">Próximamente añadiremos más outfits en este estilo.</p>`;
+        }
     }
 }
