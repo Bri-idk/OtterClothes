@@ -3,822 +3,430 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Acerca de Nosotros | Otter Clothes</title>
 
-    <title>Equipo</title>
+    <!-- Bootstrap 5.3 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
-
-    <!-- Fuentes de reemplazo (la guía de marca pide Cooper BT / Rugrats Sans,
-         que no están disponibles como web font gratuita) -->
+    <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- CSS propio -->
-    <link rel="stylesheet" href="../CSS/styles.css" />
+    <!-- Archivo de estilos CSS externo -->
+    <link rel="stylesheet" href="CSS/acerca.css" />
   </head>
-  <style>
-    .hero-about{
-      padding-top: 10vh;
-    }
-  </style>
   <body>
-      <div id="navbar-placeholder"></div>
-    <!-- ===========================
-         ABOUT US
-    ============================ -->
-    <header class="hero-about">
-      <div class="hero-about__brand">
-        <img
-          src="../devs/otter devs.png"
-          class="hero-about__logo"
-          alt="Logo de Otter Devs"
+
+    <!-- Navbar (cuando se incorpore al repo principal sustituir <nav> por el siguiente placeholder) -->
+    <!--<div id="navbar-placeholder"></div>-->
+
+    <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container-fluid">
+    <!-- Logo — path relativo a la raíz del proyecto (navbar.js lo hace absoluto) -->
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Abrir menú"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="HTML/aboutUs.html">Acerca de nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="HTML/contactanos.html">Contáctanos</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Estilos
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Kpop Idol</a></li>
+            <li><a class="dropdown-item" href="#">Y2K</a></li>
+            <li><a class="dropdown-item" href="#">Casual</a></li>
+            <li><a class="dropdown-item" href="#">Streetwear</a></li>
+            <li><a class="dropdown-item" href="#">Vintage</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="HTML/lista_de_items.html">
+            Outfits </a
+          ><!--
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Destacados</a></li>
+            <li><a class="dropdown-item" href="#">Nuevos Outfits</a></li>
+            <li><a class="dropdown-item" href="#">Por estilo</a></li>
+            <li><a class="dropdown-item" href="#">Por ocasión</a></li>
+          </ul>
+          -->
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="HTML/carrito.html">
+            <i class="bi bi-bag"></i> Mi carrito
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="HTML/indexSku.html">
+            <i class="bi bi-bag"></i> Agregar producto
+          </a>
+        </li>
+      </ul>
+
+      <form class="d-flex align-items-center gap-2" role="search">
+        <input
+          class="form-control"
+          type="search"
+          placeholder="Harajuku, Old Money..."
+          aria-label="Buscar"
         />
-        <h1 class="hero-about__title">About this otters</h1>
-      </div>
-      <div class="hero-about__linea"></div>
-    </header>
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!--Fin navbar-->
 
-    <!-- ===========================
-         MISIÓN, VISIÓN Y VALORES
-    ============================ -->
-    <section class="mvv">
-      <h2 class="mvv__heading">Misión, visión y valores</h2>
+    <!-- TÍTULO PRINCIPAL -->
+    <div class="header-seccion">
+      <h1 class="titulo-dinamico">
+        ACERCA DE NOSOTROS
+      </h1>
+      <p class="subtitulo">🦦​ Detrás de cada prenda y cada línea de código hay una historia. <br>
+        Te invitamos a conocer las mentes y el corazón que le dan vida a Otterclothes 🦦​</p>
+    </div>
 
-      <div class="mvv__grid">
-        <article class="mvv__card mvv__card--mision">
-          <h3>Misión</h3>
-          <p>
-            Transformar la relación de las personas con su closet a través de la
-            curación de ropa personalizada en nuestro e-commerce intuitivo.
-            Ayudamos a que nuestra comunidad descubra su estilo y su expresión
-            de personalidad, ofreciéndoles prendas clave que vayan con su
-            identidad y complementen su confianza y autenticidad.
-          </p>
-        </article>
-
-        <article class="mvv__card mvv__card--vision">
-          <h3>Visión</h3>
-          <p>
-            Convertirnos en una plataforma de moda reconocida por su estilo y
-            por la confianza de nuestros clientes, ofreciendo una experiencia de
-            compra diferente que les permita remodelar su closet. Queremos ser
-            la marca favorita y de confianza, logrando que cada cliente se
-            sienta único y dueño de su imagen gracias a nuestro consejo
-            personalizado.
-          </p>
-        </article>
+    <!-- HISTORIA, MISIÓN Y VISIÓN -->
+    <section class="container my-5">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-md-4">
+          <div class="p-4 card-historia h-100">
+            <div class="text-danger mb-3 display-6"><i class="bi bi-rocket-fill"></i></div>
+            <h3 class="font-fredoka fw-bold text-navy mb-2">Nuestra Historia</h3>
+            <p class="text-muted small">Otterclothes nacio de la idea de combinar moda urbana y versátil con innovación digital, adoptando a la nutria como nuestro símbolo porque refleja la adpatabilidad, el trabajo en equipo y el dinamismo que impulsan cada uno de nuestros proyectos.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 card-historia h-100">
+            <div class="text-primary mb-3 display-6"><i class="bi bi-bag-heart-fill"></i></div>
+            <h3 class="font-fredoka fw-bold text-navy mb-2">Misión</h3>
+            <p class="text-muted small">Diseñamos prendas urbanas de alta calidad impulsadas por tecnología web de vanguardia para garantizarte una experiencia de compra rápida, segura e interactiva.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 card-historia h-100">
+            <div class="text-warning mb-3 display-6"><i class="bi bi-eye-fill"></i></div>
+            <h3 class="font-fredoka fw-bold text-navy mb-2">Visión</h3>
+            <p class="text-muted small">Buscamos consolidarnos como el e-commerce referente de la moda urbana independiente, destacando por democratizar el diseño accesible e impulsar una plataforma web basada en código limpio y desarrollo continuo.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ===========================
-         EQUIPO
-    ============================ -->
-    <div class="equipo">
-      <h2 class="equipo__heading">Nuestro equipo</h2>
-
-      <div class="equipo__grid">
-        <!-- ================= CARLOS ================= -->
-        <div class="persona">
-          <div class="collapse tarjeta-contenedor" id="perfilCarlos">
-            <div class="tarjeta">
-              <div class="portada"></div>
-
-              <div class="contenido">
-                <div class="contenedor-avatar">
-                  <img
-                    src="../devs/Ing mecatronico.png"
-                    class="avatar-grande"
-                    alt="Foto de Carlos Ceballos"
-                  />
-                  <span class="estado"></span>
-                </div>
-
-                <h4 class="nombre">Carlos Ceballos</h4>
-                <span class="usuario">Carlos3460@gmail.com</span>
-
-                <p class="descripcion">
-                  Desarrollador Java jr fullstack, frontend y backend.
-                </p>
-
-                <div class="habilidades">
-                  <span><i class="bi bi-cup-hot"></i> Java</span>
-                  <span><i class="bi bi-filetype-html"></i> HTML</span>
-                  <span><i class="bi bi-filetype-css"></i> CSS</span>
-                  <span><i class="bi bi-bootstrap"></i> Bootstrap</span>
-                  <span><i class="bi bi-filetype-js"></i> JavaScript</span>
-                </div>
-
-                <div class="redes">
-                  <a
-                    href="https://github.com/Carlos3460"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    ><i class="bi bi-github"></i
-                  ></a>
-                  <a
-                    href="https://www.linkedin.com/in/carlos-ceballos-santoyo/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    ><i class="bi bi-linkedin"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="barra-persona"
-            data-bs-toggle="collapse"
-            data-bs-target="#perfilCarlos"
-            aria-expanded="false"
-            aria-controls="perfilCarlos"
-          >
-            <img
-              src="../devs/Ing mecatronico.png"
-              class="avatar-barra"
-              alt="Carlos Ceballos"
-            />
-
-            <div class="datos-barra">
-              <h5>Carlos Ceballos</h5>
-              <span>Desarrollador Java Jr Full Stack</span>
-            </div>
-
-            <div class="iconos">
-              <i class="bi bi-person-circle"></i>
-              <i class="bi bi-chevron-up flecha"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= MIGUEL ANGEL ================= -->
-        <div class="persona">
-          <div class="collapse tarjeta-contenedor" id="perfilMiguel">
-            <div class="tarjeta">
-              <div class="portada"></div>
-
-              <div class="contenido">
-                <div class="contenedor-avatar">
-                  <img
-                    src="../devs/IMG_20260826_191945_290.webp"
-                    class="avatar-grande"
-                    alt="Foto de Miguel Angel Campos Hipolito"
-                  />
-                  <span class="estado"></span>
-                </div>
-
-                <h4 class="nombre">Miguel Angel Campos Hipolito</h4>
-                <span class="usuario">@angelcampos-dev</span>
-
-                <p class="descripcion">
-                  Programador Java Full Stack.
-                </p>
-
-                <div class="redes">
-                  <a
-                    href="https://github.com/angelcampos-dev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    ><i class="bi bi-github"></i
-                  ></a>
-                  <a
-                    href="https://www.linkedin.com/in/miguel-angel-campos-hipolito/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    ><i class="bi bi-linkedin"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="barra-persona"
-            data-bs-toggle="collapse"
-            data-bs-target="#perfilMiguel"
-            aria-expanded="false"
-            aria-controls="perfilMiguel"
-          >
-            <img
-              src="../devs/IMG_20260826_191945_290.webp"
-              class="avatar-barra"
-              alt="Miguel Angel Campos Hipolito"
-            />
-
-            <div class="datos-barra">
-              <h5>Miguel Angel Campos Hipolito</h5>
-              <span>Desarrollador</span>
-            </div>
-
-            <div class="iconos">
-              <i class="bi bi-person-circle"></i>
-              <i class="bi bi-chevron-up flecha"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= BRIAN ================= -->
-        <div class="persona">
-          <div class="collapse tarjeta-contenedor" id="perfilBrian">
-            <div class="tarjeta">
-              <div class="portada"></div>
-
-              <div class="contenido">
-                <div class="contenedor-avatar">
-                  <img
-                    src="../devs/brian.jpeg"
-                    class="avatar-grande"
-                    alt="Foto de Brian E. Pineda Martinez"
-                  />
-                  <span class="estado"></span>
-                </div>
-
-                <h4 class="nombre">Brian E. Pineda Martinez</h4>
-                <span class="usuario">@Bri-idk</span>
-
-                <p class="descripcion">
-                  Desarrollador y consultor del proyecto.
-                </p>
-
-                <div class="habilidades">
-                  <span><i class="bi bi-cup-hot"></i> Java</span>
-                  <span><i class="bi bi-filetype-html"></i> HTML</span>
-                  <span><i class="bi bi-filetype-css"></i> CSS</span>
-                  <span><i class="bi bi-bootstrap"></i> Bootstrap</span>
-                  <span><i class="bi bi-filetype-js"></i> JavaScript</span>
-                </div>
-
-                <div class="redes">
-                  <a
-                    href="https://github.com/Bri-idk/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >GitHub</a
-                  >
-                  <a
-                    href="https://www.linkedin.com/in/brian-pineda-martinez-dev/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >LinkedIn</a
-                  >
-                  <a
-                    href="https://brian-dev-nine.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Portafolio</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="barra-persona"
-            data-bs-toggle="collapse"
-            data-bs-target="#perfilBrian"
-            aria-expanded="false"
-            aria-controls="perfilBrian"
-          >
-            <img
-              src="../devs/brian.jpeg"
-              class="avatar-barra"
-              alt="Brian E. Pineda Martinez"
-            />
-
-            <div class="datos-barra">
-              <h5>Brian E. Pineda Martinez</h5>
-              <span>Desarrollador Fullstack en Otter Clothes</span>
-            </div>
-
-            <div class="iconos">
-              <i class="bi bi-person-circle"></i>
-              <i class="bi bi-chevron-up flecha"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= DAVID ================= -->
-        <div class="persona">
-          <div class="collapse tarjeta-contenedor" id="perfilDavid">
-            <div class="tarjeta">
-              <div class="portada"></div>
-
-              <div class="contenido">
-                <div class="contenedor-avatar">
-                  <img
-                    src="../devs/Fernandez_Brito_David_Java_Fullstack_Developer.jpeg"
-                    class="avatar-grande"
-                    alt="Foto de David Fernández Brito"
-                  />
-                  <span class="estado"></span>
-                </div>
-
-                <h4 class="nombre">David Fernández Brito</h4>
-                <span class="usuario">@david</span>
-
-                <p class="descripcion">Desarrollador Java Full Stack.</p>
-
-                <div class="habilidades">
-                  <span><i class="bi bi-cup-hot"></i> Java Full Stack</span>
-                </div>
-
-                <div class="redes">
-                  <a
-                    href="https://github.com/Monopolo-Magnetico"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >GitHub</a
-                  >
-                  <a
-                    href="https://www.linkedin.com/in/davidfernandezbrito/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >LinkedIn</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="barra-persona"
-            data-bs-toggle="collapse"
-            data-bs-target="#perfilDavid"
-            aria-expanded="false"
-            aria-controls="perfilDavid"
-          >
-            <img
-              src="../devs/Fernandez_Brito_David_Java_Fullstack_Developer.jpeg"
-              class="avatar-barra"
-              alt="David Fernández Brito"
-            />
-
-            <div class="datos-barra">
-              <h5>David Fernández Brito</h5>
-              <span>Desarrollador Java Full Stack</span>
-            </div>
-
-            <div class="iconos">
-              <i class="bi bi-person-circle"></i>
-              <i class="bi bi-chevron-up flecha"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= DANIEL ================= -->
-        <div class="persona">
-          <div class="collapse tarjeta-contenedor" id="perfilDaniel">
-            <div class="tarjeta">
-              <div class="portada"></div>
-
-              <div class="contenido">
-                <div class="contenedor-avatar">
-                  <img
-                    src="../devs/daniel.jpg"
-                    class="avatar-grande"
-                    alt="Foto de Daniel Arellano Morales"
-                  />
-                  <span class="estado"></span>
-                </div>
-
-                <h4 class="nombre">Daniel Arellano Morales</h4>
-                <span class="usuario">@Dani77-AM</span>
-
-                <p class="descripcion">Desarrollador Full Stack.</p>
-
-                <div class="habilidades">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>Bootstrap</span>
-                  <span>JavaScript</span>
-                </div>
-
-                <div class="redes">
-                  <a
-                    href="https://github.com/Dani77-AM"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >GitHub</a
-                  >
-                  <a
-                    href="https://www.linkedin.com/in/daniel-arellano-morales"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >LinkedIn</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="barra-persona"
-            data-bs-toggle="collapse"
-            data-bs-target="#perfilDaniel"
-            aria-expanded="false"
-            aria-controls="perfilDaniel"
-          >
-            <img
-              src="../devs/daniel.jpg"
-              class="avatar-barra"
-              alt="Daniel Arellano Morales"
-            />
-            <div class="datos-barra">
-              <h5>Daniel Arellano</h5>
-              <span>Desarrollador Full Stack en Otter Clothes</span>
-            </div>
-            <div class="iconos">
-              <i class="bi bi-person-circle"></i>
-              <i class="bi bi-chevron-up flecha"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= DANIELA ================= -->
-        <div class="persona">
-          <div class="collapse tarjeta-contenedor" id="perfilDaniela">
-            <div class="tarjeta">
-              <div class="portada"></div>
-
-              <div class="contenido">
-                <div class="contenedor-avatar">
-                  <img
-                    src="../devs/Desarrolladora Jva Full Stack Jr. - Daniela Chagal - Profile.jfif"
-                    class="avatar-grande"
-                    alt="Foto de Daniela Chagal"
-                  />
-                  <span class="estado"></span>
-                </div>
-
-                <h4 class="nombre">Daniela Chagal</h4>
-                <span class="usuario">@DanyLcs</span>
-
-                <p class="descripcion">
-                  Desarrolladora Java Full Stack Jr. con formación en Idiomas y
-                  experiencia práctica en JavaScript, HTML, CSS, Bootstrap, Git,
-                  GitHub y Scrum.
-                </p>
-
-                <div class="habilidades">
-                  <span><i class="bi bi-cup-hot"></i> Java</span>
-                  <span><i class="bi bi-filetype-html"></i> HTML</span>
-                  <span><i class="bi bi-filetype-css"></i> CSS</span>
-                  <span><i class="bi bi-bootstrap"></i> Bootstrap</span>
-                  <span><i class="bi bi-filetype-js"></i> JavaScript</span>
-                  <span><i class="bi bi-git"></i> Git y GitHub</span>
-                </div>
-
-                <div class="redes">
-                  <a
-                    href="https://github.com/DanyLcs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >GitHub</a
-                  >
-                  <a
-                    href="https://www.linkedin.com/in/daniela-chagal/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >LinkedIn</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="barra-persona"
-            data-bs-toggle="collapse"
-            data-bs-target="#perfilDaniela"
-            aria-expanded="false"
-            aria-controls="perfilDaniela"
-          >
-            <img
-              src="../devs/Desarrolladora Jva Full Stack Jr. - Daniela Chagal - Profile.jfif"
-              class="avatar-barra"
-              alt="Daniela Chagal"
-            />
-
-            <div class="datos-barra">
-              <h5>Daniela Chagal</h5>
-              <span>Desarrolladora Java Full Stack Jr.</span>
-            </div>
-
-            <div class="iconos">
-              <i class="bi bi-person-circle"></i>
-              <i class="bi bi-chevron-up flecha"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= MAFER ================= -->
-        <div class="persona">
-          <div class="collapse tarjeta-contenedor" id="perfilMafer">
-            <div class="tarjeta">
-              <div class="portada"></div>
-
-              <div class="contenido">
-                <div class="contenedor-avatar">
-                  <img
-                    src="../devs/maf.jpg"
-                    class="avatar-grande"
-                    alt="Foto de Maria Fernanda Vazquez Jimenez"
-                  />
-                  <span class="estado"></span>
-                </div>
-
-                <h4 class="nombre">Maria Fernanda Vazquez Jimenez</h4>
-                <span class="usuario">@Mafer-vazquez</span>
-
-                <p class="descripcion">
-                  Desarrolladora Frontend en Otter Clothes. Diseño y construyo
-                  interfaces atractivas y funcionales.
-                </p>
-
-                <div class="habilidades">
-                  <span><i class="bi bi-filetype-html"></i> HTML</span>
-                  <span><i class="bi bi-filetype-css"></i> CSS</span>
-                  <span><i class="bi bi-bootstrap"></i> Bootstrap</span>
-                  <span><i class="bi bi-filetype-js"></i> JavaScript</span>
-                </div>
-
-                <div class="redes">
-                  <a
-                    href="https://github.com/Mafer-vazquez"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >GitHub</a
-                  >
-                  <a
-                    href="https://www.linkedin.com/in/maria-fernanda-vazquez-jimenez/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >LinkedIn</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="barra-persona"
-            data-bs-toggle="collapse"
-            data-bs-target="#perfilMafer"
-            aria-expanded="false"
-            aria-controls="perfilMafer"
-          >
-            <img
-              src="../devs/maf.jpg"
-              class="avatar-barra"
-              alt="Maria Fernanda Vazquez Jimenez"
-            />
-
-            <div class="datos-barra">
-              <h5>Mafer Vazquez</h5>
-              <span>Desarrolladora Frontend en Otter Clothes</span>
-            </div>
-
-            <div class="iconos">
-              <i class="bi bi-person-circle"></i>
-              <i class="bi bi-chevron-up flecha"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= MARCELA ================= -->
-        <div class="persona">
-          <div class="collapse tarjeta-contenedor" id="perfilMarcela">
-            <div class="tarjeta">
-              <div class="portada"></div>
-
-              <div class="contenido">
-                <div class="contenedor-avatar">
-                  <img
-                    src="../devs/MARCELA COLLADO 10.jpg"
-                    class="avatar-grande"
-                    alt="Foto de Marcela Collado"
-                  />
-                  <span class="estado"></span>
-                </div>
-
-                <h4 class="nombre">Marcela Collado</h4>
-                <span class="usuario">@Marcela-Collado</span>
-
-                <p class="descripcion">
-                  Integrante del equipo de Otter Clothes.
-                </p>
-
-                <div class="habilidades">
-                  <span><i class="bi bi-code-slash"></i> Desarrollo</span>
-                  <span><i class="bi bi-people"></i> Trabajo en equipo</span>
-                </div>
-
-                <div class="redes">
-                  <a href="#" aria-label="GitHub de Marcela Collado">GitHub</a>
-                  <a href="#" aria-label="LinkedIn de Marcela Collado"
-                    >LinkedIn</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="barra-persona"
-            data-bs-toggle="collapse"
-            data-bs-target="#perfilMarcela"
-            aria-expanded="false"
-            aria-controls="perfilMarcela"
-          >
-            <img
-              src="../devs/MARCELA COLLADO 10.jpg"
-              class="avatar-barra"
-              alt="Marcela Collado"
-            />
-            <div class="datos-barra">
-              <h5>Marcela Collado</h5>
-              <span>Integrante del equipo</span>
-            </div>
-            <div class="iconos">
-              <i class="bi bi-person-circle"></i>
-              <i class="bi bi-chevron-up flecha"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= VICTOR ================= -->
-        <div class="persona">
-          <div class="collapse tarjeta-contenedor" id="perfilVictor">
-            <div class="tarjeta">
-              <div class="portada"></div>
-
-              <div class="contenido">
-                <div class="contenedor-avatar">
-                  <img
-                    src="../devs/victor.jpeg"
-                    class="avatar-grande"
-                    alt="Foto de Victor Antonio Garcia Olachea"
-                  />
-                  <span class="estado"></span>
-                </div>
-
-                <h4 class="nombre">Victor Antonio Garcia Olachea</h4>
-                <span class="usuario">@victor.olachea</span>
-
-                <p class="descripcion">
-                  Desarrollador Java Junior enfocado en Backend, con
-                  conocimientos en Java, POO, SQL, MySQL y Spring Boot.
-                </p>
-
-                <div class="habilidades">
-                  <span><i class="bi bi-cup-hot"></i> Java</span>
-                  <span><i class="bi bi-layout-text-window"></i> Frontend</span>
-                  <span><i class="bi bi-hdd-network"></i> Backend</span>
-                  <span><i class="bi bi-git"></i> Git</span>
-                </div>
-
-                <div class="redes">
-                  <a
-                    href="https://github.com/Victor-Antonio-Garcia-Olachea"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >GitHub</a
-                  >
-                  <a
-                    href="https://www.linkedin.com/in/victor-garcia-olachea/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >LinkedIn</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="barra-persona"
-            data-bs-toggle="collapse"
-            data-bs-target="#perfilVictor"
-            aria-expanded="false"
-            aria-controls="perfilVictor"
-          >
-            <img
-              src="../devs/victor.jpeg"
-              class="avatar-barra"
-              alt="Victor Antonio Garcia Olachea"
-            />
-
-            <div class="datos-barra">
-              <h5>Victor Antonio Garcia Olachea</h5>
-              <span>Desarrollador Java Backend</span>
-            </div>
-
-            <div class="iconos">
-              <i class="bi bi-person-circle"></i>
-              <i class="bi bi-chevron-up flecha"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- ================= LEONARDO URESTI ================= -->
-        <div class="persona">
-          <div class="collapse tarjeta-contenedor" id="perfilNombre1">
-            <div class="tarjeta">
-              <div class="portada"></div>
-
-              <div class="contenido">
-                <div class="contenedor-avatar">
-                  <img
-                    src="../devs/Leo.jpg"
-                    class="avatar-grande"
-                    alt="Foto de Leonardo Uresti"
-                  />
-                  <span class="estado"></span>
-                </div>
-
-                <h4 class="nombre">Leonardo Uresti</h4>
-                <span class="usuario">@leouresti</span>
-
-                <p class="descripcion">
-                  Desarrollador Java Full Stack Jr. con experiencia en gestión y
-                  administración.
-                </p>
-
-                <div class="habilidades">
-                  <span><i class="bi bi-filetype-html"></i> HTML</span>
-                  <span><i class="bi bi-filetype-css"></i> CSS</span>
-                  <span><i class="bi bi-bootstrap"></i> Bootstrap</span>
-                  <span><i class="bi bi-filetype-js"></i> JavaScript</span>
-                </div>
-
-                <div class="redes">
-                  <a
-                    href="https://github.com/LeoU-cpu"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub de Leonardo Uresti"
-                    ><i class="bi bi-github"></i
-                  ></a>
-                  <a
-                    href="https://www.linkedin.com/in/leonardo-uresti-iniguez"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn de Leonardo Uresti"
-                    ><i class="bi bi-linkedin"></i
-                  ></a>
-                  <a
-                    href="mailto:leouresti98@gmail.com"
-                    aria-label="Correo de Leonardo Uresti"
-                    ><i class="bi bi-envelope"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="barra-persona"
-            data-bs-toggle="collapse"
-            data-bs-target="#perfilNombre1"
-            aria-expanded="false"
-            aria-controls="perfilNombre1"
-          >
-            <img
-              src="../devs/Leo.jpg"
-              class="avatar-barra"
-              alt="Leonardo Uresti"
-            />
-
-            <div class="datos-barra">
-              <h5>Leonardo Uresti</h5>
-              <span>Full Stack Developer Jr.</span>
-            </div>
-
-            <div class="iconos">
-              <i class="bi bi-person-circle"></i>
-              <i class="bi bi-chevron-up flecha"></i>
-            </div>
-          </div>
-        </div>
+    <!-- INTEGRANTES (GRID DE CARDS 3D) -->
+    <section class="container my-5">
+      <div class="text-center mb-4">
+        <h2 class="font-fredoka fw-bold text-navy">Equipo de Desarrolladores</h2>
+        <p class="text-muted">✨ Cada línea de código tiene un rostro detrás. Haz clic en una tarjeta para explorar su historia y proyectos. ✨</p>
       </div>
-    </div>
 
-    <!-- Bootstrap JS -->
-    <script src="../JS/navbar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="grid-equipo">
+        <!-- Developer 1 -->
+        <div class="card-flip-container" onclick="toggleCard(this)">
+          <div class="card-flip">
+            <div class="card-front">
+              <span class="badge-click"><i class="bi bi-hand-index-fill"></i> Clic</span>
+              <img src="devs/Ing mecatronico.png" alt="Carlos Ceballos" onerror="this.src='https://ui-avatars.com/api/?name=Carlos+Ceballos&background=BCE3FF&color=1E405B'" />
+              <div class="info-front">
+                <h4>Carlos Ceballos</h4>
+                <span>Desarrollador Java Full Stack Jr.</span>
+              </div>
+              <small class="text-muted"><i class="bi bi-arrow-repeat"></i> Haz clic</small>
+            </div>
+            <div class="card-back">
+              <h5>Carlos Ceballos</h5>
+              <p>Desarrollador Java Jr. enfocado en arquitectura Fullstack, Frontend y Backend.</p>
+              <div class="badges"><span>Java</span><span>HTML</span><span>CSS</span></div>
+              <a href="mailto:Carlos3460@gmail.com" class="btn-contacto" onclick="event.stopPropagation();"><i class="bi bi-envelope"></i> Contactar</a>
+              <div class="redes-card">
+                <a href="https://github.com/Carlos3460" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/carlos-ceballos-santoyo/" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer 2 -->
+        <div class="card-flip-container" onclick="toggleCard(this)">
+          <div class="card-flip">
+            <div class="card-front">
+              <span class="badge-click"><i class="bi bi-hand-index-fill"></i> Clic</span>
+              <img src="devs/IMG_20260826_191945_290.webp" alt="Miguel Campos" onerror="this.src='https://ui-avatars.com/api/?name=Miguel+Campos&background=BCE3FF&color=1E405B'" />
+              <div class="info-front">
+                <h4>Miguel Campos</h4>
+                <span>Desarrollador Java Full Stack Jr.</span>
+              </div>
+              <small class="text-muted"><i class="bi bi-arrow-repeat"></i> Haz clic</small>
+            </div>
+            <div class="card-back">
+              <h5>Miguel Campos</h5>
+              <p>Desarrollador Frontend apasionado por crear interfaces web visualmente atractivas, intuitivas y optimizadas para el usuario.</p>
+              <div class="badges"><span>Java</span><span>JavaScript</span><span>HTML</span></div>
+              <a href="mailto:miguelangelcamposhipolito@gmail.com" class="btn-contacto" onclick="event.stopPropagation();"><i class="bi bi-envelope"></i> Contactar</a>
+              <div class="redes-card">
+                <a href="https://github.com/angelcampos-dev" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/miguel-angel-campos-hipolito/" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer 3 -->
+        <div class="card-flip-container" onclick="toggleCard(this)">
+          <div class="card-flip">
+            <div class="card-front">
+              <span class="badge-click"><i class="bi bi-hand-index-fill"></i> Clic</span>
+              <img src="devs/brian.jpeg" alt="Brian Pineda" onerror="this.src='https://ui-avatars.com/api/?name=Brian+Pineda&background=BCE3FF&color=1E405B'" />
+              <div class="info-front">
+                <h4>Brian E. Pineda</h4>
+                <span>Desarrollador Java Full Stack Jr.</span>
+              </div>
+              <small class="text-muted"><i class="bi bi-arrow-repeat"></i> Haz clic</small>
+            </div>
+            <div class="card-back">
+              <h5>Brian E. Pineda</h5>
+              <p>Desarrollador y consultor del proyecto enfocado en componentes dinámicos.</p>
+              <div class="badges"><span>Java</span><span>Bootstrap</span><span>JavaScript</span></div>
+              <a href="#" class="btn-contacto" onclick="event.stopPropagation();"><i class="bi bi-envelope"></i> Contactar</a>
+              <div class="redes-card">
+                <a href="https://github.com/Bri-idk/" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/brian-pineda-martinez-dev/" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer 4 -->
+        <div class="card-flip-container" onclick="toggleCard(this)">
+          <div class="card-flip">
+            <div class="card-front">
+              <span class="badge-click"><i class="bi bi-hand-index-fill"></i> Clic</span>
+              <img src="devs/Fernandez_Brito_David_Java_Fullstack_Developer.jpeg" alt="David Fernández" onerror="this.src='https://ui-avatars.com/api/?name=David+Fernandez&background=BCE3FF&color=1E405B'" />
+              <div class="info-front">
+                <h4>David Fernández</h4>
+                <span> Desarrollador Java Full Stack Jr.</span>
+              </div>
+              <small class="text-muted"><i class="bi bi-arrow-repeat"></i> Haz clic</small>
+            </div>
+            <div class="card-back">
+              <h5>David Fernández</h5>
+              <p>Desarrollador Java Full Stack con un enfoque partícular en Backend y bases de datos</p>
+              <div class="badges"><span>Java</span><span>CSS</span><span>HTML</span></div>
+              <a href="mailto:david.fernandezbrito01@gmail.com" class="btn-contacto" onclick="event.stopPropagation();"><i class="bi bi-envelope"></i> Contactar</a>
+              <div class="redes-card">
+                <a href="https://github.com/Monopolo-Magnetico" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/davidfernandezbrito/" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer 5 -->
+        <div class="card-flip-container" onclick="toggleCard(this)">
+          <div class="card-flip">
+            <div class="card-front">
+              <span class="badge-click"><i class="bi bi-hand-index-fill"></i> Clic</span>
+              <img src="devs/daniel.jpg" alt="Daniel Arellano" onerror="this.src='https://ui-avatars.com/api/?name=Daniel+Arellano&background=BCE3FF&color=1E405B'" />
+              <div class="info-front">
+                <h4>Daniel Arellano</h4>
+                <span>Desarrollador Java Full Stack Jr.</span>
+              </div>
+              <small class="text-muted"><i class="bi bi-arrow-repeat"></i> Haz clic</small>
+            </div>
+            <div class="card-back">
+              <h5>Daniel Arellano</h5>
+              <p>Desarrollador especializado en backened y bases de datos.</p>
+              <div class="badges"><span>Java</span><span>MySQL</span><span>Spring Boot</span></div>
+              <a href="mailto:contacto.daniel.arellano.morales@gmail.com
+              " class="btn-contacto" onclick="event.stopPropagation();"><i class="bi bi-envelope"></i> Contactar</a>
+              <div class="redes-card">
+                <a href="https://github.com/Dani77-AM" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/daniel-arellano-morales" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer 6 -->
+        <div class="card-flip-container" onclick="toggleCard(this)">
+          <div class="card-flip">
+            <div class="card-front">
+              <span class="badge-click"><i class="bi bi-hand-index-fill"></i> Clic</span>
+              <img src="devs/Desarrolladora Jva Full Stack Jr. - Daniela Chagal - Profile.jfif" alt="Daniela Chagal" onerror="this.src='https://ui-avatars.com/api/?name=Daniela+Chagal&background=BCE3FF&color=1E405B'" />
+              <div class="info-front">
+                <h4>Daniela Chagal</h4>
+                <span> Desarrolladora Java Full Stack Jr.</span>
+              </div>
+              <small class="text-muted"><i class="bi bi-arrow-repeat"></i> Haz clic</small>
+            </div>
+            <div class="card-back">
+              <h5>Daniela Chagal</h5>
+              <p>Desarrolladora Java Full Stack Jr. con formación en Idiomas y
+                experiencia práctica en JavaScript, HTML, CSS, Bootstrap, Git,
+                GitHub y Scrum.</p>
+              <div class="badges"><span>Java</span><span>Bootstrap</span><span>CSS</span></div>
+              <a href="mailto:danielalizbeth.chagal@gmail.com" class="btn-contacto" onclick="event.stopPropagation();"><i class="bi bi-envelope"></i> Contactar</a>
+              <div class="redes-card">
+                <a href="https://github.com/DanyLcs" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/daniela-chagal/" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer 7 -->
+        <div class="card-flip-container" onclick="toggleCard(this)">
+          <div class="card-flip">
+            <div class="card-front">
+              <span class="badge-click"><i class="bi bi-hand-index-fill"></i> Clic</span>
+              <img src="devs/maf.jpg" alt="Mafer Vazquez" />
+              <div class="info-front">
+                <h4>Maria Fernanda Vazquez</h4>
+                <span>Desarrolladora Java Full Stack Jr.</span>
+              </div>
+              <small class="text-muted"><i class="bi bi-arrow-repeat"></i> Haz clic</small>
+            </div>
+            <div class="card-back">
+              <h5>Maria Fernanda Vazquez Jimenez</h5>
+              <p> Desarrolladora Frontend en Otter Clothes. Diseño y construyo
+                  interfaces atractivas y funcionales.</p>
+              <div class="badges"><span>Java</span><span>HTML</span><span>CSS</span></div>
+              <a href="mailto:mariafernandavazquez.dev@gmail.com" class="btn-contacto" onclick="event.stopPropagation();"><i class="bi bi-envelope"></i> Contactar</a>
+              <div class="redes-card">
+                <a href="https://github.com/Mafer-vazquez" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/maria-fernanda-vazquez-jimenez/" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer 8 -->
+        <div class="card-flip-container" onclick="toggleCard(this)">
+          <div class="card-flip">
+            <div class="card-front">
+              <span class="badge-click"><i class="bi bi-hand-index-fill"></i> Clic</span>
+              <img src="devs/victor.jpeg" alt="Victor Olachea" />
+              <div class="info-front">
+                <h4>Victor Antonio Garcia</h4>
+                <span>Desarrollador Java Full Stack Jr.</span>
+              </div>
+              <small class="text-muted"><i class="bi bi-arrow-repeat"></i> Haz clic</small>
+            </div>
+            <div class="card-back">
+              <h5>Victor Antonio Garcia Olachea</h5>
+              <p>Desarrollador Java Junior enfocado en Backend, con
+                conocimientos en Java, POO, SQL, MySQL y Spring Boot.</p>
+              <div class="badges"><span>Java</span><span>Spring Boot</span><span>MySQL</span></div>
+              <a href="#" class="btn-contacto" onclick="event.stopPropagation();"><i class="bi bi-envelope"></i> Contactar</a>
+              <div class="redes-card">
+                <a href="https://github.com/Victor-Antonio-Garcia-Olachea" onclick="event.stopPropagation();"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/victor-garcia-olachea/" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer 9 -->
+        <div class="card-flip-container" onclick="toggleCard(this)">
+          <div class="card-flip">
+            <div class="card-front">
+              <span class="badge-click"><i class="bi bi-hand-index-fill"></i> Clic</span>
+              <img src="devs/MARCELA COLLADO 10.jpg" alt="Marcela Collado" />
+              <div class="info-front">
+                <h4>Marcela Collado</h4>
+                <span>Desarrolladora Java Full Stack Jr.</span>
+              </div>
+              <small class="text-muted"><i class="bi bi-arrow-repeat"></i> Haz clic</small>
+            </div>
+            <div class="card-back">
+              <h5>Marcela Collado</h5>
+              <p>Desarrolladora Java Full Stack HTML | JS | Java </p>
+              <div class="badges"><span>Scrum</span><span>Agile</span><span>Java</span></div>
+              <a href="mailto:marcela.colladom@gmail.com" class="btn-contacto" onclick="event.stopPropagation();"><i class="bi bi-envelope"></i> Contactar</a>
+              <div class="redes-card">
+                <a href="https://github.com/Marce-cm7" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/marcela-collado-m/" target="_blank" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer 10 -->
+        <div class="card-flip-container" onclick="toggleCard(this)">
+          <div class="card-flip">
+            <div class="card-front">
+              <span class="badge-click"><i class="bi bi-hand-index-fill"></i> Clic</span>
+              <img src="devs/Leo.jpg" alt="Gabriel Castro" />
+              <div class="info-front">
+                <h4>Leonardo Uresti</h4>
+                <span>Desarrollador Java Full Stack Jr.</span>
+              </div>
+              <small class="text-muted"><i class="bi bi-arrow-repeat"></i> Haz clic</small>
+            </div>
+            <div class="card-back">
+              <h5>Leonardo Uresti</h5>
+              <p>Desarrollador Java Full Stack Jr. con experiencia en gestión y
+                administración.</p>
+              <div class="badges"><span>Java</span><span>HTML</span><span>CSS</span></div>
+              <a href="mailto:leouresti98@gmail.com" class="btn-contacto" onclick="event.stopPropagation();"><i class="bi bi-envelope"></i> Contactar</a>
+              <div class="redes-card">
+                <a href="https://github.com/LeoU-cpu" onclick="event.stopPropagation();"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/leonardo-uresti-iniguez" onclick="event.stopPropagation();"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-redes mb-3">
+          <a href="https://github.com/Bri-idk/OtterClothes" target="_blank"><i class="bi bi-github"></i></a>
+        </div>
+        <p class="mb-1 text-muted fw-bold">Otter Clothes &copy; 2026 - Todos los derechos reservados</p>
+        <small class="text-muted">Diseñado con <i class="bi bi-heart-fill text-danger"></i> por el equipo de Otter Devs</small>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS & Archivo JavaScript personal -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/acerca.js"></script>
   </body>
 </html>
