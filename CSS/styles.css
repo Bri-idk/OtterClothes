@@ -819,3 +819,43 @@ footer p,
 footer small {
   color: var(--cafe) !important;
 }
+
+/* =========================
+   BÚSQUEDA
+========================= */
+
+body.busqueda {
+    background: linear-gradient(
+    to bottom,
+    var(--naranja) 0%,
+    var(--naranja) 30%,
+    var(--crema) 75%,
+    var(--celeste) 100%
+  );
+  background-attachment: fixed;
+}
+
+footer.busqueda {
+  margin-top: auto;
+  background-color: var(--crema);
+  border-top: 2px solid var(--cafe);
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.footer-redes a {
+  color: var(--cafe);
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-redes a:hover {
+  color: var(--naranja);
+  transform: scale(1.2);
+}
+
+footer p,
+footer small {
+  color: var(--cafe) !important;
