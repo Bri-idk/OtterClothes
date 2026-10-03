@@ -1,0 +1,329 @@
+/* =========================
+   VARIABLES DE MARCA (tomadas de la guía base)
+========================= */
+:root {
+  --crema: #F8DFB7;
+  --naranja: #ed450d;
+  --cafe: #49261E;
+  --celeste: #aad6ec;
+  --azul: #35509a;
+  --durazno: #f4a261;
+
+
+
+  /* Derivados para fondos y textos suaves */
+  --crema-suave: #FFF8ED;
+  --cafe-suave: #65382D;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+
+body {
+  
+
+  /* Gradiente radial elíptico. Centro claro (crema) para no distraer del contenido, colores fuertes (celeste, azul, cafe) al borde */
+  background: linear-gradient(
+    to bottom,
+    var(--naranja) 0%,
+    var(--naranja) 20%,
+    var(--crema-suave) 65%,
+    var(--crema) 100%
+  );
+  background-attachment: fixed;
+
+  font-family: 'Quicksand', sans-serif;
+  color: var(--cafe);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR (sólida, crema, sticky arriba)
+========================= */
+
+.custom-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background-color: var(--crema);
+  border-bottom: 2px solid var(--cafe);
+  font-family: 'Fredoka', sans-serif;
+}
+
+.navbar-brand {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.5rem;
+  color: var(--cafe) !important;
+  cursor: pointer;
+}
+
+.custom-navbar .navbar-toggler {
+  border-color: var(--cafe);
+}
+.custom-navbar .nav-link {
+  color: var(--cafe);
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar  {
+  color: var(--naranja);
+}
+
+
+/* =========================
+   HERO TITLE
+========================= */
+.header-seccion {
+  text-align: center;
+  margin: 60px 0 20px;
+  
+}
+
+.titulo-dinamico {
+  font-family: 'Anton', sans-serif;
+  font-size: 3.2rem;
+  letter-spacing: 2px;
+  color: var(--azul);
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+
+.subtitulo {
+  font-size: 1.1rem;
+  color: var(--cafe);
+  font-weight: 600;
+}
+
+/* =========================
+   HISTORIA, MISIÓN & VISIÓN
+========================= */
+.card-historia {
+  /* Gradiente lineal de las cards */
+  background: linear-gradient(
+    90deg,
+    var(--crema) 0%,
+    var(--crema-suave) 50%,
+    var(--crema) 100%
+  );
+  border-radius: 20px;
+  border: 1px solid var(--cafe-suave);
+  border-top: 3px solid var(--cafe);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 10px 30px rgba(73, 38, 30, 0.12);
+}
+
+.card-historia:hover {
+  transform: translateY(-5px);
+  border-color: var(--cafe);
+}
+
+.card-historia h3 {
+  color: var(--naranja) !important;
+}
+
+
+.card-historia .text-danger {
+  color: var(--naranja) !important;
+}
+
+.card-historia .text-primary {
+  color: var(--azul) !important;
+}
+
+.card-historia .text-warning {
+  color: var(--cafe-suave) !important;
+}
+
+.card-historia p {
+  color: var(--cafe) !important;
+}
+
+/* =========================
+   CARDS DE INTEGRANTES 3D
+========================= */
+.grid-equipo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 2fr));
+  gap: 25px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.card-flip-container {
+  perspective: 1200px;
+  height: 340px;
+  cursor: pointer;
+}
+
+.card-flip {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 20px;
+}
+
+.card-flip-container.flipped .card-flip {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 20px rgba(73, 38, 30, 0.12);
+}
+
+.card-front {
+  background: linear-gradient(
+    90deg,
+    var(--crema) 0%,
+    var(--crema-suave) 50%,
+    var(--crema) 100%
+  );
+  border: 6px double var(--cafe-suave);
+  transition: border-color 0.4s ease;
+}
+
+.card-flip-container:hover .card-front {
+  border-color: var(--celeste);
+}
+
+.badge-click {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 0.75rem;
+  background: var(--crema-suave);
+  color: var(--azul);
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.card-front img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px double var(--durazno);
+}
+
+.info-front h4 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.2rem;
+  margin: 10px 0 2px;
+  text-align: center;
+  color: var(--cafe);
+}
+
+.info-front span {
+  font-size: 0.85rem;
+  color: var(--cafe-suave);
+  display: block;
+  text-align: center;
+}
+
+.card-back {
+  background: linear-gradient(
+    90deg,
+    var(--crema) 0%,
+    var(--crema-suave) 50%,
+    var(--crema) 100%
+  );
+  border: 5px double var(--cafe-suave);
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.card-back h5 {
+  color: var(--cafe);
+}
+
+.card-back p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-top: 1opx;
+  color: var(--azul);
+}
+
+.badges span {
+  background: var(--celeste);
+  color: #fff;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin: 2px;
+  display: inline-block;
+}
+
+.btn-contacto {
+  background-color: var(--naranja);
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 7px;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+}
+
+.btn-contacto:hover {
+  background-color: var(--durazno);
+  color: #fff;
+}
+
+.redes-card a {
+  color: var(--celeste);
+  font-size: 1.2rem;
+  margin: 0 6px;
+  transition: color 0.25s ease;
+}
+
+.redes-card a:hover {
+  color: var(--naranja);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  margin-top: auto;
+  background-color: var(--crema);
+  border-top: 2px solid var(--cafe);
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.footer-redes a {
+  color: var(--cafe);
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-redes a:hover {
+  color: var(--naranja);
+  transform: scale(1.2);
+}
+
+footer p,
+footer small {
+  color: var(--cafe) !important;
+}
