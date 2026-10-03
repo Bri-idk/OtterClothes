@@ -26,8 +26,9 @@
       rel="stylesheet" />
 
     <title>Contactanos Otters</title>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">-->
 </head>
-<body>
+<body class="body-contactanos">
   <!--!Navbar-->
   <div id="navbar-placeholder"></div>
 
@@ -53,10 +54,12 @@
 
   <!--! Formulario--> 
   <form id="formContacto">
+
     <div class="mb-3">
       <label for="nombre" class="form-label" style="color: black;">Nombre
         <span class="campo-obligatorio">*</span>
       </label>
+      <div class="mensaje-error" id="error-nombre"></div> <!-- Contenedor de avisos. Aquí se muestra mensaje de error-->
       <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
     </div>
 
@@ -64,7 +67,16 @@
       <label for="correo" class="form-label" style="color: black;">Correo electrónico
         <span class="campo-obligatorio">*</span>
       </label>
+      <div class="mensaje-error" id="error-correo"></div>
       <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo electrónico">
+    </div>
+
+    <div class="mb-3">
+      <label for="telefono" class="form-label" style="color: black;">Teléfono
+        <span class="campo-obligatorio">*</span>
+      </label>
+      <div class="mensaje-error" id="error-telefono"></div>
+      <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
     </div>
 
     <!--todo: Motivo de contacto-->
@@ -109,12 +121,10 @@
     <!--todo: Fin de motivo de contacto-->
   
     <div class="mb-3">
-      <label for="telefono" class="form-label" style="color: black;">Teléfono</label>
-      <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
-    </div>
-
-    <div class="mb-3">
-      <label for="mensaje" class="form-label" style="color: black;">Mensaje</label>
+      <label for="mensaje" class="form-label" style="color: black;">Mensaje
+        <span class="campo-obligatorio">*</span>
+      </label>
+      <div class="mensaje-error" id="error-mensaje"></div>
       <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Mensaje"></textarea>
     </div>
 
@@ -127,21 +137,23 @@
   </form>
 
   <!--! Mensaje de confirmación -->
-    <section id="confirmacion" class="confirmacion" hidden aria-live="polite">
-      <div class="confirmacion__icono">
+    <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+          <div class="confirmacion__icono">
          🦦💗
+          </div>
+          <h2>¡Éxito total!</h2>
+          <p> ¡Tu formulario ha sido enviado! Una nutria mensajera ha salido nadando con tu información.</p>
+          <a href="../index.html" class="btn btn-inicio">Volver al inicio</a>
+          <button type="button" class="btn btn-inicio" data-bs-dismiss="modal">Cerrar</button>
+        </div>
       </div>
-      <h2>¡Gracias por escribirnos!</h2>
-      <p> Tu formulario ha sido enviado correctamente.</p>
-      <a href="../index.html" class="btn btn-inicio">Volver al inicio</a>
-
-    </section>
-
-
-   
-
-   
+    </div>
+    <!--Fin form-->
+    
     <script src = "../JS/navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="../JS/form.js"></script>
 </body>
 </html>
