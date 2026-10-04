@@ -843,6 +843,10 @@ footer small {
   color: var(--cafe) !important;
 }
 
+#listaPedidos > div {
+    --bs-border-color: var(--cafe, #49261E);
+}
+
 /* =========================
    BÚSQUEDA
 ========================= */

@@ -25,7 +25,7 @@ try {
         // Copiamos con slice, invertimos la lista para que el más reciente (último elemento de la lista) aparezca primero y creamos sus respectivos contenedores con forEach()
         pedidos.slice().reverse().forEach((pedido) => {
             const contenedor = document.createElement("div");
-            contenedor.className = "mb-3";
+            contenedor.className = "pb-3 mb-3 border-bottom";
 
             const titulo = document.createElement("h6");
             titulo.textContent = `Pedido ${pedido.numero}`
