@@ -71,7 +71,7 @@ const outfit1 = new Outfit({
     precio: 1149,
 
     imagen:
-        "https://placehold.co/600x700/F8DFB7/49261E?text=Retro+2000",
+        "https://i.pinimg.com/736x/65/43/38/654338182152a05e0fbe34b9d9fc5bd9.jpg",
 
     descripcionCorta:
         "Look inspirado en la moda de los años 2000.",
@@ -103,7 +103,7 @@ const outfit2 = new Outfit({
     precio: 1299,
 
     imagen:
-        "https://placehold.co/600x700/F6C1D5/49261E?text=Pink+Cyber",
+        "https://i.pinimg.com/736x/98/86/59/988659845199b10ead0bfcf318ed019c.jpg",
 
     descripcionCorta:
         "Estética futurista Y2K en tonos rosas.",
@@ -134,7 +134,7 @@ const outfit3 = new Outfit({
     precio: 1199,
 
     imagen:
-        "https://placehold.co/600x700/D9D9D9/49261E?text=Silver+Star",
+        "https://media-photos.depop.com/b1/42459049/2281831139_e0c021b343e941c59133306721b754fe/P0.jpg",
 
     descripcionCorta:
         "Prendas Y2K con detalles metálicos.",
@@ -166,7 +166,7 @@ const outfit4 = new Outfit({
     precio: 1349,
 
     imagen:
-        "https://placehold.co/600x700/AFC8DD/49261E?text=Denim+2000",
+        "https://tse4.mm.bing.net/th/id/OIP.W9ZRCHv-XktqNVznVSD5xAAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
 
     descripcionCorta:
         "Denim y accesorios inspirados en los 2000.",
@@ -197,7 +197,7 @@ const outfit5 = new Outfit({
     precio: 1249,
 
     imagen:
-        "https://placehold.co/600x700/FADADD/49261E?text=Pop+Princess",
+        "https://i.pinimg.com/originals/6f/95/fe/6f95fe130387577ee14f0a87aad8fbda.jpg",
 
     descripcionCorta:
         "Inspirado en el pop de principios de los 2000.",
@@ -229,7 +229,7 @@ const outfit6 = new Outfit({
     precio: 1399,
 
     imagen:
-        "https://placehold.co/600x700/C9E7F6/49261E?text=Cyber+Blue",
+        "https://i.pinimg.com/736x/96/46/9f/96469f2cbdb71fe2a011946cef1a5e97.jpg",
 
     descripcionCorta:
         "Estilo futurista Y2K en tonos azules.",
@@ -261,7 +261,7 @@ const outfit7 = new Outfit({
     precio: 1099,
 
     imagen:
-        "https://placehold.co/600x700/F4CCCC/49261E?text=Bubblegum",
+        "https://d2bzx2vuetkzse.cloudfront.net/fit-in/0x700/outfits/aa5af7f5-df7c-46c4-8604-4fc763ba24f3.png",
 
     descripcionCorta:
         "Look juvenil en tonos rosas y blancos.",
@@ -292,7 +292,7 @@ const outfit8 = new Outfit({
     precio: 1449,
 
     imagen:
-        "https://placehold.co/600x700/BDBDBD/49261E?text=Chrome+Girl",
+        "https://i.pinimg.com/474x/82/c3/24/82c32401d68c9700a1983c4f4f495eae.jpg?nii=t",
 
     descripcionCorta:
         "Outfit Y2K con elementos metálicos.",
@@ -323,7 +323,7 @@ const outfit9 = new Outfit({
     precio: 1279,
 
     imagen:
-        "https://placehold.co/600x700/8FB6D9/ffffff?text=Retro+Denim",
+        "https://i.pinimg.com/originals/48/ec/8d/48ec8daf086e6a21131c4117993fa979.jpg?nii=t",
 
     descripcionCorta:
         "Mezclilla clásica con esencia Y2K.",
@@ -360,7 +360,7 @@ const outfit10 = new Outfit({
     precio: 999,
 
     imagen:
-        "https://placehold.co/600x700/EADBC8/49261E?text=Everyday+Cream",
+        "https://d2bzx2vuetkzse.cloudfront.net/fit-in/0x700/outfits/5fbca72e-29f4-45ba-a8da-58ec156584a1.png",
 
     descripcionCorta:
         "Look cómodo y sencillo para todos los días.",
@@ -392,7 +392,7 @@ const outfit11 = new Outfit({
     precio: 1099,
 
     imagen:
-        "https://placehold.co/600x700/DDD0C0/49261E?text=Soft+Beige",
+        "https://i.pinimg.com/474x/2a/8f/60/2a8f609d9dfe31e5ab4be81a00750a2b.jpg?nii=t",
 
     descripcionCorta:
         "Colores claros para un look relajado.",
@@ -425,7 +425,7 @@ const outfit12 = new Outfit({
     precio: 1199,
 
     imagen:
-        "https://placehold.co/600x700/CABFAF/49261E?text=Weekend",
+        "https://i.pinimg.com/originals/e9/fe/72/e9fe72190e9b3a696140a29cacc43b5b.jpg",
 
     descripcionCorta:
         "Look relajado para fines de semana.",
@@ -456,7 +456,7 @@ const outfit13 = new Outfit({
     precio: 1049,
 
     imagen:
-        "https://placehold.co/600x700/C8AD8D/49261E?text=Coffee+Day",
+        "https://i.pinimg.com/originals/9a/54/50/9a5450d60b9a35f1c1830ef7f9a334d0.jpg",
 
     descripcionCorta:
         "Outfit casual en tonos tierra.",
@@ -488,7 +488,7 @@ const outfit14 = new Outfit({
     precio: 1149,
 
     imagen:
-        "https://placehold.co/600x700/CAD8E5/49261E?text=Daily+Blue",
+        "https://i.pinimg.com/474x/28/c4/33/28c4330969cfc6f1e3924539489f69b8.jpg?nii=t",
 
     descripcionCorta:
         "Casual moderno con tonos azules.",
@@ -520,7 +520,7 @@ const outfit15 = new Outfit({
     precio: 949,
 
     imagen:
-        "https://placehold.co/600x700/EDE1D1/49261E?text=Sunday+Fit",
+        "https://i.pinimg.com/originals/a5/f2/06/a5f20650770aac3026754a87b965103a.jpg",
 
     descripcionCorta:
         "Comodidad para un día relajado.",
@@ -552,7 +552,7 @@ const outfit16 = new Outfit({
     precio: 1249,
 
     imagen:
-        "https://placehold.co/600x700/BEB8AD/49261E?text=Urban+Casual",
+        "https://i.pinimg.com/736x/e2/90/f7/e290f78417df35914cb7ab93fff523b2.jpg",
 
     descripcionCorta:
         "Casual con detalles urbanos.",
@@ -584,7 +584,7 @@ const outfit17 = new Outfit({
     precio: 899,
 
     imagen:
-        "https://placehold.co/600x700/F2F2F2/49261E?text=Basic+White",
+        "https://i.pinimg.com/564x/d7/f0/79/d7f079d3bb66186bdd587bb0debab5bd.jpg",
 
     descripcionCorta:
         "Básicos fáciles de combinar.",
@@ -617,7 +617,7 @@ const outfit18 = new Outfit({
     precio: 1079,
 
     imagen:
-        "https://placehold.co/600x700/D9CCBB/49261E?text=Morning+Fit",
+        "https://tse3.mm.bing.net/th/id/OIP.ldq_tAoXlH0LFwAKGrC24gHaNC?r=0&w=604&h=1064&rs=1&pid=ImgDetMain&o=7&rm=3",
 
     descripcionCorta:
         "Look ligero y cómodo.",
@@ -653,7 +653,7 @@ const outfit19 = new Outfit({
     precio: 1299,
 
     imagen:
-        "https://placehold.co/600x700/292929/ffffff?text=Urban+Black",
+        "https://i.pinimg.com/originals/c0/58/60/c0586065ecc6b5ca59973745f354e9d6.jpg",
 
     descripcionCorta:
         "Hoodie oversized, cargo y sneakers.",
@@ -686,7 +686,7 @@ const outfit20 = new Outfit({
     precio: 1399,
 
     imagen:
-        "https://placehold.co/600x700/555555/ffffff?text=Concrete",
+        "https://i.pinimg.com/originals/af/2a/f2/af2af26b468a38a55a9959ffd62fc27f.jpg",
 
     descripcionCorta:
         "Tonos grises con prendas oversized.",
@@ -718,7 +718,7 @@ const outfit21 = new Outfit({
     precio: 1449,
 
     imagen:
-        "https://placehold.co/600x700/FA4E02/ffffff?text=Orange+District",
+        "https://i.pinimg.com/736x/ee/c3/78/eec37848925c5702b51820247299471f.jpg",
 
     descripcionCorta:
         "Streetwear con detalles naranja.",
@@ -750,7 +750,7 @@ const outfit22 = new Outfit({
     precio: 1499,
 
     imagen:
-        "https://placehold.co/600x700/171717/ffffff?text=Night+City",
+        "https://i.pinimg.com/originals/b8/5b/77/b85b777a2bf3029adb6fc039f2e27e74.jpg",
 
     descripcionCorta:
         "Look urbano pensado para la noche.",
@@ -781,7 +781,7 @@ const outfit23 = new Outfit({
     precio: 1349,
 
     imagen:
-        "https://placehold.co/600x700/4C5145/ffffff?text=Cargo+District",
+        "https://i.pinimg.com/736x/67/c9/35/67c9353fd7b3eac87c17c3d05d10d539.jpg",
 
     descripcionCorta:
         "El pantalón cargo como pieza principal.",
@@ -813,7 +813,7 @@ const outfit24 = new Outfit({
     precio: 1199,
 
     imagen:
-        "https://placehold.co/600x700/696969/ffffff?text=Oversized+Grey",
+        "https://tse1.mm.bing.net/th/id/OIP.h3vrx8ApGWTXrRdSDKp3pAHaJ3?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
 
     descripcionCorta:
         "Siluetas amplias y tonos grises.",
@@ -845,7 +845,7 @@ const outfit25 = new Outfit({
     precio: 1429,
 
     imagen:
-        "https://placehold.co/600x700/7B2525/ffffff?text=City+Red",
+        "https://i.pinimg.com/736x/7b/8e/5f/7b8e5f9534770b63ce478d90f0fd8ee9.jpg",
 
     descripcionCorta:
         "Streetwear con detalles en rojo.",
@@ -877,7 +877,7 @@ const outfit26 = new Outfit({
     precio: 1549,
 
     imagen:
-        "https://placehold.co/600x700/111111/ffffff?text=Underground",
+        "https://tse3.mm.bing.net/th/id/OIP.xP8VNmu-0zfE2QxYs_5IwAHaIH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
 
     descripcionCorta:
         "Look urbano de estética underground.",
@@ -908,7 +908,7 @@ const outfit27 = new Outfit({
     precio: 1379,
 
     imagen:
-        "https://placehold.co/600x700/343A40/ffffff?text=Metro+Style",
+        "https://i.pinimg.com/736x/7d/6a/8a/7d6a8a0b9dace91a32d50191c8973d63.jpg",
 
     descripcionCorta:
         "Inspirado en el movimiento de la ciudad.",
@@ -946,7 +946,7 @@ const outfit28 = new Outfit({
     precio: 1199,
 
     imagen:
-        "https://placehold.co/600x700/E1E1E1/555555?text=Clean+Style",
+        "https://i.pinimg.com/474x/2a/b5/d4/2ab5d4704a2e582d0cca5558087d1831.jpg?nii=t",
 
     descripcionCorta:
         "Colores neutros y líneas sencillas.",
@@ -978,7 +978,7 @@ const outfit29 = new Outfit({
     precio: 1249,
 
     imagen:
-        "https://placehold.co/600x700/F7F7F7/555555?text=Pure+White",
+        "https://zentrosy.com/wp-content/uploads/2024/12/spring-outfits-for-teen-girls-2025-11.png",
 
     descripcionCorta:
         "Outfit dominado por tonos blancos.",
@@ -1010,7 +1010,7 @@ const outfit30 = new Outfit({
     precio: 1299,
 
     imagen:
-        "https://placehold.co/600x700/D9C7A5/49261E?text=Neutral+Sand",
+        "https://i.pinimg.com/736x/e0/42/56/e04256c75ec8ae648d926542ecd425da.jpg",
 
     descripcionCorta:
         "Tonos arena y cortes limpios.",
@@ -1041,7 +1041,7 @@ const outfit31 = new Outfit({
     precio: 1149,
 
     imagen:
-        "https://placehold.co/600x700/C4C4C4/49261E?text=Grey+Line",
+        "https://i.pinimg.com/originals/01/5a/22/015a2205bc4bbb2714bd7a250de9ed98.jpg",
 
     descripcionCorta:
         "Grises y siluetas simples.",
@@ -1073,7 +1073,7 @@ const outfit32 = new Outfit({
     precio: 1399,
 
     imagen:
-        "https://placehold.co/600x700/333333/ffffff?text=Simple+Black",
+        "https://i.pinimg.com/originals/a5/c9/6d/a5c96d90c1a522eb10a5047d4d7ef365.jpg",
 
     descripcionCorta:
         "Minimalismo en color negro.",
@@ -1105,7 +1105,7 @@ const outfit33 = new Outfit({
     precio: 1229,
 
     imagen:
-        "https://placehold.co/600x700/EEE1CA/49261E?text=Soft+Cream",
+        "https://i.pinimg.com/736x/44/d4/6f/44d46fe23088a9f762172002587acbc0.jpg",
 
     descripcionCorta:
         "Colores crema y materiales suaves.",
@@ -1137,7 +1137,7 @@ const outfit34 = new Outfit({
     precio: 1279,
 
     imagen:
-        "https://placehold.co/600x700/D6C6AC/49261E?text=Mono+Beige",
+        "https://i.pinimg.com/736x/bb/fe/d3/bbfed398f02f5b4d105111f814345e39.jpg",
 
     descripcionCorta:
         "Look monocromático beige.",
@@ -1168,7 +1168,7 @@ const outfit35 = new Outfit({
     precio: 1099,
 
     imagen:
-        "https://placehold.co/600x700/EBEBEB/49261E?text=Essential",
+        "https://i.pinimg.com/564x/3f/22/1a/3f221a46f5c7b50d000dbec0f394dd2a.jpg",
 
     descripcionCorta:
         "Solo las prendas esenciales.",
@@ -1200,7 +1200,7 @@ const outfit36 = new Outfit({
     precio: 1349,
 
     imagen:
-        "https://placehold.co/600x700/F5F5F5/49261E?text=Modern+White",
+        "https://i.pinimg.com/736x/8c/40/b3/8c40b3befa756d6dd14845ca4389b885.jpg",
 
     descripcionCorta:
         "Minimalismo moderno en tonos claros.",
@@ -1237,7 +1237,7 @@ const outfit37 = new Outfit({
     precio: 1599,
 
     imagen:
-        "https://placehold.co/600x700/49261E/ffffff?text=Night+Style",
+        "https://i.pinimg.com/736x/63/46/d8/6346d8fcd340bcdd4f3dc240c115fc61.jpg",
 
     descripcionCorta:
         "Outfit pensado para eventos especiales.",
@@ -1269,7 +1269,7 @@ const outfit38 = new Outfit({
     precio: 1699,
 
     imagen:
-        "https://placehold.co/600x700/1E1E1E/ffffff?text=Black+Dinner",
+        "https://i.pinimg.com/736x/c7/8b/13/c78b1345aa98d494cb100abced4fbdb1.jpg",
 
     descripcionCorta:
         "Elegancia en tonos negros.",
@@ -1300,7 +1300,7 @@ const outfit39 = new Outfit({
     precio: 1749,
 
     imagen:
-        "https://placehold.co/600x700/795548/ffffff?text=Classic+Brown",
+        "https://www.fashiondivadesign.com/wp-content/uploads/2014/12/Polyvore-Casual-New-Year-Party-Outfits-For-Girls-2013-2014-5-420x470.jpg",
 
     descripcionCorta:
         "Estilo clásico en tonos café.",
@@ -1332,7 +1332,7 @@ const outfit40 = new Outfit({
     precio: 1649,
 
     imagen:
-        "https://placehold.co/600x700/F2EFE9/49261E?text=White+Night",
+        "https://i0.wp.com/www.alexawebb.com/wp-content/uploads/2018/12/plus-size-party-outfit-alexa-webb-1218-2.jpg?w=812&ssl=1",
 
     descripcionCorta:
         "Elegancia moderna en tonos claros.",
@@ -1364,7 +1364,7 @@ const outfit41 = new Outfit({
     precio: 1899,
 
     imagen:
-        "https://placehold.co/600x700/722F37/ffffff?text=Wine+Suit",
+        "https://i.pinimg.com/736x/5e/a5/58/5ea55894297ce4bd9907e8bd1029ca86.jpg",
 
     descripcionCorta:
         "Look formal con tonos vino.",
@@ -1396,7 +1396,7 @@ const outfit42 = new Outfit({
     precio: 1799,
 
     imagen:
-        "https://placehold.co/600x700/3D3D3D/ffffff?text=Modern+Gentleman",
+        "https://i.pinimg.com/736x/43/e0/9d/43e09d629cb5fb15d3e06cdb16bc159e.jpg",
 
     descripcionCorta:
         "Elegancia contemporánea.",
@@ -1427,7 +1427,7 @@ const outfit43 = new Outfit({
     precio: 1849,
 
     imagen:
-        "https://placehold.co/600x700/191970/ffffff?text=Midnight",
+        "https://i.pinimg.com/736x/e5/4c/90/e54c903c57c2414fa31e2deabb95aca1.jpg",
 
     descripcionCorta:
         "Look nocturno sofisticado.",
@@ -1459,7 +1459,7 @@ const outfit44 = new Outfit({
     precio: 1699,
 
     imagen:
-        "https://placehold.co/600x700/777777/ffffff?text=Classic+Grey",
+        "https://i.pinimg.com/736x/43/e0/9d/43e09d629cb5fb15d3e06cdb16bc159e.jpg",
 
     descripcionCorta:
         "Elegancia clásica en gris.",
@@ -1491,7 +1491,7 @@ const outfit45 = new Outfit({
     precio: 1999,
 
     imagen:
-        "https://placehold.co/600x700/000000/ffffff?text=Premium+Black",
+        "https://i.pinimg.com/originals/74/0e/0e/740e0e525b30648f3ab2a4fd5b4dfd36.jpg",
 
     descripcionCorta:
         "Outfit formal premium.",
@@ -1528,7 +1528,7 @@ const outfit46 = new Outfit({
     precio: 1349,
 
     imagen:
-        "https://placehold.co/600x700/B08968/ffffff?text=Vintage+Brown",
+        "https://i.pinimg.com/736x/9a/56/9a/9a569aa0d48ebba54d719746cc8e420d.jpg",
 
     descripcionCorta:
         "Inspirado en las décadas de los 80 y 90.",
@@ -1559,7 +1559,7 @@ const outfit47 = new Outfit({
     precio: 1449,
 
     imagen:
-        "https://placehold.co/600x700/967259/ffffff?text=Old+School",
+        "https://i.pinimg.com/736x/78/d8/20/78d8209af6e4b879173967d1fe4134b5.jpg",
 
     descripcionCorta:
         "Estilo clásico de décadas anteriores.",
@@ -1591,7 +1591,7 @@ const outfit48 = new Outfit({
     precio: 1299,
 
     imagen:
-        "https://placehold.co/600x700/718355/ffffff?text=Retro+Green",
+        "https://i.pinimg.com/736x/eb/2f/ec/eb2fec9640694b20d3e56aaab366994a.jpg",
 
     descripcionCorta:
         "Look retro con tonos verdes.",
@@ -1622,7 +1622,7 @@ const outfit49 = new Outfit({
     precio: 1499,
 
     imagen:
-        "https://placehold.co/600x700/C08552/ffffff?text=Seventies",
+        "https://i.pinimg.com/originals/02/8a/41/028a415737d68bd945781560b64c6f80.jpg",
 
     descripcionCorta:
         "Inspiración directa de los años 70.",
@@ -1654,7 +1654,7 @@ const outfit50 = new Outfit({
     precio: 1399,
 
     imagen:
-        "https://placehold.co/600x700/6688A8/ffffff?text=Retro+Denim",
+        "https://i.pinimg.com/736x/88/37/11/883711b50d4eb3471bcd267334aca001.jpg",
 
     descripcionCorta:
         "La mezclilla como protagonista.",
@@ -1686,7 +1686,7 @@ const outfit51 = new Outfit({
     precio: 1249,
 
     imagen:
-        "https://placehold.co/600x700/E5D1B5/49261E?text=Classic+Cream",
+        "https://i.pinimg.com/736x/cc/23/b9/cc23b9d719d2ef629d49990efc646902.jpg",
 
     descripcionCorta:
         "Look retro en colores crema.",
@@ -1718,7 +1718,7 @@ const outfit52 = new Outfit({
     precio: 1379,
 
     imagen:
-        "https://placehold.co/600x700/756A5D/ffffff?text=Nineties",
+        "https://i.pinimg.com/736x/ce/30/e0/ce30e012a86d05f2ecd46f676a2b5411.jpg",
 
     descripcionCorta:
         "Inspiración directa de los años 90.",
@@ -1749,7 +1749,7 @@ const outfit53 = new Outfit({
     precio: 1329,
 
     imagen:
-        "https://placehold.co/600x700/8B7355/ffffff?text=Retro+College",
+        "https://i.pinimg.com/originals/13/51/5d/13515d6dc9bd812f767629c3769a9440.png",
 
     descripcionCorta:
         "Estética universitaria retro.",
@@ -1781,7 +1781,7 @@ const outfit54 = new Outfit({
     precio: 1599,
 
     imagen:
-        "https://placehold.co/600x700/5C4033/ffffff?text=Brown+Leather",
+        "https://i.pinimg.com/736x/fc/79/88/fc79885b82f57805e71d4b1a0b4782cc.jpg",
 
     descripcionCorta:
         "Chaqueta café como pieza principal.",
