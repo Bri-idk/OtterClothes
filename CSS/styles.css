@@ -843,7 +843,8 @@ footer small {
   color: var(--cafe) !important;
 }
 
-#listaPedidos > div {
+#listaPedidos > div,
+#listaFavoritos > div {
     --bs-border-color: var(--cafe, #49261E);
 }
 
