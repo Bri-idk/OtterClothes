@@ -10,6 +10,8 @@ formulario.addEventListener("submit", function (evento) {
   const nombre = document.getElementById("nombre").value.trim();
   const email = document.getElementById("email").value.trim();
   const telefono = document.getElementById("telefono").value.trim();
+  const direccion = document.getElementById("direccion").value.trim();
+  // const metodoPago = document.getElementById("metodoPago").value.trim();
   const password = document.getElementById("password").value;
   const confirmarPassword = document.getElementById("confirmarPassword").value;
 
@@ -53,6 +55,17 @@ formulario.addEventListener("submit", function (evento) {
     mostrarError("errorTelefono", "");
   }
 
+  // Direccion
+  if (direccion === "") {
+    mostrarError("errorDireccion", "La dirección es obligatoria");
+    formularioValido = false;
+  } else if (direccion.length < 5) {
+    mostrarError("errorDireccion", "La dirección es demasiado corta");
+    formularioValido = false;
+  } else {
+    mostrarError("errorDireccion", "");
+  }
+
   // Contraseña
   const tieneMayuscula = /[A-Z]/;
   const tieneEspecial = /[^A-Za-z0-9]/;
@@ -90,11 +103,15 @@ formulario.addEventListener("submit", function (evento) {
       nombreCompleto: nombre,
       telefono: telefono,
       email: email,
+      direccion: direccion,
+      // metodoPago: metodoPago,
       password: password
     };
 
     const usuarioJSON = JSON.stringify(usuario, null, 2);
     console.log(usuarioJSON);
+    localStorage.setItem("usuario", usuarioJSON);
+    window.location.href="../HTML/miPerfil.html";
 
     formulario.reset();
   } else {

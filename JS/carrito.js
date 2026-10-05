@@ -19,6 +19,7 @@ const CATEGORY_IMAGES = {
     image: "https://placehold.co/600x700/F6C1D5/49261E?text=Vestidos",
   },
 };
+const ORDERS_STORAGE_KEY = "otterPedidos"; // Constante en local storage propia del demo sin backend
 
 let cart = [];
 let appliedCoupon = null;
@@ -143,6 +144,23 @@ function saveCart() {
     return true;
   } catch (error) {
     showCartError(`No se pudo guardar el carrito: ${error.message}`);
+    return false;
+  }
+}
+
+// Guardar el pedido en local storage por ausencia de backend
+function savePedido(pedido) {
+  try {
+    const saved = localStorage.getItem(ORDERS_STORAGE_KEY); // Acceder a los pedidos en local storage
+    const pedidos = saved ? JSON.parse(saved) : []; // Pasar a objeto de js si existe el valor, [] en caso contrario
+    if (!Array.isArray(pedidos)) {
+      throw new TypeError("Los pedidos guardados tienen un formato inválido");
+    }
+    pedidos.push(pedido);
+    localStorage.setItem(ORDERS_STORAGE_KEY, JSON.stringify(pedidos));
+    return true;
+  } catch (error) {
+    showCartError(`No se pudo guardar el pedido: ${error.message}`);
     return false;
   }
 }
@@ -446,9 +464,25 @@ checkoutBtn?.addEventListener("click", () => {
 
   if (!saveCart()) return;
   const orderId = generateOrderId();
+
+  // Se genera el json del pedido para guardar en local storage
+  const pedido = {
+    numero: orderId,
+    articulos: cart.map((item) => {
+      const product = resolveProduct(item.id);
+      return { // El map devuelve este objeto para cada elemento del array cart
+        nombre: product.nombre,
+        talla: item.talla,
+        cantidad: item.cantidad,
+        precioUnitario: product.precio
+      };
+    })
+  };
+  if (!savePedido(pedido)) return; // Guarda el pedido en local storage o informa el fracaso
+
   if (orderIdEl) orderIdEl.textContent = orderId;
 
-  cart = [];
+  cart = []; // Aquí se vacía el carrito después del click en checkoutBtn
   if (!saveCart()) return;
   document.getElementById("cartSection")?.classList.add("d-none");
   document.getElementById("couponSection")?.classList.add("d-none");

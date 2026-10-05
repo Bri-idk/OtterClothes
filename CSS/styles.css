@@ -770,3 +770,121 @@ body {
 .mensaje-error.visible {
     display: block; /*Empuja el contenido al desplegar, evita solapamiento*/
 }
+
+/* =========================
+   MI PERFIL
+========================= */
+
+body.mi-perfil {
+    background: linear-gradient(
+    to bottom,
+    var(--naranja) 0%,
+    var(--naranja) 30%,
+    var(--crema) 75%,
+    var(--celeste) 100%
+  );
+  background-attachment: fixed;
+}
+
+.bienvenida {
+    margin-top: 5rem;
+}
+
+/* Estilo general para todas las cards */
+.card {
+  background-color: #FAF6F0 !important;
+  border: 1px solid #E8E0D5 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Títulos */
+.card-title {
+  color: #49261E;
+  font-weight: 700;
+}
+
+/* Íconos */
+.card-title i, .bi-bag-x, .bi-wallet2 {
+  color: #FA4E02; /* Naranja Otterclothes */
+}
+
+
+footer.mi-perfil {
+  margin-top: auto;
+  background-color: var(--crema);
+  border-top: 2px solid var(--cafe);
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.footer-redes a {
+  color: var(--cafe);
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-redes a:hover {
+  color: var(--naranja);
+  transform: scale(1.2);
+}
+
+footer p,
+footer small {
+  color: var(--cafe) !important;
+}
+
+#listaPedidos > div,
+#listaFavoritos > div {
+    --bs-border-color: var(--cafe, #49261E);
+}
+
+/* =========================
+   BÚSQUEDA
+========================= */
+
+body.busqueda {
+    background: linear-gradient(
+    to bottom,
+    var(--naranja) 0%,
+    var(--naranja) 30%,
+    var(--crema) 75%,
+    var(--celeste) 100%
+  );
+  background-attachment: fixed;
+}
+
+footer.busqueda {
+  margin-top: auto;
+  background-color: var(--crema);
+  border-top: 2px solid var(--cafe);
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.footer-redes a {
+  color: var(--cafe);
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-redes a:hover {
+  color: var(--naranja);
+  transform: scale(1.2);
+}
+
+footer p,
+footer small {
+  color: var(--cafe) !important;
+}
