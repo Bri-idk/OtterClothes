@@ -13,10 +13,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding-bottom: 48px;
-    background:
-        radial-gradient(ellipse at 12% 17%, rgb(201 231 246 / 48%), transparent 27rem),
-        radial-gradient(ellipse at 92% 70%, rgb(250 78 2 / 8%), transparent 24rem),
-        #fff9f0;
+    background-color: #faf6f0;
     color: var(--sku-ink);
     font-family: 'Fredoka', Arial, Helvetica, sans-serif;
 }
