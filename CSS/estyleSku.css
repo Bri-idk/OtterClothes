@@ -108,7 +108,8 @@ body {
 }
 
 .btn-principal:focus-visible,
-#clothingForm .btn:focus-visible {
+#clothingForm .btn:focus-visible,
+#formRegistro .btn:focus-visible {
     outline: 3px solid rgb(53 80 154 / 45%);
     outline-offset: 3px;
 }
@@ -168,7 +169,8 @@ body {
     color: var(--sku-muted);
 }
 
-#clothingForm .form-label {
+#clothingForm .form-label,
+#formRegistro .form-label {
     margin-bottom: 8px;
     color: var(--cafe);
     font-size: 0.95rem;
@@ -176,7 +178,8 @@ body {
 }
 
 #clothingForm .form-control,
-#clothingForm .form-select {
+#clothingForm .form-select,
+#formRegistro .form-control {
     min-height: 49px;
     padding: 10px 14px;
     border: 1px solid #e7ddd3;
@@ -187,12 +190,14 @@ body {
     transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
-#clothingForm .form-control::placeholder {
+#clothingForm .form-control::placeholder,
+#formRegistro .form-control::placeholder {
     color: #a99c94;
 }
 
 #clothingForm .form-control:focus,
-#clothingForm .form-select:focus {
+#clothingForm .form-select:focus,
+#formRegistro .form-control:focus {
     border-color: var(--azul);
     box-shadow: 0 0 0 4px rgb(201 231 246 / 65%);
 }
@@ -232,11 +237,13 @@ body {
     font-weight: 600;
 }
 
-#clothingForm > .row > [class*="col-"] {
+#clothingForm > .row > [class*="col-"],
+#formRegistro > .row > [class*="col-"] {
     margin-bottom: 22px !important;
 }
 
-#clothingForm .btn {
+#clothingForm .btn,
+#formRegistro .btn {
     min-height: 52px;
     margin-top: 6px;
     border: 0;
@@ -249,7 +256,8 @@ body {
     transition: transform 180ms ease, background-color 180ms ease;
 }
 
-#clothingForm .btn:hover {
+#clothingForm .btn:hover,
+#formRegistro .btn:hover {
     transform: translateY(-1px);
     background: #293e7d;
     color: #fff;
