@@ -1,3 +1,5 @@
+const PRODUCTOS_STORAGE_KEY = 'misProductosFormulario';
+
 // Función global que se activa al dar clic en el botón de guardar
 window.validarFormulario = function() {
     const errorAlert = document.getElementById('errorAlert');
@@ -32,6 +34,7 @@ window.validarFormulario = function() {
 
     // CREACIÓN DEL MODELO DE DATOS EN FORMATO JSON
     const productoModelo = {
+        id: `sku-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
         nombre: name,
         categoria: category,
         genero: gender,
@@ -42,10 +45,27 @@ window.validarFormulario = function() {
         creadoEl: new Date().toISOString()
     };
 
-    // Se convierte el objeto a una cadena JSON formal y se manda a la consola (F12)
-    console.log("=== NUEVO MODELO JSON GENERADO ===");
-    console.log(JSON.stringify(productoModelo, null, 2));
-    
+    let productosGuardados;
+    try {
+        const productosJson = localStorage.getItem(PRODUCTOS_STORAGE_KEY);
+        productosGuardados = productosJson ? JSON.parse(productosJson) : [];
+        if (!Array.isArray(productosGuardados)) {
+            return mostrarAlertaError("No se pudo guardar: los productos guardados tienen un formato inválido.");
+        }
+    } catch (error) {
+        const mensaje = error instanceof SyntaxError
+            ? "No se pudo leer el inventario guardado porque sus datos están dañados."
+            : `No se pudo leer el inventario guardado: ${error.message}`;
+        return mostrarAlertaError(mensaje);
+    }
+
+    try {
+        productosGuardados.push(productoModelo);
+        localStorage.setItem(PRODUCTOS_STORAGE_KEY, JSON.stringify(productosGuardados));
+    } catch (error) {
+        return mostrarAlertaError(`No se pudo guardar el producto en este navegador: ${error.message}`);
+    }
+
     // ACTIVACIÓN VISUAL: Mostramos la alerta verde de éxito en la interfaz principal
     successAlert.classList.remove('d-none'); 
     
@@ -68,13 +88,4 @@ const contenedorForm = document.getElementById('contenedorFormulario');
 btnAbrir.addEventListener('click', () => {
     contenedorForm.style.display = 'block'; // Mostramos el formulario
     btnAbrir.style.display = 'none';        // Ocultamos este botón para limpiar la pantalla
-});
-
-// OPCIONAL: Si quieres que al enviar el formulario el botón vuelva a aparecer:
-document.getElementById('tuFormularioActual').addEventListener('submit', (e) => {
-    // Aquí ya debes tener tu código para guardar el SKU...
-    
-    // Al terminar de guardar, puedes limpiar el formulario y regresar al botón inicial:
-    contenedorForm.style.display = 'none';
-    btnAbrir.style.display = 'block';
 });
