@@ -24,19 +24,11 @@
 body {
   
 
-  /* Gradiente radial elíptico. Centro claro (crema) para no distraer del contenido, colores fuertes (celeste, azul, cafe) al borde */
-  background: linear-gradient(
-    to bottom,
-    var(--naranja) 0%,
-    var(--naranja) 20%,
-    var(--crema-suave) 65%,
-    var(--crema) 100%
-  );
-  background-attachment: fixed;
+  background-color: #faf6f0;
 
   font-family: 'Quicksand', sans-serif;
   color: var(--cafe);
-  min-height: 100vh;
+  padding-top: 70px;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
@@ -47,8 +39,10 @@ body {
 ========================= */
 
 .custom-navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 1030;
   background-color: var(--crema);
   border-bottom: 2px solid var(--cafe);
@@ -70,7 +64,7 @@ body {
 }
 
 .custom-navbar .nav-link:hover,
-.custom-navbar  {
+.custom-navbar .nav-link.active {
   color: var(--naranja);
 }
 

@@ -10,7 +10,7 @@
     --celeste: #C9E7F6;
     --azul: #35509a;
 
-    --fondo: #fffaf3;
+    --fondo: #faf6f0;
     --blanco: #ffffff;
     --gris: #666666;
 
@@ -714,6 +714,24 @@ body {
 
 }
 
+.disponibilidad-producto {
+    margin: 12px 0 0;
+    color: var(--azul);
+    font-weight: 600;
+}
+
+.btn-outfit:disabled,
+.btn-agregar-carrito:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.favorito:focus-visible,
+.btn-talla:focus-visible {
+    outline: 3px solid rgb(53 80 154 / 45%);
+    outline-offset: 3px;
+}
+
 
 
 /* =========================================
@@ -1032,7 +1050,7 @@ body {
         Helvetica,
         sans-serif;
 
-    font-weight: 600;
+    font-weight: 700;
 
 }
 
@@ -1055,7 +1073,32 @@ body {
 .custom-navbar .nav-link {
 
     color: var(--cafe);
+    font-weight: 700;
 
+}
+
+.custom-navbar .btn {
+
+    font-weight: 700;
+
+}
+
+.custom-navbar .btn-busqueda {
+    color: var(--azul);
+    background-color: var(--celeste);
+    border-color: var(--azul);
+}
+
+.custom-navbar .btn-busqueda:hover,
+.custom-navbar .btn-busqueda:focus,
+.custom-navbar .btn-busqueda:active {
+    color: var(--celeste);
+    background-color: var(--azul);
+    border-color: var(--azul);
+}
+
+.custom-navbar .btn-busqueda:focus-visible {
+    box-shadow: 0 0 0 0.25rem rgb(53 80 154 / 25%);
 }
 
 

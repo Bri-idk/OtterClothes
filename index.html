@@ -4,7 +4,7 @@
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;600&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;600;700&display=swap"
     rel="stylesheet" />
 
   <meta charset="UTF-8" />
@@ -16,6 +16,13 @@
   <style>
     body {
       padding-top: 50px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    footer {
+      width: 100%;
+      margin-top: auto;
     }
     .carousel-item img {
       height: 90vh;
@@ -147,26 +154,26 @@
     </div>
 
   </div> <!-- Cierre de row g-4 -->
+</div> <!-- Cierre del contenedor de tarjetas -->
 
   <!-- PANEL DONDE EL USUARIO ARMA SU PROPIO OUTFIT -->
-<div class="mt-5 p-4 bg-white rounded shadow text-dark text-center">
-  <h3> Tu Outfit Personalizado</h3>
-  <p>Selecciona prendas con el botón <strong>"+ Mi Outfit"</strong> para combinar el outfit.</p>
-
-  <!-- Lazo  -->
-  <div class="position-relative mx-auto my-4" style="width: 280px; height: 420px; background-color: #f8f9fa; border-radius: 16px; border: 2px dashed #dee2e6; overflow: hidden;">
+   <!--
+  <div class="mt-5 p-4 bg-white rounded shadow text-dark text-center">
+    <h3> Tu Outfit Personalizado</h3>
+    <p>Selecciona prendas con el botón <strong>"+ Mi Outfit"</strong> para combinar el outfit.</p>
     
-
-    <!-- Capa receptora donde se apilarán las prendas en encimado -->
-    <div id="contenedor-mi-outfit" class="width: 100%; max-width: 380px; min-height: 200px; height: auto; border: 2px dashed #dee2e6; border-radius: 16px;">
-      <!-- El JS colocará las imágenes aquí -->
-    </div>
-
+       <div class="position-relative mx-auto my-4" style="width: 280px; height: 420px; background-color: #f8f9fa; border-radius: 16px; border: 2px dashed #dee2e6; overflow: hidden;">
+      
+      
+          <div id="contenedor-mi-outfit" class="width: 100%; max-width: 380px; min-height: 200px; height: auto; border: 2px dashed #dee2e6; border-radius: 16px;">
+          </div>
+    
   </div>
-
+  
   <button class="btn btn-success mt-2" onclick="miOutfit.limpiar()">Vaciar mi outfit</button>
 </div>
 
+-->
 
   <!-- Footer mafer-->
 

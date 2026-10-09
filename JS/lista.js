@@ -37,6 +37,7 @@ let carrito =
 let outfitActual = null;
 
 let tallaSeleccionada = null;
+let productoActualEsSku = false;
 
 
 
@@ -65,7 +66,7 @@ function formatoPrecio(precio) {
 
             currency: "MXN",
 
-            maximumFractionDigits: 0
+            maximumFractionDigits: 2
 
         }
     ).format(precio);
@@ -85,6 +86,62 @@ function buscarOutfit(id) {
             outfit.id === id
     );
 
+}
+
+
+function buscarProductoSku(id) {
+    if (typeof id !== "string") return null;
+
+    try {
+        const guardados = localStorage.getItem("misProductosFormulario");
+        const productos = guardados ? JSON.parse(guardados) : [];
+        if (!Array.isArray(productos)) return null;
+        return productos.find(producto => producto.id === id) ?? null;
+    } catch (error) {
+        console.error("No se pudo buscar la prenda guardada.", error);
+        return null;
+    }
+}
+
+
+function buscarProductoCatalogo(id) {
+    const outfit = buscarOutfit(id);
+    if (outfit) return outfit;
+
+    const producto = buscarProductoSku(id);
+    if (!producto) return null;
+
+    const categoria = categoriasFormulario[producto.categoria] ?? {
+        nombre: producto.categoria,
+        imagen: "https://placehold.co/600x700/F8DFB7/49261E?text=Prenda"
+    };
+
+    return {
+        ...producto,
+        categoria: categoria.nombre,
+        imagen: categoria.imagen,
+        descripcionCorta: `SKU: ${producto.sku} · Género: ${producto.genero}`,
+        descripcion: `Prenda individual de ${categoria.nombre.toLowerCase()}. SKU: ${producto.sku}. Género: ${producto.genero}.`,
+        incluye: [producto.nombre]
+    };
+}
+
+
+function cantidadEnCarrito(id) {
+    return carrito
+        .filter(producto => producto.id === id)
+        .reduce((total, producto) => total + producto.cantidad, 0);
+}
+
+
+function escaparHtml(valor) {
+    return String(valor).replace(/[&<>"']/g, caracter => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[caracter]);
 }
 
 
@@ -361,7 +418,7 @@ function crearCard(outfit) {
 
                     <h2 class="nombre-outfit">
 
-                        ${outfit.nombre}
+                        ${escaparHtml(outfit.nombre)}
 
                     </h2>
 
@@ -658,209 +715,81 @@ function renderizarSecciones() {
 // ==========================================
 
 function abrirOutfit(id) {
-
-    outfitActual =
-        buscarOutfit(id);
-
-
-    tallaSeleccionada =
-        null;
-
-
-
-    if (!outfitActual) {
-
-        return;
-
-    }
-
-
-
-    // IMAGEN
-
-    document.querySelector(
-        "#modalImagen"
-    ).src =
-        outfitActual.imagen;
-
-
-
-    // NOMBRE
-
-    document.querySelector(
-        "#modalNombre"
-    ).textContent =
-        outfitActual.nombre;
-
-
-
-    // CATEGORÍA
-
-    document.querySelector(
-        "#modalEstilo"
-    ).textContent =
-        outfitActual.categoria;
-
-
-
-    // DESCRIPCIÓN
-
-    document.querySelector(
-        "#modalDescripcion"
-    ).textContent =
-        outfitActual.descripcion;
-
-
-
-    // PRECIO
-
-    document.querySelector(
-        "#modalPrecio"
-    ).textContent =
-        formatoPrecio(
-            outfitActual.precio
-        );
-
-
-
-    // ======================================
-    // PRENDAS
-    // ======================================
-
-    const listaIncluye =
-        document.querySelector(
-            "#modalIncluye"
-        );
-
-
-    listaIncluye.innerHTML = "";
-
-
-
-    outfitActual.incluye.forEach(
-        prenda => {
-
-
-            const li =
-                document.createElement(
-                    "li"
-                );
-
-
-            li.textContent =
-                prenda;
-
-
-            listaIncluye.appendChild(
-                li
-            );
-
-        }
-    );
-
-
-
-    // ======================================
-    // TALLAS
-    // ======================================
-
-    const contenedorTallas =
-        document.querySelector(
-            "#modalTallas"
-        );
-
-
-    contenedorTallas.innerHTML = "";
-
-
-
-    outfitActual.tallas.forEach(
-        talla => {
-
-
-            const boton =
-                document.createElement(
-                    "button"
-                );
-
-
-            boton.type =
-                "button";
-
-
-            boton.className =
-                "btn-talla";
-
-
-            boton.textContent =
-                talla;
-
-
-
-            boton.addEventListener(
-                "click",
-                () => {
-
-
-                    tallaSeleccionada =
-                        talla;
-
-
-
-                    document
-                        .querySelectorAll(
-                            ".btn-talla"
-                        )
-                        .forEach(
-                            btn => {
-
-                                btn.classList
-                                    .remove(
-                                        "seleccionada"
-                                    );
-
-                            }
-                        );
-
-
-                    boton.classList.add(
-                        "seleccionada"
-                    );
-
-                }
-            );
-
-
-
-            contenedorTallas
-                .appendChild(
-                    boton
-                );
-
-        }
-    );
-
-
+    outfitActual = buscarOutfit(id);
+    productoActualEsSku = false;
+    mostrarProductoEnModal(outfitActual);
+}
+
+
+function abrirProductoSku(id) {
+    outfitActual = buscarProductoCatalogo(id);
+    productoActualEsSku = Boolean(outfitActual);
+    mostrarProductoEnModal(outfitActual);
+}
+
+
+function mostrarProductoEnModal(producto) {
+    tallaSeleccionada = null;
+    if (!producto) return;
+
+    document.querySelector("#modalImagen").src = producto.imagen;
+    document.querySelector("#modalImagen").alt = producto.nombre;
+    document.querySelector("#modalNombre").textContent = producto.nombre;
+    document.querySelector("#modalEstilo").textContent = producto.categoria;
+    document.querySelector("#modalDescripcion").textContent = producto.descripcion;
+    document.querySelector("#modalPrecio").textContent = formatoPrecio(producto.precio);
+
+    const listaIncluye = document.querySelector("#modalIncluye");
+    listaIncluye.replaceChildren();
+    producto.incluye.forEach(prenda => {
+        const li = document.createElement("li");
+        li.textContent = prenda;
+        listaIncluye.appendChild(li);
+    });
+
+    const contenedorTallas = document.querySelector("#modalTallas");
+    contenedorTallas.replaceChildren();
+    producto.tallas.forEach(talla => {
+        const boton = document.createElement("button");
+        boton.type = "button";
+        boton.className = "btn-talla";
+        boton.textContent = talla;
+        boton.addEventListener("click", () => {
+            tallaSeleccionada = talla;
+            contenedorTallas.querySelectorAll(".btn-talla").forEach(btn => {
+                btn.classList.toggle("seleccionada", btn === boton);
+            });
+        });
+        contenedorTallas.appendChild(boton);
+    });
+
+    actualizarDisponibilidadProductoModal();
 
     actualizarBotonFavoritoModal();
+    bootstrap.Modal.getOrCreateInstance(document.querySelector("#modalOutfit")).show();
+}
 
 
+function actualizarDisponibilidadProductoModal() {
+    const disponibilidad = document.querySelector("#modalDisponibilidad");
+    const botonAgregar = document.querySelector("#btnAgregarCarrito");
+    if (!disponibilidad || !botonAgregar) return;
 
-    // ABRIR
+    if (!productoActualEsSku || !outfitActual) {
+        disponibilidad.textContent = "";
+        disponibilidad.classList.add("d-none");
+        botonAgregar.disabled = false;
+        botonAgregar.innerHTML = '<i class="bi bi-bag-plus"></i> Agregar al carrito';
+        return;
+    }
 
-    const modal =
-        bootstrap.Modal
-            .getOrCreateInstance(
-
-                document.querySelector(
-                    "#modalOutfit"
-                )
-
-            );
-
-
-    modal.show();
-
+    const disponibles = Math.max(0, outfitActual.stock - cantidadEnCarrito(outfitActual.id));
+    disponibilidad.textContent = `Disponibles: ${disponibles}`;
+    disponibilidad.classList.remove("d-none");
+    botonAgregar.disabled = disponibles < 1;
+    botonAgregar.innerHTML = disponibles < 1
+        ? "Sin unidades disponibles"
+        : '<i class="bi bi-bag-plus"></i> Agregar al carrito';
 }
 
 
@@ -910,7 +839,7 @@ function toggleFavorito(id) {
     renderizarFavoritos();
 
 
-    renderizarSecciones();
+    renderizarProductosFormulario();
 
 
     actualizarBotonFavoritoModal();
@@ -982,7 +911,7 @@ function renderizarFavoritos() {
 
 
             const outfit =
-                buscarOutfit(id);
+                buscarProductoCatalogo(id);
 
 
             if (!outfit) {
@@ -1000,7 +929,7 @@ function renderizarFavoritos() {
 
                     <img
                         src="${outfit.imagen}"
-                        alt="${outfit.nombre}">
+                        alt="${escaparHtml(outfit.nombre)}">
 
 
                     <div class="item-info">
@@ -1008,14 +937,14 @@ function renderizarFavoritos() {
 
                         <h6>
 
-                            ${outfit.nombre}
+                            ${escaparHtml(outfit.nombre)}
 
                         </h6>
 
 
                         <p class="categoria">
 
-                            ${outfit.categoria}
+                            ${escaparHtml(outfit.categoria)}
 
                         </p>
 
@@ -1039,8 +968,8 @@ function renderizarFavoritos() {
                             class="eliminar-item"
 
                             onclick="
-                                toggleFavorito(
-                                    ${outfit.id}
+                                toggleFavoritoPorClave(
+                                        '${encodeURIComponent(String(outfit.id))}'
                                 )
                             ">
 
@@ -1122,6 +1051,16 @@ function actualizarBotonFavoritoModal() {
     }
 
 
+    window.toggleFavoritoPorClave = function(idCodificado) {
+        const id = decodeURIComponent(idCodificado);
+        const idNumerico = Number(id);
+        const idCatalogo = Number.isInteger(idNumerico) && outfits.some(outfit => outfit.id === idNumerico)
+            ? idNumerico
+            : id;
+        toggleFavorito(idCatalogo);
+    };
+
+
 
     const boton =
         document.querySelector(
@@ -1177,35 +1116,28 @@ document
         "click",
         () => {
 
-
             if (!outfitActual) {
-
                 return;
-
             }
 
-
-
-            // =================================
-            // VALIDAR TALLA
-            // =================================
+            if (productoActualEsSku) {
+                outfitActual = buscarProductoCatalogo(outfitActual.id);
+                if (!outfitActual || outfitActual.stock < 1) {
+                    mostrarMensaje("Esta prenda está agotada");
+                    return;
+                }
+                if (cantidadEnCarrito(outfitActual.id) >= outfitActual.stock) {
+                    mostrarMensaje("No hay más unidades disponibles en inventario");
+                    return;
+                }
+            }
 
             if (!tallaSeleccionada) {
-
                 mostrarMensaje(
                     "Selecciona una talla"
                 );
-
-
                 return;
-
             }
-
-
-
-            // =================================
-            // BUSCAR SI YA EXISTE
-            // =================================
 
             const existente =
                 carrito.find(
@@ -1223,12 +1155,15 @@ document
 
 
             if (existente) {
-
                 existente.cantidad++;
 
             }
 
             else {
+                if (productoActualEsSku && outfitActual.stock < 1) {
+                    mostrarMensaje("Esta prenda está agotada");
+                    return;
+                }
 
                 carrito.push({
 
@@ -1248,13 +1183,14 @@ document
 
 
             guardarCarrito();
-
-
             renderizarCarrito();
-
-
+            renderizarProductosFormulario();
+            actualizarDisponibilidadProductoModal();
             mostrarMensaje(
-                "🛒 Outfit agregado al carrito"
+                productoActualEsSku
+                    ? "🛒 Prenda agregada al carrito"
+                    : "🛒 Outfit agregado al carrito",
+                true
             );
 
         }
@@ -1293,6 +1229,7 @@ function renderizarCarrito() {
             "#listaCarrito"
         );
 
+    if (!contenedor) return;
 
     contenedor.innerHTML =
         "";
@@ -1334,17 +1271,18 @@ function renderizarCarrito() {
 
 
             const outfit =
-                buscarOutfit(
+                buscarProductoCatalogo(
                     productoCarrito.id
                 );
 
 
             if (!outfit) {
-
                 return;
-
             }
 
+            const sinStockDisponible =
+                typeof productoCarrito.id === "string" &&
+                cantidadEnCarrito(productoCarrito.id) >= outfit.stock;
 
 
             total +=
@@ -1377,7 +1315,7 @@ function renderizarCarrito() {
 
                         <h6>
 
-                            ${outfit.nombre}
+                            ${escaparHtml(outfit.nombre)}
 
                         </h6>
 
@@ -1388,7 +1326,7 @@ function renderizarCarrito() {
 
                             <strong>
 
-                                ${productoCarrito.talla}
+                                ${escaparHtml(productoCarrito.talla)}
 
                             </strong>
 
@@ -1436,6 +1374,7 @@ function renderizarCarrito() {
 
                             <button
                                 type="button"
+                                ${sinStockDisponible ? "disabled" : ""}
 
                                 onclick="
                                     cambiarCantidad(
@@ -1516,9 +1455,18 @@ function cambiarCantidad(
     index,
     cambio
 ) {
+    const productoEnCarrito = carrito[index];
+    if (!productoEnCarrito) return;
 
-    carrito[index].cantidad +=
-        cambio;
+    if (cambio > 0 && typeof productoEnCarrito.id === "string") {
+        const producto = buscarProductoCatalogo(productoEnCarrito.id);
+        if (!producto || cantidadEnCarrito(producto.id) >= producto.stock) {
+            mostrarMensaje("No hay más unidades disponibles en inventario");
+            return;
+        }
+    }
+
+    productoEnCarrito.cantidad += cambio;
 
 
 
@@ -1537,8 +1485,9 @@ function cambiarCantidad(
 
     guardarCarrito();
 
-
     renderizarCarrito();
+    renderizarProductosFormulario();
+    actualizarDisponibilidadProductoModal();
 
 }
 
@@ -1560,6 +1509,8 @@ function eliminarCarrito(index) {
 
 
     renderizarCarrito();
+    renderizarProductosFormulario();
+    actualizarDisponibilidadProductoModal();
 
 
     mostrarMensaje(
@@ -1574,13 +1525,15 @@ function eliminarCarrito(index) {
 // 23. MENSAJES
 // ==========================================
 
-function mostrarMensaje(texto) {
+function mostrarMensaje(texto, incluirEnlaceCarrito = false) {
 
     document.querySelector(
         "#textoToast"
     ).textContent =
         texto;
 
+    const enlaceCarrito = document.querySelector("#toastCartLink");
+    enlaceCarrito?.classList.toggle("d-none", !incluirEnlaceCarrito);
 
 
     const toast =
@@ -1593,7 +1546,7 @@ function mostrarMensaje(texto) {
 
                 {
 
-                    delay: 2000
+                    delay: incluirEnlaceCarrito ? 6000 : 2000
 
                 }
 
@@ -1617,6 +1570,7 @@ document.addEventListener(
 
         renderizarSecciones();
 
+        renderizarProductosFormulario();
 
         renderizarFavoritos();
 
@@ -1629,110 +1583,162 @@ document.addEventListener(
 
 
 
-//  NUEVo producto
+const PRODUCTOS_STORAGE_KEY = "misProductosFormulario";
 
-function cargarProductosDesdeFormulario() {
-    const contenedor = document.querySelector("#seccionesOutfits");
-    if (!contenedor) return; // Si no encuentra el div, se detiene para no dar error
-    
-    // Leemos los productos que guardó el formulario en el navegador
-    const productos = JSON.parse(localStorage.getItem('misProductosFormulario')) || [];
-    
-    // Si la memoria está vacía, mostramos un mensaje amigable
-    if (productos.length === 0) {
-        contenedor.innerHTML = `<p class="text-muted text-center py-4">No hay productos agregados desde el formulario todavía.</p>`;
-        return;
-    }
-
-    let htmlContenido = `<div class="row g-4 justify-content-start">`;
-
-    productos.forEach(producto => {
-        // Formateamos el precio del JSON a pesos de forma dinámica
-        const precioFormateado = new Intl.NumberFormat("es-MX", {
-            style: "currency", currency: "MXN", maximumFractionDigits: 0
-        }).format(producto.precio);
-
-        const htmlTallas = producto.tallas.map(talla => `<span>${talla}</span>`).join("");
-
-        // colocamos las variables del formulario en el esquema HTML de la tarjeta
-        htmlContenido += `
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="card outfit-card h-100">
-                    <div class="imagen-outfit">
-                        <img src="${producto.imagen}" alt="${producto.nombre}" class="card-img-top">
-                        <button type="button" class="favorito">
-                            <i class="bi bi-heart"></i>
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <span class="categoria text-uppercase">${producto.categoria}</span>
-                        <h2 class="nombre-outfit">${producto.nombre}</h2>
-                        <p class="descripcion">SKU: ${producto.sku} | Género: ${producto.genero}</p>
-                        <div class="tallas mb-3">${htmlTallas}</div>
-                        <div class="precio mb-3">${precioFormateado}</div>
-                        
-                        <!--  aquí le pasamos el ID real de tu JSON al hacer clic -->
-                        <button type="button" class="btn btn-outfit" onclick="abrirOutfitSimulado('${producto.id}')">
-                            Ver outfit
-                        </button>
-                    </div>
-                </article>
-            </div>
-        `;
-    });
-
-    htmlContenido += `</div></section>`;
-    contenedor.innerHTML += htmlContenido; // coloca las tarjetas en el div de Outfits pero abajo
-}
-
-// Escuchador para que la función corra en cuanto cargue la página
-document.addEventListener("DOMContentLoaded", cargarProductosDesdeFormulario);
-
-//segundo 
-
-//   el modal su control 
-
-window.abrirOutfitSimulado = function(id) {
-    const productos = JSON.parse(localStorage.getItem('misProductosFormulario')) || [];
-    const productoEncontrado = productos.find(p => p.id === id);
-    
-    // Si por alguna razón el ID viene vacío o no coincide, nos avisa en la consola
-    if (!productoEncontrado) {
-        console.error("No se encontró el producto con ID:", id);
-        return;
-    }
-
-    // Mapeamos los datos del JSON dentro de los elementos de tu modal de Bootstrap
-    document.getElementById('modalImagen').src = productoEncontrado.imagen;
-    document.getElementById('modalImagen').alt = productoEncontrado.nombre;
-    document.getElementById('modalEstilo').textContent = productoEncontrado.categoria;
-    document.getElementById('modalNombre').textContent = productoEncontrado.nombre;
-    document.getElementById('modalDescripcion').textContent = `SKU: ${productoEncontrado.sku} | Género: ${productoEncontrado.genero}. Prenda en inventario local.`;
-
-    const listaIncluye = document.getElementById('modalIncluye');
-    if (listaIncluye) {
-        listaIncluye.innerHTML = `<li><i class="bi bi-check2-circle me-2"></i>1x ${productoEncontrado.nombre}</li>`;
-    }
-
-    const contenedorTallas = document.getElementById('modalTallas');
-    if (contenedorTallas) {
-        contenedorTallas.innerHTML = productoEncontrado.tallas.map(talla => 
-            `<button type="button" class="btn btn-outline-dark btn-talla-modal">${talla}</button>`
-        ).join("");
-    }
-
-    const precioModal = document.getElementById('modalPrecio');
-    if (precioModal) {
-        precioModal.textContent = new Intl.NumberFormat("es-MX", {
-            style: "currency", currency: "MXN", maximumFractionDigits: 0
-        }).format(productoEncontrado.precio);
-    }
-
-    // Levantamos el modal 
-    const miModalHTML = document.getElementById('modalOutfit');
-    if (miModalHTML) {
-        const instanciaModal = new bootstrap.Modal(miModalHTML);
-        instanciaModal.show();
+const categoriasFormulario = {
+    camisas: {
+        nombre: "Camisas / Playeras",
+        imagen: "https://placehold.co/600x700/F8DFB7/49261E?text=Camisas+%2F+Playeras"
+    },
+    pantalones: {
+        nombre: "Pantalones / Jeans",
+        imagen: "https://placehold.co/600x700/C9E7F6/35509a?text=Pantalones+%2F+Jeans"
+    },
+    vestidos: {
+        nombre: "Vestidos",
+        imagen: "https://placehold.co/600x700/F6C1D5/49261E?text=Vestidos"
     }
 };
 
+function crearTarjetaProductoFormulario(producto) {
+    const categoria = categoriasFormulario[producto.categoria] ?? {
+        nombre: producto.categoria,
+        imagen: "https://placehold.co/600x700/F8DFB7/49261E?text=Prenda"
+    };
+    const columna = document.createElement("div");
+    columna.className = "col-12 col-md-6 col-lg-4";
+
+    const tarjeta = document.createElement("article");
+    tarjeta.className = "card outfit-card h-100";
+
+    const contenedorImagen = document.createElement("div");
+    contenedorImagen.className = "imagen-outfit";
+
+    const imagen = document.createElement("img");
+    imagen.src = categoria.imagen;
+    imagen.alt = `Imagen de referencia: ${categoria.nombre}`;
+    imagen.className = "card-img-top";
+    contenedorImagen.append(imagen);
+
+    const favorito = document.createElement("button");
+    favorito.type = "button";
+    favorito.className = `favorito ${favoritos.includes(producto.id) ? "activo" : ""}`;
+    favorito.setAttribute("aria-label", favoritos.includes(producto.id)
+        ? "Quitar de favoritos"
+        : "Agregar a favoritos");
+    favorito.innerHTML = `<i class="bi ${favoritos.includes(producto.id) ? "bi-heart-fill" : "bi-heart"}"></i>`;
+    favorito.addEventListener("click", () => toggleFavorito(producto.id));
+    contenedorImagen.append(favorito);
+
+    const contenido = document.createElement("div");
+    contenido.className = "card-body";
+
+    const etiquetaCategoria = document.createElement("span");
+    etiquetaCategoria.className = "categoria";
+    etiquetaCategoria.textContent = categoria.nombre;
+
+    const nombre = document.createElement("h2");
+    nombre.className = "nombre-outfit";
+    nombre.textContent = producto.nombre;
+
+    const descripcion = document.createElement("p");
+    descripcion.className = "descripcion";
+    descripcion.textContent = `SKU: ${producto.sku} · Género: ${producto.genero}`;
+
+    const tallas = document.createElement("div");
+    tallas.className = "tallas";
+    (Array.isArray(producto.tallas) ? producto.tallas : []).forEach(talla => {
+        const etiquetaTalla = document.createElement("span");
+        etiquetaTalla.textContent = talla;
+        tallas.append(etiquetaTalla);
+    });
+
+    const precio = document.createElement("div");
+    precio.className = "precio";
+    precio.textContent = formatoPrecio(producto.precio);
+
+    const stock = document.createElement("p");
+    stock.className = "descripcion mb-0";
+    stock.textContent = `Disponibles: ${Math.max(0, producto.stock - cantidadEnCarrito(producto.id))}`;
+
+    const verPrenda = document.createElement("button");
+    verPrenda.type = "button";
+    verPrenda.className = "btn btn-outfit";
+    verPrenda.textContent = "Ver prenda";
+    verPrenda.addEventListener("click", () => abrirProductoSku(producto.id));
+
+    contenido.append(etiquetaCategoria, nombre, descripcion, tallas, precio, stock, verPrenda);
+    tarjeta.append(contenedorImagen, contenido);
+    columna.append(tarjeta);
+    return columna;
+}
+
+function renderizarProductosFormulario() {
+    const contenedor = document.querySelector("#seccionesOutfits");
+    if (!contenedor) return;
+
+    const seccionAnterior = document.querySelector("#productosFormulario");
+    seccionAnterior?.remove();
+
+    let productos = [];
+    try {
+        const productosGuardados = localStorage.getItem(PRODUCTOS_STORAGE_KEY);
+        productos = productosGuardados ? JSON.parse(productosGuardados) : [];
+    } catch (error) {
+        console.error("No se pudieron leer los productos guardados del formulario.", error);
+        return;
+    }
+
+    if (!Array.isArray(productos)) {
+        console.error("Los productos guardados del formulario tienen un formato inválido.");
+        return;
+    }
+
+    const productosValidos = productos.filter(producto =>
+        producto &&
+        typeof producto.id === "string" &&
+        typeof producto.nombre === "string" &&
+        typeof producto.categoria === "string" &&
+        typeof producto.genero === "string" &&
+        typeof producto.sku === "string" &&
+        Number.isFinite(producto.precio) &&
+        Number.isFinite(producto.stock) &&
+        Array.isArray(producto.tallas)
+    );
+
+    if (productosValidos.length !== productos.length) {
+        console.error("Se omitieron productos con datos incompletos del inventario local.");
+    }
+    if (productosValidos.length === 0) return;
+
+    const seccion = document.createElement("section");
+    seccion.id = "productosFormulario";
+    seccion.className = "bloque-seccion";
+
+    const encabezado = document.createElement("div");
+    encabezado.className = "encabezado-carrusel";
+
+    const titulo = document.createElement("h2");
+    titulo.className = "titulo-carrusel";
+    titulo.textContent = "Nuevas prendas";
+
+    const contador = document.createElement("span");
+    contador.className = "cantidad-outfits";
+    contador.textContent = `${productosValidos.length} ${productosValidos.length === 1 ? "prenda" : "prendas"}`;
+    encabezado.append(titulo, contador);
+
+    const fila = document.createElement("div");
+    fila.className = "row g-4 justify-content-center";
+    productosValidos.forEach(producto => {
+        fila.append(crearTarjetaProductoFormulario(producto));
+    });
+
+    seccion.append(encabezado, fila);
+    contenedor.append(seccion);
+}
+
+window.addEventListener("storage", event => {
+    if (event.key === PRODUCTOS_STORAGE_KEY) {
+        renderizarProductosFormulario();
+    }
+});

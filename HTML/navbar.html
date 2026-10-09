@@ -34,6 +34,9 @@
         <li class="nav-item">
           <a class="nav-link" href="HTML/contactanos.html">Contáctanos</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="HTML/miPerfil.html">Mi perfil</a>
+        </li>
 
         <li class="nav-item dropdown">
           <a
@@ -42,29 +45,50 @@
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
-          >
-            Estilos
+            >Estilos
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Kpop Idol</a></li>
-            <li><a class="dropdown-item" href="#">Y2K</a></li>
-            <li><a class="dropdown-item" href="#">Casual</a></li>
-            <li><a class="dropdown-item" href="#">Streetwear</a></li>
-            <li><a class="dropdown-item" href="#">Vintage</a></li>
+            <!-- %20 es para darle espacio pero para que lo lea el link -->
+            <li>
+              <a
+                class="dropdown-item"
+                href="HTML/catalogoStilo.html?categoria=Kpop%20Idol"
+                >Kpop Idol</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="HTML/catalogoStilo.html?categoria=Y2K"
+                >Y2K</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="HTML/catalogoStilo.html?categoria=Casual"
+                >Casual</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="HTML/catalogoStilo.html?categoria=Streetwear"
+                >Streetwear</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                href="HTML/catalogoStilo.html?categoria=Vintage"
+                >Vintage</a
+              >
+            </li>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="HTML/lista_de_items.html">
-            Outfits </a
-          ><!--
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Destacados</a></li>
-            <li><a class="dropdown-item" href="#">Nuevos Outfits</a></li>
-            <li><a class="dropdown-item" href="#">Por estilo</a></li>
-            <li><a class="dropdown-item" href="#">Por ocasión</a></li>
-          </ul>
-          -->
+          <a class="nav-link" href="HTML/lista_de_items.html"> Catálogo </a>
         </li>
 
         <li class="nav-item">
@@ -77,6 +101,9 @@
             <i class="bi bi-bag"></i> Agregar producto
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="HTML/registro.html">Registrarse</a>
+        </li>
       </ul>
 
       <form class="d-flex align-items-center gap-2" role="search">
@@ -86,7 +113,7 @@
           placeholder="Harajuku, Old Money..."
           aria-label="Buscar"
         />
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
+        <button class="btn btn-busqueda" type="submit">Buscar</button>
       </form>
     </div>
   </div>
