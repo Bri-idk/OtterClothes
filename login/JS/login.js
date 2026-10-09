@@ -35,7 +35,7 @@ form.addEventListener("submit", function (e) {
 
     if (encontrado) {
         localStorage.setItem("sesion", user);
-        window.location = "miPerfil.html";   // remplazar esta linea con la ruta de la pagina 
+        window.location = "../HTML/miPerfil.html";   // remplazar esta linea con la ruta de la pagina 
     } else {
         document.getElementById("errorGeneral").textContent = "Usuario o contraseña inválidos";
     }
