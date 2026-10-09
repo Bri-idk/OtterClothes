@@ -1,19 +1,28 @@
 /* primera parte o blque 1 fondo en general */
 
 body {
-    /*  degradado de arriba hacia abajo (to bottom) */
-    background: linear-gradient(to bottom, 
-        #FA4E02 0%,   
-        #FA4E02 20%,   
-        #F8DFB7 65%,   
-        #C9E7F6 100%   
-
-    );
-    
-    /* cubrae toda la altura de la pantalla sin cortarse */
-    background-attachment: fixed;
+    background-color: #faf6f0;
+    color: #49261e;
     min-height: 100vh;
     margin: 0;
+}
+
+#tituloCategoria {
+    color: #49261e;
+}
+
+#seccionesOutfits .card {
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(73, 38, 30, 0.16),
+        0 4px 12px rgba(73, 38, 30, 0.08) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#seccionesOutfits .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(73, 38, 30, 0.2),
+        0 6px 16px rgba(73, 38, 30, 0.1) !important;
 }
 
 /* segunda parte o bloque 2 la card hace zoom centrado */
@@ -47,4 +56,3 @@ body {
     background-color: #49261E; /* Cambia a tu color café al pasar el mouse */
     color: #ffffff;
 }
-
