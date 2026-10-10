@@ -5,11 +5,12 @@ body {
     color: #49261e;
     min-height: 100vh;
     margin: 0;
+    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
 }
 
 #tituloCategoria {
     color: #49261e;
-}
+} 
 
 #seccionesOutfits .card {
     overflow: hidden;
@@ -55,4 +56,8 @@ body {
 .btn-naranja:hover {
     background-color: #49261E; /* Cambia a tu color café al pasar el mouse */
     color: #ffffff;
+}
+
+.navbar .nav-link {
+    white-space: nowrap;
 }
