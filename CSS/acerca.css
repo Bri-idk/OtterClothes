@@ -22,11 +22,8 @@
 
 
 body {
-  
-
   background-color: #faf6f0;
-
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Fredoka', Arial, Helvetica, sans-serif;
   color: var(--cafe);
   padding-top: 70px;
   display: flex;
@@ -38,36 +35,53 @@ body {
    NAVBAR (sólida, crema, sticky arriba)
 ========================= */
 
+.mi-navbar-fondo {
+    background-color: #F8DFB7 !important;
+
+    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+
+    font-weight: 700;
+
+    font-size: 24px;
+}
+
 .custom-navbar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-  background-color: var(--crema);
-  border-bottom: 2px solid var(--cafe);
-  font-family: 'Fredoka', sans-serif;
+    background-color: var(--crema);
+    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
 }
 
-.navbar-brand {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 1.5rem;
-  color: var(--cafe) !important;
-  cursor: pointer;
-}
-
-.custom-navbar .navbar-toggler {
-  border-color: var(--cafe);
-}
+.custom-navbar .navbar-brand span,
 .custom-navbar .nav-link {
-  color: var(--cafe);
+    color: var(--cafe);
+    font-weight: 700;
+}
+
+.custom-navbar .btn {
+    font-weight: 700;
+}
+
+.custom-navbar .btn-busqueda {
+    color: var(--azul);
+    background-color: var(--celeste);
+    border-color: var(--azul);
+}
+
+.custom-navbar .btn-busqueda:hover,
+.custom-navbar .btn-busqueda:focus,
+.custom-navbar .btn-busqueda:active {
+    color: var(--celeste);
+    background-color: var(--azul);
+    border-color: var(--azul);
+}
+
+.custom-navbar .btn-busqueda:focus-visible {
+    box-shadow: 0 0 0 0.25rem rgb(53 80 154 / 25%);
 }
 
 .custom-navbar .nav-link:hover,
 .custom-navbar .nav-link.active {
-  color: var(--naranja);
+    color: var(--naranja);
 }
-
 
 /* =========================
    HERO TITLE
@@ -79,7 +93,7 @@ body {
 }
 
 .titulo-dinamico {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Fredoka', Arial, Helvetica, sans-serif;
   font-size: 3.2rem;
   letter-spacing: 2px;
   color: var(--azul);
@@ -190,7 +204,7 @@ body {
     var(--crema-suave) 50%,
     var(--crema) 100%
   );
-  border: 6px double var(--cafe-suave);
+  border: 6px double var(--cafe);
   transition: border-color 0.4s ease;
 }
 
@@ -296,14 +310,16 @@ body {
 /* =========================
    FOOTER
 ========================= */
+
 footer {
   margin-top: auto;
   background-color: var(--crema);
-  border-top: 2px solid var(--cafe);
+  border-top: 5px solid var(--celeste);
   padding: 35px 20px;
   text-align: center;
 }
 
+/* Enlaces e Iconos de Redes */
 .footer-redes a {
   color: var(--cafe);
   font-size: 1.5rem;
@@ -317,7 +333,14 @@ footer {
   transform: scale(1.2);
 }
 
+/* Textos dentro del Footer */
 footer p,
 footer small {
   color: var(--cafe) !important;
+}
+
+/* Estilos específicos para tarjetas de listas (Pedidos / Favoritos) */
+#listaPedidos > div,
+#listaFavoritos > div {
+  --bs-border-color: var(--cafe, #49261E);
 }
