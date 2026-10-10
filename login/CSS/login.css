@@ -1,17 +1,134 @@
-body { font-family: sans-serif; display: flex; 
-      justify-content: center; 
-     padding: 1rem; 
-    }
-form { 
-     width: 100%; 
-     max-width: 400px;
-     display: flex; 
-     flex-direction: 
-     column; gap: 8px; }
-input { 
-    padding: 10px; 
-    font-size: 1rem; }
+
+/* Fondo de la página */
+body {
+    font-family: 'Fredoka', sans-serif;
+    background-color: #faf6f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 270px 20px 40px;
+    box-sizing: border-box;
+}
+
+/* Tarjeta horizontal */
+.login-card {
+    display: flex;
+    width: 850px;
+    max-width: 100%;
+    min-height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(73, 38, 30, 0.15);
+}
+
+/* Lado izquierdo: imagen nutrias */
+.login-imagen {
+    width: 50%;
+    background-image: url("../../assets otterdevs/background_otters.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Lado derecho: formulario */
+#loginForm {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    background-color: #fffdfa;
+    padding: 40px 45px;
+    box-sizing: border-box;
+}
+
+/* Título */
+#loginForm h1 {
+    text-align: center;
+    color: #49261E;
+    margin-bottom: 25px;
+}
+
+/* Etiquetas de usuario y contraseña*/
+#loginForm label {
+    color: #49261E;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Campos de form */
+#loginForm input {
+    padding: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    width: 100%;
+    border: 1px solid #b9a49a;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Iconos dentro */
+.input-icono {
+    position: relative;
+}
+
+.input-icono i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #49261E;
+}
+
+#loginForm .input-icono input {
+    padding-left: 40px;
+}
+
+/* Botón naranja */
+#loginForm input[type="submit"] {
+    width: 100%;
+    background-color: #FA4E02;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#loginForm input[type="submit"]:hover {
+    background-color: #df4600;
+}
+
+/* Mensajes de error */
 .error {
-     color: red; 
-     font-size: 0.9rem;
-      margin: 0; }
+    color: red;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* responsive celular */
+@media (max-width: 767px) {
+    body {
+        padding: 40px 15px;
+    }
+
+    .login-card {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .login-imagen {
+        width: 100%;
+        min-height: 180px;
+    }
+
+    #loginForm {
+        width: 100%;
+        padding: 30px;
+    }
+}
