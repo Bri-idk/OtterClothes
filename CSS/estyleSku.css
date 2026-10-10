@@ -352,7 +352,7 @@ main {
 footer {
   margin-top: auto;
   background-color: var(--crema);
-  border-top: 2px solid var(--cafe);
+  border-top: 5px solid var(--celeste);
   padding: 35px 20px;
   text-align: center;
 }
