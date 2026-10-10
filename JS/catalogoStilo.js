@@ -92,68 +92,6 @@ const listaProductos = [
         incluye: ["Chaqueta de Mezclilla", "Camiseta Blanca Lisa", "Pantalón Negro Slim"],
         tallas: ["S", "M", "L", "G", "XL"]
     },
-    {
-        id: 4,
-        nombre: "Streetwear Essential Tokyo",
-        estilo: "Streetwear",
-        descripcion: "Comodidad y vanguardia con cortes oversize inspirados en las calles de Harajuku.",
-        precio: "\$980 MXN",
-        imagen: "#",
-        incluye: ["Sudadera con Capucha Gráfica", "Joggers Ajustables"],
-        tallas: ["S", "M", "L", "G", "XL"]
-    },
-    {
-        id: 4.2,
-        nombre: "Urban Techwear Pack",
-        estilo: "Streetwear",
-        descripcion: "Cortes utilitarios tácticos con múltiples correas y telas impermeables.",
-        precio: "$1,600 MXN",
-        imagen: "#",
-        incluye: ["Chaqueta Impermeable Táctica", "Pantalón Cargo Multi-bolsillos", "Gorrito Beanie"],
-        tallas: ["M", "L", "XL", "G"]
-    },
-     {
-        id: 4.3,
-        nombre: "Skater Graphic Vibe",
-        estilo: "Streetwear",
-        descripcion: "Estilo urbano californiano clásico y relajado de corte muy holgado.",
-        precio: "$890 MXN",
-        imagen: "#",
-        incluye: ["Camiseta Oversize Estampada", "Pantalón de Mezclilla Ancho", "Tenis de Suela Plana"],
-        tallas: ["M", "L", "XL", "G"]
-    },
-
-    {
-        id: 6,
-        nombre: "Retro Golden Vintage Tailor",
-        estilo: "Vintage",
-        descripcion: "Prendas inspiradas en los años 70 y 80 con texturas y patrones atemporales.",
-        precio: "\$1,100 MXN",
-        imagen: "#",
-        incluye: ["Camisa de Pana Retro", "Pantalón de Pinzas"],
-        tallas: ["S", "M", "L", "G", "XL"]
-    },
-     {
-        id: 6.2,
-        nombre: "90s Varsity Classic",
-        estilo: "Vintage",
-        descripcion: "Look universitario retro que rescata las siluetas americanas clásicas de los 90.",
-        precio: "$1,350 MXN",
-        imagen: "#",
-        incluye: ["Chaqueta Varsity de Cuero", "Sudadera Cuello Redondo", "Pantalón Recto"],
-        tallas: ["M", "L", "G", "XL"]
-    },
-    {
-        id: 5.3,
-        nombre: "70s Corduroy & Earth Set",
-        estilo: "Vintage",
-        descripcion: "Inspirado en paletas de colores tierra y patrones de cuadros de la época de oro.",
-        precio: "$1,190 MXN",
-        imagen: "#",
-        incluye: ["Saco de Pana Café", "Camisa Estampada de Cuadros", "Cinturón de Cuero"],
-        tallas: ["M", "L", "G", "XL"]
-    }
-
 ];
 
 
@@ -167,22 +105,10 @@ const mensajesPorEstilo = {
         nombre: "Kpop Idol",
         mensaje: "Descubre outfits inspirados en el estilo K-pop. 💖"
     },
-    "y2k": {
-        nombre: "Y2K",
-        mensaje: "Explora la colección con toda la vibra Y2K. ✨"
-    },
     "casual": {
         nombre: "Casual",
         mensaje: "Encuentra tu próximo look casual favorito. ☀️"
-    },
-    "streetwear": {
-        nombre: "Streetwear",
-        mensaje: "Descubre outfits urbanos con mucha actitud. 🧢"
-    },
-    "vintage": {
-        nombre: "Vintage",
-        mensaje: "Explora prendas con inspiración vintage. 📼"
-    }
+     },   
 };
 
 // Vincula las etiquetas de tu HTML donde pintaremos los datos
