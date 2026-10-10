@@ -296,6 +296,7 @@ body {
 /* =========================
    FOOTER
 ========================= */
+
 footer {
   margin-top: auto;
   background-color: var(--crema);
@@ -304,6 +305,7 @@ footer {
   text-align: center;
 }
 
+/* Enlaces e Iconos de Redes */
 .footer-redes a {
   color: var(--cafe);
   font-size: 1.5rem;
@@ -317,7 +319,14 @@ footer {
   transform: scale(1.2);
 }
 
+/* Textos dentro del Footer */
 footer p,
 footer small {
   color: var(--cafe) !important;
+}
+
+/* Estilos específicos para tarjetas de listas (Pedidos / Favoritos) */
+#listaPedidos > div,
+#listaFavoritos > div {
+  --bs-border-color: var(--cafe, #49261E);
 }

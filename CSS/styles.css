@@ -833,38 +833,6 @@ body.mi-perfil .card:hover {
   color: #FA4E02; /* Naranja Otterclothes */
 }
 
-
-footer.mi-perfil {
-  margin-top: auto;
-  background-color: var(--crema);
-  border-top: 2px solid var(--cafe);
-  padding: 35px 20px;
-  text-align: center;
-}
-
-.footer-redes a {
-  color: var(--cafe);
-  font-size: 1.5rem;
-  margin: 0 10px;
-  transition: color 0.3s ease, transform 0.2s ease;
-  display: inline-block;
-}
-
-.footer-redes a:hover {
-  color: var(--naranja);
-  transform: scale(1.2);
-}
-
-footer p,
-footer small {
-  color: var(--cafe) !important;
-}
-
-#listaPedidos > div,
-#listaFavoritos > div {
-    --bs-border-color: var(--cafe, #49261E);
-}
-
 /* =========================
    BÚSQUEDA
 ========================= */
@@ -873,14 +841,21 @@ body.busqueda {
     background-color: #faf6f0;
 }
 
-footer.busqueda {
+
+/* =========================
+   FOOTER
+========================= */
+
+
+footer {
   margin-top: auto;
   background-color: var(--crema);
-  border-top: 2px solid var(--cafe);
+  border-top: 2px solid var(--celeste);
   padding: 35px 20px;
   text-align: center;
 }
 
+/* Enlaces e Iconos de Redes */
 .footer-redes a {
   color: var(--cafe);
   font-size: 1.5rem;
@@ -894,7 +869,14 @@ footer.busqueda {
   transform: scale(1.2);
 }
 
+/* Textos dentro del Footer */
 footer p,
 footer small {
   color: var(--cafe) !important;
+}
+
+/* Estilos específicos para tarjetas de listas (Pedidos / Favoritos) */
+#listaPedidos > div,
+#listaFavoritos > div {
+  --bs-border-color: var(--cafe, #49261E);
 }

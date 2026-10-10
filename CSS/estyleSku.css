@@ -9,13 +9,23 @@
     --sku-paper: #fffdfa;
 }
 
+html {
+  height: 100%;
+  background-color: #faf6f0;
+}
+
 body {
-    min-height: 100vh;
-    margin: 0;
-    padding-bottom: 48px;
-    background-color: #faf6f0;
-    color: var(--sku-ink);
-    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #faf6f0;
+  display: flex;
+  flex-direction: column;
+  color: var(--sku-ink);
+  font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+}
+
+main {
+  flex: 1;
 }
 
 .sku-page {
@@ -333,4 +343,42 @@ body {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  margin-top: auto;
+  background-color: var(--crema);
+  border-top: 2px solid var(--cafe);
+  padding: 35px 20px;
+  text-align: center;
+}
+
+/* Enlaces e Iconos de Redes */
+.footer-redes a {
+  color: var(--cafe);
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-redes a:hover {
+  color: var(--naranja);
+  transform: scale(1.2);
+}
+
+/* Textos dentro del Footer */
+footer p,
+footer small {
+  color: var(--cafe) !important;
+}
+
+/* Estilos específicos para tarjetas de listas (Pedidos / Favoritos) */
+#listaPedidos > div,
+#listaFavoritos > div {
+  --bs-border-color: var(--cafe, #49261E);
 }
