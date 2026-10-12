@@ -2,7 +2,7 @@
 /* Fondo de la página */
 body {
     font-family: 'Fredoka', sans-serif;
-    background-color: #faf6f0;
+    background-color: #F8DFB7;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -15,9 +15,9 @@ body {
 /* Tarjeta horizontal */
 .login-card {
     display: flex;
-    width: 850px;
+    width: 950px;
     max-width: 100%;
-    min-height: 450px;
+    min-height: 500px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(73, 38, 30, 0.15);
@@ -26,7 +26,7 @@ body {
 /* Lado izquierdo: imagen nutrias */
 .login-imagen {
     width: 50%;
-    background-image: url("../../assets otterdevs/background_otters.jpeg");
+    background-image: url("../../assets otterdevs/Guía\ de\ diseño\ OTTERCLOTHES.png");
     background-size: cover;
     background-position: center;
 }
@@ -55,11 +55,12 @@ body {
     color: #49261E;
     text-align: left;
     font-weight: 600;
+    font-size: 18px;
 }
 
 /* Campos de form */
 #loginForm input {
-    padding: 12px;
+    padding: 14px;
     font-size: 1rem;
     font-family: inherit;
 }
@@ -79,7 +80,7 @@ body {
 
 .input-icono i {
     position: absolute;
-    left: 12px;
+    left: 14px;
     top: 50%;
     transform: translateY(-50%);
     color: #49261E;
@@ -98,6 +99,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     margin-top: 15px;
+    font-size: 18px;
 }
 
 #loginForm input[type="submit"]:hover {
