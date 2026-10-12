@@ -16,6 +16,86 @@
     ? scriptSrc.slice(0, scriptSrc.lastIndexOf("/JS/") + 1)
     : location.origin + "/";
 
+  // =====================================================
+    // SELECCIONAR EL ARCHIVO CSS
+    // =====================================================
+
+     const ESTILO = "CSS/Navbar.css";
+
+    function cargarCSS(id, ruta) {
+
+        if (document.getElementById(id)) return;
+
+        const link = document.createElement("link");
+
+        link.id = id;
+        link.rel = "stylesheet";
+        link.href = ruta;
+
+        document.head.appendChild(link);
+    }
+
+    // Cargar los estilos de la navbar
+    cargarCSS("navbar-css", BASE + ESTILO);
+
+// =====================================================
+    // CARGAR ICONOS DE BOOTSTRAP
+    // =====================================================
+
+    cargarCSS(
+        "bootstrap-icons-css",
+        "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    );
+
+
+    // =====================================================
+    // CONFIGURACION DE ICONOS
+    // =====================================================
+
+    const iconos = {
+        "mi carrito": "bi-cart3",
+        "agregar producto": "bi-plus-circle-fill",
+    };
+
+    // =====================================================
+    // AGREGAR ICONOS AL NAVBAR
+    // =====================================================
+
+    function agregarIconos(placeholder) {
+
+        const enlaces = placeholder.querySelectorAll(
+            ".nav-link"
+        );
+
+        enlaces.forEach((enlace) => {
+
+            const texto = enlace.textContent
+                .trim()
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+
+            const claseIcono = iconos[texto];
+
+            if (!claseIcono) return;
+
+            // Evitar iconos duplicados
+            if (enlace.querySelector(".bi")) return;
+
+            const icono = document.createElement("i");
+
+            icono.className = `bi ${claseIcono}`;
+            icono.setAttribute("aria-hidden", "true");
+
+            enlace.prepend(icono);
+
+        });
+    }
+
+     // =====================================================
+    // ------------------------------------------------------------
+    // =====================================================
+
   // ── Inyección de navbar ──────────────────────────────────────────────────
   document.addEventListener("DOMContentLoaded", () => {
     const placeholder = document.getElementById("navbar-placeholder");
