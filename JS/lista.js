@@ -188,110 +188,16 @@ function obtenerMasVistos() {
 
 function obtenerSecciones() {
 
+    const categorias = [...new Set(outfits.map(o => o.categoria))];
+
     return [
+        { id: "mas-visto", titulo: "Lo más visto", items: obtenerMasVistos() },
 
-        {
-
-            id: "mas-visto",
-
-            titulo:
-                "Lo más visto",
-
-            items:
-                obtenerMasVistos()
-
-        },
-
-
-        {
-
-            id: "y2k",
-
-            titulo:
-                "Y2K",
-
-            items:
-                obtenerPorCategoria(
-                    "Y2K"
-                )
-
-        },
-
-
-        {
-
-            id: "casual",
-
-            titulo:
-                "Casual",
-
-            items:
-                obtenerPorCategoria(
-                    "Casual"
-                )
-
-        },
-
-
-        {
-
-            id: "streetwear",
-
-            titulo:
-                "Streetwear",
-
-            items:
-                obtenerPorCategoria(
-                    "Streetwear"
-                )
-
-        },
-
-
-        {
-
-            id: "minimalista",
-
-            titulo:
-                "Minimalista",
-
-            items:
-                obtenerPorCategoria(
-                    "Minimalista"
-                )
-
-        },
-
-
-        {
-
-            id: "elegante",
-
-            titulo:
-                "Elegante",
-
-            items:
-                obtenerPorCategoria(
-                    "Elegante"
-                )
-
-        },
-
-
-        {
-
-            id: "vintage",
-
-            titulo:
-                "Vintage",
-
-            items:
-                obtenerPorCategoria(
-                    "Vintage"
-                )
-
-        }
-
+        ...categorias.map(categoria => ({
+            id: categoria.toLowerCase().replace(/\s+/g, "-"),
+            titulo: categoria,
+            items: obtenerPorCategoria(categoria)
+        }))
     ];
 
 }

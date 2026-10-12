@@ -5,11 +5,12 @@ body {
     color: #49261e;
     min-height: 100vh;
     margin: 0;
+    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
 }
 
 #tituloCategoria {
     color: #49261e;
-}
+} 
 
 #seccionesOutfits .card {
     overflow: hidden;
@@ -59,7 +60,6 @@ body {
 
 /* =========================
    FOOTER
-========================= */
 
 footer {
   margin-top: auto;
@@ -93,4 +93,6 @@ footer small {
 #listaPedidos > div,
 #listaFavoritos > div {
   --bs-border-color: var(--cafe, #49261E);
+.navbar .nav-link {
+    white-space: nowrap;
 }

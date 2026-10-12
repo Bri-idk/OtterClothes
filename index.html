@@ -29,6 +29,13 @@
       height: 90vh;
       object-fit: cover; 
     }
+
+    /* Las imágenes de los outfits tienen proporciones distintas:
+       esto las deja todas del mismo alto para que las cards se vean parejas */
+    #cardsInicio .card-img-top {
+      height: 420px;
+      object-fit: cover;
+    }
   </style>
 </head>
 
@@ -57,6 +64,7 @@
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
+    </button>
 
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -68,93 +76,10 @@
   <!--!cards-->
 
 <div class="container" style="background-color: var(--naranja); font-family: 'Fredoka', sans-serif; padding: 3rem 1rem; border-radius: 12px;">
-  <div class="row g-4">
 
-    <!-- Tarjeta 1 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="assets%20otterdevs/casual-1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Casual Blue - Outfit completo</h5>
-          <p class="precio">$299 MXN</p>
-          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-          <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Casual Blue', 'assets%20otterdevs/casual-1.jpg')">+ Mi Outfit</button>
-        </div>
-      </div>
-    </div>
+  <!-- Las cards las genera el script del final con los outfits de Kpop Idol y Casual -->
+  <div class="row g-4" id="cardsInicio"></div>
 
-    <!-- Tarjeta 2 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="assets%20otterdevs/casual-men-1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Casual Playa - Outfit completo</h5>
-          <p class="precio">$299 MXN</p>
-          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-          <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Casual Playa', 'assets%20otterdevs/casual-men-1.jpg')">+ Mi Outfit</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 3 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="assets%20otterdevs/kpop-idol-1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Kpop Idol "Pink Punk" - Outfit Completo</h5>
-          <p class="precio">$299 MXN</p>
-          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-          <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Kpop Pink Punk', 'assets%20otterdevs/kpop-idol-1.jpg')">+ Mi Outfit</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 4 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="assets%20otterdevs/kpopmen-idol-1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">K-Pop Men Idol "Cyber Grunge" - Outfit completo</h5>
-          <p class="precio">$299 MXN</p>
-          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-          <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Cyber Grunge', 'assets%20otterdevs/kpopmen-idol-1.jpg')">+ Mi Outfit</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 5 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="assets%20otterdevs/vintage-men-21.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Vintage Men - Comfy chill dude</h5>
-          <p class="precio">$299 MXN</p>
-          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-          <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Vintage Men', 'assets%20otterdevs/vintage-men-21.jpg')">+ Mi Outfit</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 6 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="assets%20otterdevs/y2k-1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Y2K PINK GIRL - Outfit completo</h5>
-          <p class="precio">$299 MXN</p>
-          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-          <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Y2K Pink Girl', 'assets%20otterdevs/y2k-1.jpg')">+ Mi Outfit</button>
-        </div>
-      </div>
-    </div>
-
-  </div> <!-- Cierre de row g-4 -->
 </div> <!-- Cierre del contenedor de tarjetas -->
 
   <!-- PANEL DONDE EL USUARIO ARMA SU PROPIO OUTFIT -->
@@ -192,7 +117,138 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
+
+  <!-- DATOS: el archivo con los outfits (clase Outfit, arreglo outfits).
+       Debe ir ANTES del script de las cards. -->
+  <script src="JS/productos.js"></script>
+
   <script src="JS/outFitSelector.js"></script>
+
+  <!-- CARDS DEL INICIO + AGREGAR AL CARRITO -->
+  <script>
+    (function () {
+
+      // Outfits que se muestran en el inicio (ids de productos.js).
+      // 1, 2, 6 = Kpop Idol  |  10, 11, 16 = Casual
+      const idsInicio = [1, 10, 2, 11, 6, 16];
+
+      const contenedor = document.getElementById("cardsInicio");
+
+
+      // ---------- 1. DIBUJAR LAS CARDS ----------
+
+      function crearCard(outfit) {
+
+        const tallasHTML = outfit.tallas
+          .map(talla => `
+            <button type="button"
+                    class="btn btn-outline-dark btn-sm me-1 mb-1 btn-talla-inicio"
+                    data-talla="${talla}">${talla}</button>`)
+          .join("");
+
+        return `
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100">
+              <img src="${outfit.imagen}" class="card-img-top" alt="${outfit.nombre}">
+              <div class="card-body">
+                <h5 class="card-title">${outfit.nombre} - ${outfit.categoria}</h5>
+                <p class="precio">${outfit.obtenerPrecioFormateado()} MXN</p>
+                <p class="card-text">${outfit.descripcionCorta}</p>
+
+                <div class="mb-3">${tallasHTML}</div>
+
+                <button type="button"
+                        class="btn btn-comprar btn-agregar-inicio"
+                        data-id="${outfit.id}">
+                  Agregar al carrito
+                </button>
+              </div>
+            </div>
+          </div>`;
+      }
+
+      contenedor.innerHTML = idsInicio
+        .map(id => outfits.find(outfit => outfit.id === id))
+        .filter(Boolean)
+        .map(crearCard)
+        .join("");
+
+
+      // ---------- 2. CARRITO ----------
+
+      // Mismo formato que usa la página de outfits: { id, talla, cantidad }
+      function guardarEnCarrito(id, talla) {
+
+        let carrito = [];
+
+        try {
+          carrito = JSON.parse(localStorage.getItem("otterCarrito")) || [];
+        } catch (error) {
+          carrito = [];
+        }
+
+        const existente = carrito.find(p => p.id === id && p.talla === talla);
+
+        if (existente) {
+          existente.cantidad++;
+        } else {
+          carrito.push({ id, talla, cantidad: 1 });
+        }
+
+        localStorage.setItem("otterCarrito", JSON.stringify(carrito));
+
+        // Actualiza el contador del carrito si existe en la página
+        const contador = document.getElementById("contadorCarrito");
+        if (contador) {
+          contador.textContent = carrito.reduce((total, p) => total + p.cantidad, 0);
+        }
+      }
+
+      // Texto temporal dentro del botón
+      function mostrarAviso(boton, texto) {
+        if (!boton.dataset.original) boton.dataset.original = boton.innerHTML;
+        boton.textContent = texto;
+        clearTimeout(boton.temporizador);
+        boton.temporizador = setTimeout(() => {
+          boton.innerHTML = boton.dataset.original;
+        }, 1500);
+      }
+
+
+      // ---------- 3. CLICS (un solo oyente para todas las cards) ----------
+
+      contenedor.addEventListener("click", evento => {
+
+        // Elegir talla
+        const botonTalla = evento.target.closest(".btn-talla-inicio");
+        if (botonTalla) {
+          botonTalla.parentElement.querySelectorAll(".btn-talla-inicio").forEach(b => {
+            b.classList.remove("btn-dark", "seleccionada");
+            b.classList.add("btn-outline-dark");
+          });
+          botonTalla.classList.remove("btn-outline-dark");
+          botonTalla.classList.add("btn-dark", "seleccionada");
+          return;
+        }
+
+        // Agregar al carrito
+        const botonAgregar = evento.target.closest(".btn-agregar-inicio");
+        if (botonAgregar) {
+          const tallaElegida = botonAgregar.closest(".card").querySelector(".btn-talla-inicio.seleccionada");
+
+          if (!tallaElegida) {
+            mostrarAviso(botonAgregar, "Elige una talla");
+            return;
+          }
+
+          guardarEnCarrito(Number(botonAgregar.dataset.id), tallaElegida.dataset.talla);
+          mostrarAviso(botonAgregar, "¡Agregado!");
+          return;
+        }
+      });
+
+    })();
+  </script>
 </body>
 
 </html>
