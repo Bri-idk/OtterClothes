@@ -1,0 +1,299 @@
+
+/* =========================================
+   NAVBAR OTTERCLOTHES
+========================================= */
+
+/* Fondo original */
+.mi-navbar-fondo {
+    background-color: #F8DFB7 !important;
+    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+/* Navbar principal */
+.custom-navbar {
+    background-color: var(--crema, #F8DFB7);
+    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+
+    padding: 15px 25px;
+    min-height: 85px;
+
+    box-shadow: 0 3px 12px rgba(73, 38, 30, 0.12);
+}
+
+/* =========================================
+   LOGOTIPO
+========================================= */
+
+.custom-navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-right: 25px;
+}
+
+.custom-navbar .navbar-brand img {
+    max-height: 55px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.custom-navbar .navbar-brand:hover img {
+    transform: scale(1.06);
+}
+
+.custom-navbar .navbar-brand span {
+    color: var(--cafe, #49261E);
+    font-weight: 700;
+    font-size: 22px;
+}
+
+/* =========================================
+   DISTRIBUCION DEL NAVBAR
+========================================= */
+
+.custom-navbar .navbar-collapse {
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.custom-navbar .navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* =========================================
+   ENLACES DEL MENU
+========================================= */
+
+.custom-navbar .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    color: var(--cafe, #49261E) !important;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    padding: 11px 13px !important;
+
+    border-radius: 10px;
+    white-space: nowrap;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Hover de los enlaces */
+.custom-navbar .nav-link:hover {
+    color: var(--naranja, #FA4E02) !important;
+
+    background-color: rgba(73, 38, 30, 0.08);
+
+    transform: translateY(-2px);
+}
+
+/* Pagina activa */
+.custom-navbar .nav-link.active {
+    color: var(--naranja, #FA4E02) !important;
+}
+
+/* =========================================
+   ICONOS
+========================================= */
+
+.custom-navbar .nav-link i {
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+
+    transition: transform 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover i {
+    transform: scale(1.15);
+}
+
+/* =========================================
+   MENU DESPLEGABLE - ESTILOS
+========================================= */
+
+.custom-navbar .dropdown-menu {
+    background-color: #F8DFB7;
+
+    border: 1px solid rgba(73, 38, 30, 0.15);
+    border-radius: 12px;
+
+    padding: 10px;
+
+    box-shadow: 0 8px 20px rgba(73, 38, 30, 0.15);
+}
+
+.custom-navbar .dropdown-item {
+    color: var(--cafe, #49261E);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 10px 15px;
+    border-radius: 8px;
+
+    transition: all 0.3s ease;
+}
+
+.custom-navbar .dropdown-item:hover,
+.custom-navbar .dropdown-item:focus {
+    background-color: var(--celeste, #C9E7F6);
+    color: var(--azul, #35509a);
+}
+
+/* =========================================
+   BUSCADOR
+========================================= */
+
+.custom-navbar form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-left: auto;
+}
+
+.custom-navbar input[type="search"] {
+    width: 180px;
+    min-width: 0;
+
+    padding: 10px 14px;
+
+    border: 1px solid #D6B895;
+    border-radius: 10px;
+
+    background-color: white;
+    color: var(--cafe, #49261E);
+
+    font-family: 'Fredoka', Arial, sans-serif;
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+.custom-navbar input[type="search"]:focus {
+    border-color: var(--azul, #35509a);
+
+    box-shadow: 0 0 0 3px rgba(53, 80, 154, 0.12);
+
+    outline: none;
+}
+
+/* =========================================
+   BOTON BUSCAR
+========================================= */
+
+.custom-navbar .btn {
+    font-weight: 700;
+}
+
+.custom-navbar .btn-busqueda {
+    color: var(--azul, #35509a);
+    background-color: var(--celeste, #C9E7F6);
+    border: 1px solid var(--azul, #35509a);
+
+    padding: 10px 16px;
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+.custom-navbar .btn-busqueda:hover,
+.custom-navbar .btn-busqueda:focus,
+.custom-navbar .btn-busqueda:active {
+    color: var(--celeste, #C9E7F6);
+    background-color: var(--azul, #35509a);
+    border-color: var(--azul, #35509a);
+}
+
+.custom-navbar .btn-busqueda:hover {
+    transform: translateY(-2px);
+}
+
+.custom-navbar .btn-busqueda:focus-visible {
+    box-shadow: 0 0 0 0.25rem rgb(53 80 154 / 25%);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .custom-navbar {
+        padding: 12px 18px;
+    }
+
+    .custom-navbar .navbar-collapse {
+        padding-top: 15px;
+    }
+
+    .custom-navbar .navbar-nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+    .custom-navbar .nav-link {
+        display: flex;
+        justify-content: flex-start;
+
+        width: 100%;
+        padding: 12px 15px !important;
+
+        font-size: 16px;
+    }
+
+    .custom-navbar form {
+        width: 100%;
+        margin: 12px 0 0;
+    }
+
+    .custom-navbar input[type="search"] {
+        width: 100%;
+        flex: 1;
+    }
+
+    .custom-navbar .dropdown-menu {
+        box-shadow: none;
+    }
+
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+
+    .custom-navbar {
+        padding: 10px 12px;
+    }
+
+    .custom-navbar .navbar-brand {
+        margin-right: 8px;
+    }
+
+    .custom-navbar .navbar-brand img {
+        max-height: 45px;
+    }
+
+    .custom-navbar .nav-link {
+        font-size: 15px;
+    }
+
+}

@@ -564,57 +564,7 @@ RESPONSIVE=========================*/
 }
 
 
-/* =========================
-   NAVBAR
-========================= */
 
-.mi-navbar-fondo {
-    background-color: #F8DFB7 !important;
-
-    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
-
-    font-weight: 700;
-
-    font-size: 24px;
-}
-
-.custom-navbar {
-    background-color: var(--crema);
-    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
-}
-
-.custom-navbar .navbar-brand span,
-.custom-navbar .nav-link {
-    color: var(--cafe);
-    font-weight: 700;
-}
-
-.custom-navbar .btn {
-    font-weight: 700;
-}
-
-.custom-navbar .btn-busqueda {
-    color: var(--azul);
-    background-color: var(--celeste);
-    border-color: var(--azul);
-}
-
-.custom-navbar .btn-busqueda:hover,
-.custom-navbar .btn-busqueda:focus,
-.custom-navbar .btn-busqueda:active {
-    color: var(--celeste);
-    background-color: var(--azul);
-    border-color: var(--azul);
-}
-
-.custom-navbar .btn-busqueda:focus-visible {
-    box-shadow: 0 0 0 0.25rem rgb(53 80 154 / 25%);
-}
-
-.custom-navbar .nav-link:hover,
-.custom-navbar .nav-link.active {
-    color: var(--naranja);
-}
 
 
 /* Mafer index*/
