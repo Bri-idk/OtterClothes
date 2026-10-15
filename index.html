@@ -1,220 +1,55 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://jsdelivr.net" rel="stylesheet">
 
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;600&display=swap"
-    rel="stylesheet" />
+    <link rel="stylesheet" href="../OtterClothes/CSS/styles.css">
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="CSS/styles.css">
-  <title>Otterclothes Inicio</title>
-  <style>
-    body {
-      padding-top: 50px;
-    }
-    .carousel-item img {
-      height: 90vh;
-      object-fit: cover; 
-    }
-  </style>
-</head>
-
-
-<body>
-  <!--Navbar by carlos y Mafer |Navbar generado con JavaScript---Brian Pineda -->
-  <div id="navbar-placeholder"></div>
-
-  <!--Pagina principal Mafer-->
-
-  <!--!carrusel-->
-
-
-  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="10000">
-        <img src="assets%20otterdevs/promo-otter.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="assets%20otterdevs/promo-ottervintage.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="assets%20otterdevs/promo-otterkpop.jpg" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
-
-  <!--!cards-->
-
-<div class="container" style="background-color: var(--naranja); font-family: 'Fredoka', sans-serif; padding: 3rem 1rem; border-radius: 12px;">
-  <div class="row g-4">
-
-    <!-- Tarjeta 1 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="assets%20otterdevs/casual-1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Casual Blue - Outfit completo</h5>
-          <p class="precio">$299 MXN</p>
-          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-          <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Casual Blue', 'assets%20otterdevs/casual-1.jpg')">+ Mi Outfit</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 2 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="assets%20otterdevs/casual-men-1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Casual Playa - Outfit completo</h5>
-          <p class="precio">$299 MXN</p>
-          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-          <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Casual Playa', 'assets%20otterdevs/casual-men-1.jpg')">+ Mi Outfit</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 3 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="assets%20otterdevs/kpop-idol-1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Kpop Idol "Pink Punk" - Outfit Completo</h5>
-          <p class="precio">$299 MXN</p>
-          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-          <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Kpop Pink Punk', 'assets%20otterdevs/kpop-idol-1.jpg')">+ Mi Outfit</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 4 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="assets%20otterdevs/kpopmen-idol-1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">K-Pop Men Idol "Cyber Grunge" - Outfit completo</h5>
-          <p class="precio">$299 MXN</p>
-          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-          <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Cyber Grunge', 'assets%20otterdevs/kpopmen-idol-1.jpg')">+ Mi Outfit</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 5 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="assets%20otterdevs/vintage-men-21.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Vintage Men - Comfy chill dude</h5>
-          <p class="precio">$299 MXN</p>
-          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-          <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Vintage Men', 'assets%20otterdevs/vintage-men-21.jpg')">+ Mi Outfit</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 6 -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100">
-        <img src="assets%20otterdevs/y2k-1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Y2K PINK GIRL - Outfit completo</h5>
-          <p class="precio">$299 MXN</p>
-          <p class="card-text">Tallas: S, M y L. Ideal para: Conciertos, dance covers o outfits urbanos.</p>
-          <a href="#" class="btn btn-comprar">Comprar ahora</a>
-          <button class="btn btn-outline-dark btn-armar" onclick="agregarPrendaDeOutfit('Y2K Pink Girl', 'assets%20otterdevs/y2k-1.jpg')">+ Mi Outfit</button>
-        </div>
-      </div>
-    </div>
-
-  </div> <!-- Cierre de row g-4 -->
-
-  <!-- PANEL DONDE EL USUARIO ARMA SU PROPIO OUTFIT -->
-<div class="mt-5 p-4 bg-white rounded shadow text-dark text-center">
-  <h3> Tu Outfit Personalizado</h3>
-  <p>Selecciona prendas con el botón <strong>"+ Mi Outfit"</strong> para combinar el outfit.</p>
-
-  <!-- Lazo  -->
-  <div class="position-relative mx-auto my-4" style="width: 280px; height: 420px; background-color: #f8f9fa; border-radius: 16px; border: 2px dashed #dee2e6; overflow: hidden;">
+    <title>Home</title>
+  </head>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary mi-navbar-fondo">
+  <div class="container-fluid">
+    <img src="/assets otterdevs/logo-circular-otter-cafeynaranja.png" alt="Bootstrap" width="40" height="34">
+    <a class="navbar-brand" href="#">OtterClothes</a>
     
-
-    <!-- Capa receptora donde se apilarán las prendas en encimado -->
-    <div id="contenedor-mi-outfit" class="width: 100%; max-width: 380px; min-height: 200px; height: auto; border: 2px dashed #dee2e6; border-radius: 16px;">
-      <!-- El JS colocará las imágenes aquí -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/HTML/aboutUs.html">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/HTML/contactanos.html">Contact us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+         
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
-
   </div>
-
-  <button class="btn btn-success mt-2" onclick="miOutfit.limpiar()">Vaciar mi outfit</button>
-</div>
-
-
-  <!-- Footer mafer-->
-
-
-  <footer style="background-color: var(--crema); font-family: 'Fredoka', sans-serif;">
-    <div class="container py-5">
-      <div class="row">
-
-        <!-- Marca -->
-        <div class="col-12 col-md-4 mb-4 mb-md-0">
-          <h5 style="color: var(--naranja); font-weight: 600;">OtterClothes</h5>
-          <p class="text-muted">Ropa cómoda, con estilo, para cada día.</p>
-        </div>
-
-        <!-- Enlaces -->
-        <div class="col-6 col-md-4 mb-4 mb-md-0">
-          <h6 style="color: var(--naranja);">Enlaces</h6>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-decoration-none text-dark">Inicio</a></li>
-            <li><a href="#" class="text-decoration-none text-dark">Catálogo</a></li>
-            <li><a href="#" class="text-decoration-none text-dark">Nosotros</a></li>
-            <li><a href="#" class="text-decoration-none text-dark">Contacto</a></li>
-          </ul>
-        </div>
-
-        <!-- Redes sociales -->
-        <div class="col-6 col-md-4">
-          <h6 style="color: var(--naranja);">Síguenos</h6>
-          <a href="#" class="text-dark me-3"><i class="bi bi-instagram fs-5"></i></a>
-          <a href="#" class="text-dark me-3"><i class="bi bi-facebook fs-5"></i></a>
-          <a href="#" class="text-dark"><i class="bi bi-tiktok fs-5"></i></a>
-        </div>
-
-      </div>
-
-      <hr>
-
-      <div class="text-center text-muted small">
-        &copy; 2026 OtterDevs. Todos los derechos reservados.
-      </div>
-    </div>
-  </footer>
-
-  <script src="JS/navbar.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-  <script src="JS/outFitSelector.js"></script>
-</body>
-
+</nav>
+  <body>
+    <h1 class="tituloBtn">Brian</h1>
+    <input type="int" class="1" />
+    <input type="int" class="2" />
+    <script src="script.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
 </html>
