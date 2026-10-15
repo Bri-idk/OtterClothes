@@ -32,7 +32,6 @@ formulario.addEventListener("submit", function (evento) {
   const formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (email === "") {
-
     mostrarError("errorEmail", "El email es obligatorio");
     formularioValido = false;
   } else if (!formatoEmail.test(email)) {
@@ -76,7 +75,6 @@ formulario.addEventListener("submit", function (evento) {
   } else if (password.length < 8) {
     mostrarError("errorPassword", "La contraseña debe tener al menos 8 caracteres");
     formularioValido = false;
-
   } else if (!tieneMayuscula.test(password)) {
     mostrarError("errorPassword", "Debe tener al menos una mayúscula");
     formularioValido = false;
@@ -98,7 +96,7 @@ formulario.addEventListener("submit", function (evento) {
     mostrarError("errorConfirmar", "");
   }
 
- if (formularioValido) {
+  if (formularioValido) {
     const usuario = {
       nombreCompleto: nombre,
       telefono: telefono,
@@ -111,11 +109,11 @@ formulario.addEventListener("submit", function (evento) {
     const usuarioJSON = JSON.stringify(usuario, null, 2);
     console.log(usuarioJSON);
     localStorage.setItem("usuario", usuarioJSON);
-    window.location.href="../HTML/miPerfil.html";
+    window.location.href = "../HTML/miPerfil.html";
 
-    formulario.reset();
+    formulario.reset(); // Aquí sí se limpia porque el usuario se registró con éxito
   } else {
     console.log("Hay errores en el formulario");
-    formulario.reset();
+
   }
 });
