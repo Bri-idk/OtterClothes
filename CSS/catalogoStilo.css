@@ -1,0 +1,98 @@
+/* primera parte o blque 1 fondo en general */
+
+body {
+    background-color: #faf6f0;
+    color: #49261e;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+}
+
+#tituloCategoria {
+    color: #49261e;
+} 
+
+#seccionesOutfits .card {
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(73, 38, 30, 0.16),
+        0 4px 12px rgba(73, 38, 30, 0.08) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#seccionesOutfits .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(73, 38, 30, 0.2),
+        0 6px 16px rgba(73, 38, 30, 0.1) !important;
+}
+
+/* segunda parte o bloque 2 la card hace zoom centrado */
+.contenedor-imagen-card {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden; /* Oculta el sobrante de la foto al crecer */
+}
+
+.contenedor-imagen-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Centra y ajusta proporcionalmente sin deformar */
+    transition: transform 0.5s ease; /* Zoom suave */
+}
+
+.contenedor-imagen-card:hover img {
+    transform: scale(1.08); /* Zoom sutil del 8% al pasar el cursor */
+}
+
+/* tercera parte o bloque 3 boton de agregar */
+.btn-naranja {
+    background-color: #FA4E02; /* Tu color naranja vivo en código directo */
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-naranja:hover {
+    background-color: #49261E; /* Cambia a tu color café al pasar el mouse */
+    color: #ffffff;
+}
+
+/* =========================
+   FOOTER
+
+footer {
+  margin-top: auto;
+  background-color: var(--crema);
+  border-top: 5px solid var(--celeste);
+  padding: 35px 20px;
+  text-align: center;
+}
+
+/* Enlaces e Iconos de Redes */
+.footer-redes a {
+  color: var(--cafe);
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-redes a:hover {
+  color: var(--naranja);
+  transform: scale(1.2);
+}
+
+/* Textos dentro del Footer */
+footer p,
+footer small {
+  color: var(--cafe) !important;
+}
+
+/* Estilos específicos para tarjetas de listas (Pedidos / Favoritos) */
+#listaPedidos > div,
+#listaFavoritos > div {
+  --bs-border-color: var(--cafe, #49261E);
+.navbar .nav-link {
+    white-space: nowrap;
+}

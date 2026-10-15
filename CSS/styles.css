@@ -564,34 +564,7 @@ RESPONSIVE=========================*/
 }
 
 
-/* =========================
-   NAVBAR
-========================= */
 
-.mi-navbar-fondo {
-    background-color: #F8DFB7 !important;
-
-    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
-
-    font-weight: 600;
-
-    font-size: 24px;
-}
-
-.custom-navbar {
-    background-color: var(--crema);
-    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
-}
-
-.custom-navbar .navbar-brand span,
-.custom-navbar .nav-link {
-    color: var(--cafe);
-}
-
-.custom-navbar .nav-link:hover,
-.custom-navbar .nav-link.active {
-    color: var(--naranja);
-}
 
 
 /* Mafer index*/
@@ -641,4 +614,220 @@ body {
     background-color: var(--naranja);
     border-color: var(--naranja);
     color: #fff;
+}
+
+/* =========================
+   CONTACTANOS
+========================= */
+
+.body-contactanos {
+    background-color: #faf6f0;
+    color: var(--cafe);
+}
+
+.body-contactanos .equipo__heading,
+.body-contactanos #subtitulo-contact,
+.body-contactanos .texto-bienvenida {
+    color: var(--cafe);
+}
+
+#titulo-contact {
+    margin-top: 8rem;
+}
+
+#subtitulo-contact {
+    font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.texto-bienvenida {
+    text-align: center;
+    max-width: 650px;
+    margin: 20px auto 35px;
+    padding: 15px;
+}
+
+#formContacto {
+    padding: 30px;
+    background-color: #FFF8ED;
+    border-radius: 15px;
+    box-shadow: 0 12px 32px rgba(73, 38, 30, 0.16),
+        0 4px 12px rgba(73, 38, 30, 0.08);
+}
+
+.body-contactanos #formContacto .form-label {
+    color: var(--cafe) !important;
+}
+
+.campo-obligatorio {
+    color: #F04405;
+    font-weight: bold;
+}
+
+#btn-enviar-contact {
+    font-family: 'Fredoka', sans-serif;
+    color: white;
+    border-radius: 8px;
+    padding: 12px;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.confirmacion {
+    text-align: center;
+    background-color: #FFF8ED;
+    padding: 40px 25px;
+    border-radius: 15px;
+    margin-top: 25px;
+    box-shadow: 0 12px 32px rgba(73, 38, 30, 0.16),
+        0 4px 12px rgba(73, 38, 30, 0.08);
+}
+
+.body-contactanos .modal-content {
+    border: 0;
+    border-radius: 18px;
+    box-shadow: 0 16px 40px rgba(73, 38, 30, 0.2);
+}
+
+.confirmacion__icono {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.confirmacion h2 {
+    color: #49261E;
+    margin-bottom: 20px;
+}
+
+.confirmacion p {
+    color: #49261E;
+    margin-bottom: 10px;
+}
+
+.btn-inicio {
+    display: inline-block;
+    background-color: #49261E;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.btn-inicio:hover {
+    background-color: #65382D;
+    color: white;
+}
+
+.mensaje-error { /* Globos de aviso de datos inválidos*/
+    display: none;
+    color: #dc3545;
+    font-size: 0.875rem;
+    font-weight: 600; /*Ancho de letra, 400 normal, 700 bold*/
+    margin-bottom: 0.25rem;
+}
+
+.mensaje-error.visible {
+    display: block; /*Empuja el contenido al desplegar, evita solapamiento*/
+}
+
+/* =========================
+   MI PERFIL
+========================= */
+
+body.mi-perfil {
+    background-color: #faf6f0;
+    color: var(--cafe);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.bienvenida {
+    margin-top: 5rem;
+}
+
+body.mi-perfil > .container.text-center {
+    flex: 1 0 auto;
+}
+
+/* Estilo general para todas las cards */
+body.mi-perfil .card {
+  background-color: #fff !important;
+  border: 1px solid #E8E0D5 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 12px 30px rgba(73, 38, 30, 0.16),
+      0 4px 12px rgba(73, 38, 30, 0.08) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover */
+body.mi-perfil .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(73, 38, 30, 0.2),
+      0 6px 16px rgba(73, 38, 30, 0.1) !important;
+}
+
+/* Títulos */
+.card-title {
+  color: #49261E;
+  font-weight: 700;
+}
+
+/* Íconos */
+.card-title i, .bi-bag-x, .bi-wallet2 {
+  color: #FA4E02; /* Naranja Otterclothes */
+}
+
+/* =========================
+   BÚSQUEDA
+========================= */
+
+body.busqueda {
+    background-color: #faf6f0;
+    padding-top: 100px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+
+footer {
+  margin-top: auto;
+  background-color: var(--crema);
+  border-top: 5px solid var(--celeste);
+  padding: 35px 20px;
+  text-align: center;
+}
+
+/* Enlaces e Iconos de Redes */
+.footer-redes a {
+  color: var(--cafe);
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-redes a:hover {
+  color: var(--naranja);
+  transform: scale(1.2);
+}
+
+/* Textos dentro del Footer */
+footer p,
+footer small {
+  color: var(--cafe) !important;
+}
+
+/* Estilos específicos para tarjetas de listas (Pedidos / Favoritos) */
+#listaPedidos > div,
+#listaFavoritos > div {
+  --bs-border-color: var(--cafe, #49261E);
 }

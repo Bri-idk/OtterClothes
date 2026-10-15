@@ -18,65 +18,156 @@
     <!--CSS-->
     <link rel="stylesheet" href="../CSS/styles.css">  
 
+    <!--Fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;600;700&display=swap"
+      rel="stylesheet" />
+
     <title>Contactanos Otters</title>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">-->
 </head>
-<body>
+<body class="body-contactanos">
   <!--!Navbar-->
   <div id="navbar-placeholder"></div>
-  
- <!--! Botones de contáctanos y acerca de nosotros-->
-  <div class="d-flex justify-content-center gap-3 my-3">
-    <a href="aboutUs.html" target="_blank" class="btn btn-primary" style="background-color: #49261E; font-family: Rugrats Sans;" role="button">
-    Acerca de nosotros
-    </a>
-    <a href="contactanos.html" target="_blank" class="btn btn-primary" style="background-color: #49261E; font-family: Rugrats Sans" role="button">
-    Contáctanos
-    </a>
+
+  <!--! Encabezado-->
+  <div class="titulo-contacto">
+    <span class="decoracion"></span>
+    <h1 id="titulo-contact" class="equipo__heading">Contáctanos</h1>
+    <span class="decoracion"></span>
   </div>
 
-  <!--Inicio form-->
-  <!--! Imagen del formulario-->
-  <div style="display: flex; justify-content: center; ">
-      <img src="../assets otterdevs/mockup-anuncio-otter.jpg" alt="mockup-anuncio-otter" width="600" height="300" style="border-radius: 15px;">
-  </div>  
+  <h2 id="subtitulo-contact">¡Tu voz también forma parte de nuestro estilo!</h2>
 
+  <p class="texto-bienvenida">
+    En Otterclothes queremos escucharte. Cuéntanos tus dudas,
+    ideas o sugerencias. 💗
+  </p>
+
+  <!--Inicio form-->
   <!--! Contenedor-->
   <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6">
 
-  <!--! Formulario-->      
-  <form id="formContacto">
-    <div class="mb-3">
-      <label for="nombre" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
-    </div>
+  <!--! Formulario--> 
+      <form id="formContacto" style="border: 4px solid #C9E7F6;">
 
-    <div class="mb-3">
-      <label for="correo" class="form-label">Correo electrónico</label>
-      <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo electrónico">
-    </div>
+        <div class="mb-3">
+          <label for="nombre" class="form-label" style="color: black;">Nombre
+            <span class="campo-obligatorio">*</span>
+          </label>
+          <div class="mensaje-error" id="error-nombre"></div> <!-- Contenedor de avisos. Aquí se muestra mensaje de error-->
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+        </div>
 
-    <div class="mb-3">
-      <label for="telefono" class="form-label">Teléfono</label>
-      <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
-    </div>
+        <div class="mb-3">
+          <label for="correo" class="form-label" style="color: black;">Correo electrónico
+            <span class="campo-obligatorio">*</span>
+          </label>
+          <div class="mensaje-error" id="error-correo"></div>
+          <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo electrónico">
+        </div>
 
-    <div class="mb-3">
-      <label for="mensaje" class="form-label">Mensaje</label>
-      <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Mensaje"></textarea>
-    </div>
+        <div class="mb-3">
+          <label for="telefono" class="form-label" style="color: black;">Teléfono
+            <span class="campo-obligatorio">*</span>
+          </label>
+          <div class="mensaje-error" id="error-telefono"></div>
+          <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
+        </div>
 
-    <!--! Botón-->
-    <div class="d-grid gap-2 col-6 mx-auto">
-      <button class="btn btn-primary" style="background-color: #49261E;  font-family: Rugrats Sans" type="submit">Enviar</button>
-    </div>
-  
-    <p id="aviso" class="mt-3"></p> <!--Aqui se despliega información respecto al envío de datos-->
-  </form>
+        <!--todo: Motivo de contacto-->
+        <div class="mb-3">
+          <label for="motivo" class="form-label" style="color: black;">Motivo de contacto
+            <span class="campo-obligatorio">*</span>
+          </label>
 
+          <select
+            class="form-select" id="motivo" name="motivo" required>
+            <option value="" selected disabled>
+              Selecciona una opción
+            </option>
+
+            <option value="productos">
+              Dudas sobre productos
+            </option>
+
+            <option value="pedidos">
+              Información sobre pedidos
+            </option>
+
+            <option value="devoluciones">
+              Cambios y devoluciones
+            </option>
+
+            <option value="compra">
+              Problemas con mi compra
+            </option>
+
+            <option value="sugerencias">
+              Sugerencias
+            </option>
+
+            <option value="otros">
+              Otros
+            </option>
+
+          </select>
+
+        </div>
+        <!--todo: Fin de motivo de contacto-->
+      
+        <div class="mb-3">
+          <label for="mensaje" class="form-label" style="color: black;">Mensaje
+            <span class="campo-obligatorio">*</span>
+          </label>
+          <div class="mensaje-error" id="error-mensaje"></div>
+          <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Mensaje"></textarea>
+        </div>
+
+        <!--! Botón-->
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button id="btn-enviar-contact" class="btn" style="background-color: #FA4E02" type="submit"><i class="bi bi-send"></i>Enviar</button>
+        </div>
+      
+        <p id="aviso" class="mt-3" style="color: #FA4E02"></p> <!--Aqui se despliega información respecto al envío de datos-->
+      </form>
+      </div> <!--? Cierre de col -->
+    </div> <!--? Cierre de row -->
+  </div> <!--? Cierre de container -->
+
+  <!--! Mensaje de confirmación -->
+    <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center p-4">
+          <div class="confirmacion__icono">
+         🦦💗
+          </div>
+          <h2>¡Éxito total!</h2>
+          <p> ¡Tu formulario ha sido enviado! Una nutria mensajera ha salido nadando con tu información.</p>
+          <a href="../index.html" class="btn btn-inicio">Volver al inicio</a>
+          <button type="button" class="btn btn-inicio" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
     <!--Fin form-->
+    
+    <!--todo: FOOTER -->
+    <footer class="main-footer py-4 text-center">
+        <div class="container">
+            <div class="footer-redes mb-3">
+                <a href="https://github.com/Bri-idk/OtterClothes" target="_blank" class="footer-icon"><i class="bi bi-github"></i></a>
+            </div>
+            <p class="mb-1 fw-bold footer-text">Otterclothes &copy; 2026 - Todos los derechos reservados</p>
+            <small class="footer-subtext">Diseñado con <i class="bi bi-heart-fill text-danger"></i> por el equipo de Otter Devs</small>
+        </div>
+    </footer>
+
     <script src = "../JS/navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="../JS/form.js"></script>
 </body>
 </html>
