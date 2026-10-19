@@ -36,7 +36,7 @@ const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const regexTelefono = /^[0-9+\-\s()]{7,16}$/;
 
 // URL del endpoint de Formspree
-const FORMSPREE_URL = "https://formspree.io/f/moeqgywk";
+const API_CONTACTO_URL = "http://localhost:8080/api/contact-forms";
 
 // Array de strings con los nombres de cada campo a validar
 const campos = ["nombre", "correo", "telefono", "mensaje"];
@@ -63,6 +63,26 @@ function limpiarTodo() {
     aviso.textContent = "";
 }
 
+/**
+ * Obtiene el user_id del usuario con sesión activa (sesión simulada en localStorage).
+ * "sesion" guarda el nombre de usuario y "usuarios" es el arreglo donde está su user_id.
+ * Devuelve null si no hay sesión o si no se encuentra el usuario.
+ */
+function obtenerUserIdSesion() {
+    try {
+        const nombreSesion = localStorage.getItem("sesion");
+        if (!nombreSesion) return null;
+ 
+        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        const usuario = usuarios.find((u) => u.usuario === nombreSesion);
+ 
+        return usuario ? Number(usuario.user_id) : null;
+    } catch (error) {
+        console.error("No se pudo leer la sesión: ", error);
+        return null;
+    }
+}
+
 /** Se crea un event listener desde que carga la página para cada campo por medio del array campos
 * Esto es para que cuando el usuario cambie el contenido del campo el mensaje de error se borre hasta que se vuelva a validar
 */
@@ -75,7 +95,7 @@ campos.forEach((id) => {
 // Estamos a la escucha del botón submit
 form.addEventListener("submit", envioDatos);
 
-// Manejo de promesa de Formspree con async/await
+// Envío del formulario al back con async/await
 async function envioDatos(e) {
     e.preventDefault(); // Evitamos que el navegador recargue la página
 
@@ -116,23 +136,29 @@ async function envioDatos(e) {
 
     if (errorBool) return; // Si alguno de los campos es inválido entonces se retorna para que no se envíe nada.
 
-    /**
-     * Creamos un objeto FormData que captura todos los campos con atributo name de un formulario HTML especificado en el argumento (form, declarado al inicio del script), convirtiendo sus valores en pares clave-valor.
-     */
-    const datos = new FormData(form);
+    // El back requiere un usuario asociado al mensaje (user_id de la sesión activa)
+    const userId = obtenerUserIdSesion();
+    if (userId === null) {
+        aviso.textContent = "Inicia sesión para enviar tu mensaje.";
+        return;
+    }
 
-    // Usamos la información procesada con trim de los regex para enviarlos en el FormData
-    datos.set("nombre", nombre);
-    datos.set("correo", correo);
-    datos.set("motivo", motivo);
-    datos.set("telefono", telefono);
-    datos.set("mensaje", mensaje);
+    /**
+     * Cuerpo de la petición. Las claves deben coincidir con los @JsonProperty de la entidad ContactForm del back:
+     * user (con su user_id), message y contact_reason.
+     * Nombre, correo y teléfono no se envían porque el back ya los tiene en la tabla users.
+     */
+    const cuerpo = {
+        user: { user_id: userId },
+        message: mensaje,
+        contact_reason: motivo
+    };
 
     try {
-        const respuestaSv = await fetch(FORMSPREE_URL, {
+        const respuestaSv = await fetch(API_CONTACTO_URL, {
             method: "POST",
-            body: datos,
-            headers: {"Accept": "application/json"}
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(cuerpo)
         });
 
         if (respuestaSv.ok) {
@@ -141,6 +167,7 @@ async function envioDatos(e) {
             form.reset(); // Limpiamos el formulario
             limpiarTodo(); // Borramos los avisos
         } else {
+            console.error("Respuesta del servidor: ", respuestaSv.status);
             aviso.textContent = "Error al enviar. Intente de nuevo.";
         }
     } catch (error) {

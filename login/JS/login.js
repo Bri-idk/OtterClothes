@@ -1,6 +1,6 @@
 // 1. Usuario de prueba "codificado", guardado en localStorage
 if (!localStorage.getItem("usuarios")) {
-    const usuarios = [{ usuario: "Juan", clave: "1234" }];
+    const usuarios = [{ usuario: "Juan", clave: "1234", user_id: 1 }];
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
 
