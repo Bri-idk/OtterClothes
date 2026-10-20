@@ -1,4 +1,4 @@
-const usuarioGuardado = localStorage.getItem("usuario"); // localStorage por no tener db ni back
+const usuarioGuardado = localStorage.getItem("usuarioLogueado"); 
 const formatoPrecio = new Intl.NumberFormat("es-MX", {
             style: "currency",
             currency: "MXN"
@@ -7,45 +7,75 @@ const formatoPrecio = new Intl.NumberFormat("es-MX", {
 
 if (usuarioGuardado) {
     const usuario = JSON.parse(usuarioGuardado); // Convertimos a objeto de JS para trabajarlo
-    document.getElementById("perfilNombre").textContent = usuario.nombreCompleto;
-    document.getElementById("perfilTelefono").textContent = usuario.telefono;
-    document.getElementById("perfilEmail").textContent = usuario.email;
-    document.getElementById("perfilDireccion").textContent = usuario.direccion;
+    
+    // Asignamos usando fallbacks para soportar snake_case (backend) y camelCase
+    document.getElementById("perfilNombre").textContent = 
+        usuario.user_full_name || usuario.userName || usuario.nombreCompleto || "Usuario";
+        
+    document.getElementById("perfilTelefono").textContent = 
+        usuario.user_phone || usuario.userPhone || usuario.telefono || "Sin teléfono";
+        
+    document.getElementById("perfilEmail").textContent = 
+        usuario.user_email || usuario.userEmail || usuario.email || "Sin correo";
+        
+    document.getElementById("perfilDireccion").textContent = 
+        usuario.user_address || usuario.userAddress || usuario.direccion || "Sin dirección registrada";
+} else {
+    // Si no se encuentra sesión activa, opcionalmente redirige al login
+    console.warn("No hay usuario autenticado en el localStorage.");
 }
 
 // Sección de pedidos
 
+// Sección de pedidos (Filtrada por usuario activo)
+
 const contenedorPedidos = document.getElementById("listaPedidos");
 
 try {
-    const pedidosGuardados = localStorage.getItem("otterPedidos"); // Acceder al array de pedidos en local storage
-    const pedidos = pedidosGuardados ? JSON.parse(pedidosGuardados) : []; // Pasar a objeto de js si existe el valor, [] en caso contrario
+    const usuario = usuarioGuardado ? JSON.parse(usuarioGuardado) : null;
+    const userId = usuario?.user_id || usuario?.userId;
 
-    if (Array.isArray(pedidos) && pedidos.length > 0 && contenedorPedidos) {
+    const pedidosGuardados = localStorage.getItem("otterPedidos");
+    const todosLosPedidos = pedidosGuardados ? JSON.parse(pedidosGuardados) : [];
+
+    // Solo obtenemos los pedidos pertenecientes al usuario actual
+    const pedidosUsuario = (Array.isArray(todosLosPedidos) && userId)
+        ? todosLosPedidos.filter(pedido => pedido.userId === userId || pedido.user_id === userId)
+        : [];
+
+    if (pedidosUsuario.length > 0 && contenedorPedidos) {
         contenedorPedidos.replaceChildren();
-        contenedorPedidos.className = "text-start py-3"; // Cambia la clase de text-center (Aviso de que no hay pedidos) a text-start para comenzar a enlistar
+        contenedorPedidos.className = "text-start py-3";
 
-        // Copiamos con slice, invertimos la lista para que el más reciente (último elemento de la lista) aparezca primero y creamos sus respectivos contenedores con forEach()
-        pedidos.slice().reverse().forEach((pedido) => {
+        pedidosUsuario.slice().reverse().forEach((pedido) => {
             const contenedor = document.createElement("div");
             contenedor.className = "pb-3 mb-3 border-bottom";
 
             const titulo = document.createElement("h6");
-            titulo.textContent = `Pedido ${pedido.numero}`
+            titulo.textContent = `Pedido ${pedido.numero}`;
             contenedor.append(titulo);
 
-            // Se recorren todos los articulos del pedido con forEach()
-            pedido.articulos.forEach((articulo) => {
-                let total = articulo.precioUnitario * articulo.cantidad;
-                const textoInfo = document.createElement("p");
-                textoInfo.className = "card-text mb-1";
-                textoInfo.textContent = `${articulo.nombre} Talla ${articulo.talla} x${articulo.cantidad} | ${formatoPrecio.format(articulo.precioUnitario)} c/u | Total: ${formatoPrecio.format(total)}`;
-                contenedor.append(textoInfo);
-            });
+            if (Array.isArray(pedido.articulos)) {
+                pedido.articulos.forEach((articulo) => {
+                    let total = articulo.precioUnitario * articulo.cantidad;
+                    const textoInfo = document.createElement("p");
+                    textoInfo.className = "card-text mb-1";
+                    textoInfo.textContent = `${articulo.nombre} Talla ${articulo.talla} x${articulo.cantidad} | ${formatoPrecio.format(articulo.precioUnitario)} c/u | Total: ${formatoPrecio.format(total)}`;
+                    contenedor.append(textoInfo);
+                });
+            }
 
             contenedorPedidos.append(contenedor);
-
         });
+    } else if (contenedorPedidos) {
+        // Muestra el mensaje por defecto si el usuario es nuevo y no tiene pedidos
+        contenedorPedidos.className = "text-center py-3";
+        contenedorPedidos.innerHTML = `
+            <div class="sin-pedidos">
+                <p class="mb-1 fw-bold">Aún no tienes pedidos</p>
+                <small class="text-muted">Explora nuestra tienda para realizar tu primera compra</small>
+            </div>
+        `;
     }
 
 } catch (error) {
