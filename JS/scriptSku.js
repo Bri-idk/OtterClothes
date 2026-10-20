@@ -16,6 +16,7 @@ window.validarFormulario = function() {
     const sku = document.getElementById('prodSku').value.trim();
     const price = document.getElementById('prodPrice').value;
     const stock = document.getElementById('prodStock').value;
+    const color = document.getElementById('prodColor').value.trim();
     
     // Recopilación de los checkboxes de tallas seleccionadas
     const selectedSizes = [];
@@ -31,6 +32,7 @@ window.validarFormulario = function() {
     if (price === "" || parseFloat(price) <= 0) return mostrarAlertaError("Ingresa un precio de venta válido mayor a 0.");
     if (stock === "" || parseInt(stock) < 0) return mostrarAlertaError("El stock inicial no puede quedar vacío ni ser menor a 0.");
     if (selectedSizes.length === 0) return mostrarAlertaError("Debes seleccionar al menos una talla disponible.");
+    if (color === "") return mostrarAlertaError("Debes indicar el color de la prenda.");
 
     // CREACIÓN DEL MODELO DE DATOS EN FORMATO JSON
     const productoModelo = {
@@ -89,3 +91,13 @@ btnAbrir.addEventListener('click', () => {
     contenedorForm.style.display = 'block'; // Mostramos el formulario
     btnAbrir.style.display = 'none';        // Ocultamos este botón para limpiar la pantalla
 });
+
+// Prueba de conexión con el backend
+fetch("http://localhost:8080/api/sizes")
+    .then(response => response.json())
+    .then(data => {
+        console.log("Tallas obtenidas desde MySQL:", data);
+    })
+    .catch(error => {
+        console.error("Error al conectar con Spring Boot:", error);
+    });
