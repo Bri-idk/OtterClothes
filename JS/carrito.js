@@ -1,3 +1,51 @@
+// --- CONEXIÓN AL BACKEND (API) ---
+const BASE_URL = "http://localhost:8080/api";
+
+// 1. Obtener todos los ítems de la BD (GET)
+async function fetchCartItemsFromAPI() {
+  try {
+    const response = await fetch(`${BASE_URL}/order-items`);
+    if (!response.ok) throw new Error("Error al obtener el carrito: " + response.status);
+    return await response.json();
+  } catch (error) {
+    console.error("Error en API GET:", error);
+    return null;
+  }
+}
+
+// 2. Guardar/Agregar un ítem en la BD (POST)
+async function saveCartItemToAPI(orderId, stockId, quantity) {
+  try {
+    const response = await fetch(`${BASE_URL}/order-items`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        order: { order_id: orderId },
+        stock: { stock_id: stockId },
+        quant_item: quantity
+      })
+    });
+    if (!response.ok) throw new Error("Error al guardar en BD: " + response.status);
+    return await response.json();
+  } catch (error) {
+    console.error("Error en API POST:", error);
+  }
+}
+
+// 3. Eliminar un ítem de la BD (DELETE)
+async function deleteCartItemFromAPI(orderItemId) {
+  try {
+    const response = await fetch(`${BASE_URL}/order-items/${orderItemId}`, {
+      method: "DELETE"
+    });
+    if (!response.ok) throw new Error("Error al eliminar de BD: " + response.status);
+    return true;
+  } catch (error) {
+    console.error("Error en API DELETE:", error);
+  }
+}
+// ---------------------------------
+
 const CART_STORAGE_KEY = "otterCarrito";
 const PRODUCTS_STORAGE_KEY = "misProductosFormulario";
 const COUPONS = {
@@ -111,11 +159,26 @@ function getCartQuantityForProduct(id) {
     .reduce((total, item) => total + item.cantidad, 0);
 }
 
-function loadCart() {
+async function loadCart() {
   clearCartError();
-  let saved;
+  
+  // 1. Intentamos obtener los datos del Backend (API)
+  const apiItems = await fetchCartItemsFromAPI();
+
+  // Si la API responde bien Y tiene elementos, usamos la API
+  if (apiItems && Array.isArray(apiItems) && apiItems.length > 0) {
+    cart = apiItems.map((item) => ({
+      orderItemId: item.order_items_id,
+      id: item.stock ? item.stock.stock_id : item.id,
+      talla: item.stock ? "M" : item.talla,
+      cantidad: item.quant_item
+    }));
+    return;
+  }
+
+  // 2. Si la API devuelve vacío [], falla o está apagada, usamos el respaldo de localStorage
   try {
-    saved = localStorage.getItem(CART_STORAGE_KEY);
+    const saved = localStorage.getItem(CART_STORAGE_KEY);
     const parsed = saved ? JSON.parse(saved) : [];
     if (!Array.isArray(parsed)) {
       throw new TypeError("El carrito guardado tiene un formato inválido.");
@@ -128,9 +191,6 @@ function loadCart() {
         Number.isInteger(item.cantidad) &&
         item.cantidad > 0,
     );
-    if (cart.length !== parsed.length) {
-      showCartError("Se encontraron artículos dañados y no se pudieron cargar.");
-    }
   } catch (error) {
     cart = [];
     showCartError(`No se pudo leer el carrito guardado: ${error.message}`);
@@ -282,7 +342,7 @@ function buildItemElement(item) {
   return el;
 }
 
-function updateCartItem(key, action) {
+async function updateCartItem(key, action) {
   let parsedKey;
   try {
     parsedKey = JSON.parse(decodeURIComponent(key));
@@ -296,11 +356,24 @@ function updateCartItem(key, action) {
   if (itemIndex < 0) return;
 
   const item = cart[itemIndex];
+
   if (action === "remove") {
+    // Si tiene un ID de la BD, lo eliminamos en el Backend (DELETE)
+    if (item.orderItemId) {
+      await deleteCartItemFromAPI(item.orderItemId);
+    }
     cart.splice(itemIndex, 1);
   } else if (action === "decrease") {
     item.cantidad -= 1;
-    if (item.cantidad < 1) cart.splice(itemIndex, 1);
+    if (item.cantidad < 1) {
+      if (item.orderItemId) {
+        await deleteCartItemFromAPI(item.orderItemId);
+      }
+      cart.splice(itemIndex, 1);
+    } else {
+      // Guardamos/Actualizamos en la API
+      await saveCartItemToAPI(1, item.id, item.cantidad);
+    }
   } else if (action === "increase") {
     if (typeof item.id === "string") {
       let product;
@@ -316,6 +389,8 @@ function updateCartItem(key, action) {
       }
     }
     item.cantidad += 1;
+    // Guardamos/Actualizamos en la API (POST)
+    await saveCartItemToAPI(1, item.id, item.cantidad);
   }
 
   if (saveCart()) renderCart();
@@ -522,7 +597,7 @@ window.addEventListener("storage", (event) => {
   }
 });
 
-window.addEventListener("DOMContentLoaded", () => {
-  loadCart();
+window.addEventListener("DOMContentLoaded", async () => {
+  await loadCart();
   renderCart();
 });
