@@ -5,6 +5,32 @@ const formatoPrecio = new Intl.NumberFormat("es-MX", {
         });
 // Info del usuario
 
+// Pide al back la dirección principal del usuario y la muestra en el perfil
+
+async function cargarDireccion(userId) {
+    const elemento = document.getElementById("perfilDireccion");
+
+    try {
+        const respuesta = await fetch(`http://localhost:8080/api/addresses/user/${userId}/default`);
+
+        // 404 es que el usuario no tiene dirección principal
+        if (respuesta.status === 404) {
+            elemento.textContent = "Sin dirección registrada";
+            return;
+        }
+        if (!respuesta.ok) {
+            throw new Error(`Error ${respuesta.status}`);
+        }
+
+        const dir = await respuesta.json();
+        elemento.textContent = `${dir.street} ${dir.house_number}, ${dir.neighborhood}, C.P. ${dir.postal_code}, ${dir.city}, ${dir.state}`
+
+    } catch (error) {
+        console.error("No se pudo obtener la dirección: ", error);
+        elemento.textContent = "No se pudo cargar la dirección";
+    }
+}
+
 if (usuarioGuardado) {
     const usuario = JSON.parse(usuarioGuardado); // Convertimos a objeto de JS para trabajarlo
     
@@ -18,8 +44,12 @@ if (usuarioGuardado) {
     document.getElementById("perfilEmail").textContent = 
         usuario.user_email || usuario.userEmail || usuario.email || "Sin correo";
         
-    document.getElementById("perfilDireccion").textContent = 
-        usuario.user_address || usuario.userAddress || usuario.direccion || "Sin dirección registrada";
+    const userId = usuario.user_id ?? usuario.userId;
+    if (userId != null) {
+        cargarDireccion(userId);
+    } else {
+        document.getElementById("perfilDireccion").textContent = "Sin dirección registrada"
+    }
 } else {
     // Si no se encuentra sesión activa, opcionalmente redirige al login
     console.warn("No hay usuario autenticado en el localStorage.");

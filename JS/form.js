@@ -70,13 +70,11 @@ function limpiarTodo() {
  */
 function obtenerUserIdSesion() {
     try {
-        const nombreSesion = localStorage.getItem("sesion");
-        if (!nombreSesion) return null;
+        const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
  
-        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-        const usuario = usuarios.find((u) => u.usuario === nombreSesion);
+        const id = usuario?.user_id ?? usuario?.userId;
+        return id != null ? Number(id) : null;
  
-        return usuario ? Number(usuario.user_id) : null;
     } catch (error) {
         console.error("No se pudo leer la sesión: ", error);
         return null;
