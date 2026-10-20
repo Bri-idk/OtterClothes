@@ -1,7 +1,7 @@
 const PRODUCTOS_STORAGE_KEY = 'misProductosFormulario';
 
 // Función global que se activa al dar clic en el botón de guardar
-window.validarFormulario = function() {
+window.validarFormulario = async function() {
     const errorAlert = document.getElementById('errorAlert');
     const successAlert = document.getElementById('pageSuccessAlert');
     
@@ -12,10 +12,13 @@ window.validarFormulario = function() {
     // Captura de datos de los elementos del formulario
     const name = document.getElementById('prodName').value.trim();
     const category = document.getElementById('prodCategory').value;
+    const description = document.getElementById('prodDescription').value.trim();
+    const style = document.getElementById('prodStyle').value.trim();
     const gender = document.getElementById('prodGender').value;
     const sku = document.getElementById('prodSku').value.trim();
     const price = document.getElementById('prodPrice').value;
     const stock = document.getElementById('prodStock').value;
+    const color = document.getElementById('prodColor').value.trim();
     
     // Recopilación de los checkboxes de tallas seleccionadas
     const selectedSizes = [];
@@ -25,46 +28,63 @@ window.validarFormulario = function() {
 
     // VALIDACIÓN JAVASCRIPT
     if (name === "") return mostrarAlertaError("El nombre de la prenda es requerido.");
+    if (description === "") return mostrarAlertaError("Debes agregar una descripción del producto.");
+    if (style === "") return mostrarAlertaError("Debes indicar el estilo de la prenda.");
     if (category === "") return mostrarAlertaError("Por favor selecciona una categoría de ropa.");
     if (gender === "") return mostrarAlertaError("Debes asignar un género para el catálogo.");
     if (sku === "") return mostrarAlertaError("El código SKU es obligatorio para el control de inventario.");
     if (price === "" || parseFloat(price) <= 0) return mostrarAlertaError("Ingresa un precio de venta válido mayor a 0.");
     if (stock === "" || parseInt(stock) < 0) return mostrarAlertaError("El stock inicial no puede quedar vacío ni ser menor a 0.");
     if (selectedSizes.length === 0) return mostrarAlertaError("Debes seleccionar al menos una talla disponible.");
+    if (color === "") return mostrarAlertaError("Debes indicar el color de la prenda.");
 
     // CREACIÓN DEL MODELO DE DATOS EN FORMATO JSON
     const productoModelo = {
         id: `sku-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
         nombre: name,
+        descripcion: description,
+        estilo: style,
         categoria: category,
         genero: gender,
         sku: sku,
         precio: parseFloat(price),
         stock: parseInt(stock),
+        color: color,
         tallas: selectedSizes,
         creadoEl: new Date().toISOString()
     };
 
-    let productosGuardados;
-    try {
-        const productosJson = localStorage.getItem(PRODUCTOS_STORAGE_KEY);
-        productosGuardados = productosJson ? JSON.parse(productosJson) : [];
-        if (!Array.isArray(productosGuardados)) {
-            return mostrarAlertaError("No se pudo guardar: los productos guardados tienen un formato inválido.");
-        }
-    } catch (error) {
-        const mensaje = error instanceof SyntaxError
-            ? "No se pudo leer el inventario guardado porque sus datos están dañados."
-            : `No se pudo leer el inventario guardado: ${error.message}`;
-        return mostrarAlertaError(mensaje);
+    // Datos que enviaremos al backend de Spring Boot
+const productoBackend = {
+    product_name: name,
+    description: description,
+    price: parseFloat(price),
+    model: gender,
+    style: style
+};
+
+   // Enviar el producto al backend de Spring Boot
+try {
+    const respuesta = await fetch("http://localhost:8080/api/products", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(productoBackend)
+    });
+
+    if (!respuesta.ok) {
+        return mostrarAlertaError("No se pudo guardar el producto en MySQL.");
     }
 
-    try {
-        productosGuardados.push(productoModelo);
-        localStorage.setItem(PRODUCTOS_STORAGE_KEY, JSON.stringify(productosGuardados));
-    } catch (error) {
-        return mostrarAlertaError(`No se pudo guardar el producto en este navegador: ${error.message}`);
-    }
+    const productoGuardado = await respuesta.json();
+
+    console.log("Producto guardado en MySQL:", productoGuardado);
+
+} catch (error) {
+    console.error("Error al conectar con Spring Boot:", error);
+    return mostrarAlertaError("Error de conexión con el servidor.");
+}
 
     // ACTIVACIÓN VISUAL: Mostramos la alerta verde de éxito en la interfaz principal
     successAlert.classList.remove('d-none'); 
@@ -89,3 +109,13 @@ btnAbrir.addEventListener('click', () => {
     contenedorForm.style.display = 'block'; // Mostramos el formulario
     btnAbrir.style.display = 'none';        // Ocultamos este botón para limpiar la pantalla
 });
+
+// Prueba de conexión con el backend
+fetch("http://localhost:8080/api/sizes")
+    .then(response => response.json())
+    .then(data => {
+        console.log("Tallas obtenidas desde MySQL:", data);
+    })
+    .catch(error => {
+        console.error("Error al conectar con Spring Boot:", error);
+    });
