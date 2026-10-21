@@ -1,5 +1,6 @@
 // --- CONEXIÓN AL BACKEND (API) ---
-const BASE_URL = "http://localhost:8080/api";
+// Con el front por separado: http://localhost:8080/api
+const BASE_URL = "/api";
 
 // 1. Obtener todos los ítems de la BD (GET)
 async function fetchCartItemsFromAPI() {

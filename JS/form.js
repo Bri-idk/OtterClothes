@@ -35,8 +35,9 @@ const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
  */
 const regexTelefono = /^[0-9+\-\s()]{7,16}$/;
 
-// URL del endpoint de Formspree
-const API_CONTACTO_URL = "http://localhost:8080/api/contact-forms";
+// URL del endpoint 
+// Para front por separado: http://localhost:8080/api/contact-forms
+const API_CONTACTO_URL = "/api/contact-forms"; 
 
 // Array de strings con los nombres de cada campo a validar
 const campos = ["nombre", "correo", "telefono", "mensaje"];
