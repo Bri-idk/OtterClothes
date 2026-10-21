@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,12 +10,21 @@
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- Bootstrap CSS (NUEVO: lo necesita el navbar) -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
     <!-- Bootstrap Icons -->
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-    <!-- CSS -->
+    <!-- CSS general: estilos del navbar y footer (NUEVO) -->
+    <!-- Cambia el nombre si tu archivo se llama distinto -->
+    <link rel="stylesheet" href="../CSS/styles.css">
+
+    <!-- CSS del login (va al final para que sus reglas tengan prioridad) -->
     <link rel="stylesheet" href="../CSS/login.css">
 
     <!-- JavaScript -->
@@ -24,6 +32,9 @@
 </head>
 
 <body>
+
+    <!-- Aquí se carga el navbar -->
+    <div id="navbar-placeholder"></div>
 
     <!-- Tarjeta horizontal -->
     <main class="login-card">
@@ -64,5 +75,21 @@
 
     </main>
 
+    <!-- FOOTER -->
+    <footer class="main-footer py-4 text-center">
+        <div class="container">
+            <div class="footer-redes mb-3">
+                <a href="https://github.com/Bri-idk/OtterClothes" target="_blank" class="footer-icon"><i class="bi bi-github"></i></a>
+            </div>
+            <p class="mb-1 fw-bold footer-text">Otterclothes &copy; 2026 - Todos los derechos reservados</p>
+            <small class="footer-subtext">Diseñado con <i class="bi bi-heart-fill text-danger"></i> por el equipo de Otter Devs</small>
+        </div>
+    </footer>
+
+    <!-- Carga el navbar dentro del div -->
+    <script src="../JS/navbar.js"></script>
+
+    <!-- Bootstrap JS (botón hamburguesa y dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
