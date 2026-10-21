@@ -11,7 +11,9 @@ async function cargarDireccion(userId) {
     const elemento = document.getElementById("perfilDireccion");
 
     try {
-        const respuesta = await fetch(`http://localhost:8080/api/addresses/user/${userId}/default`);
+        // Front por separado:
+        // http://localhost:8080/api/addresses/user/${userId}/default
+        const respuesta = await fetch(`/api/addresses/user/${userId}/default`);
 
         // 404 es que el usuario no tiene dirección principal
         if (respuesta.status === 404) {
