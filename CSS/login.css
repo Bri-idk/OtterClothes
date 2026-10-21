@@ -1,26 +1,33 @@
-
 /* Fondo de la página */
 body {
     font-family: 'Fredoka', sans-serif;
     background-color: #F8DFB7;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;   
     min-height: 100vh;
     margin: 0;
-    padding: 270px 20px 40px;
-    box-sizing: border-box;
+}
+
+/*separación entre navbar y tarjeta */
+#navbar-placeholder {
+    margin-bottom: 40px;
+}
+
+/* separación entre tarjeta y footer */
+.main-footer {
+    margin-top: 40px;
 }
 
 /* Tarjeta horizontal */
 .login-card {
     display: flex;
     width: 950px;
-    max-width: 100%;
+    max-width: calc(100% - 30px);  
     min-height: 500px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(73, 38, 30, 0.15);
+    margin: auto;                  
 }
 
 /* Lado izquierdo: imagen nutrias */
@@ -50,7 +57,7 @@ body {
     margin-bottom: 25px;
 }
 
-/* Etiquetas de usuario y contraseña*/
+/* Etiquetas de usuario y contraseña */
 #loginForm label {
     color: #49261E;
     text-align: left;
@@ -115,9 +122,7 @@ body {
 
 /* responsive celular */
 @media (max-width: 767px) {
-    body {
-        padding: 40px 15px;
-    }
+    
 
     .login-card {
         flex-direction: column;
