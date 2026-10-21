@@ -65,7 +65,7 @@ const productoBackend = {
 
    // Enviar el producto al backend de Spring Boot
 try {
-    const respuesta = await fetch("http://localhost:8080/api/products", {
+    const respuesta = await fetch("/api/products", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -111,7 +111,7 @@ btnAbrir.addEventListener('click', () => {
 });
 
 // Prueba de conexión con el backend
-fetch("http://localhost:8080/api/sizes")
+fetch("/api/sizes")
     .then(response => response.json())
     .then(data => {
         console.log("Tallas obtenidas desde MySQL:", data);
