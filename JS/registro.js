@@ -132,7 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         // AJUSTAR ESTA RUTA según la dirección y puerto de el servidor/backend
-        const respuesta = await fetch("http://localhost:8080/api/users", {
+        // const respuesta = await fetch("http://localhost:8080/api/users", {
+          const respuesta = await fetch("/api/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
