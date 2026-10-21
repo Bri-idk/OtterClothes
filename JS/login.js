@@ -31,7 +31,9 @@ form.addEventListener("submit", async function (e) {
 
     try {
         // 4. Enviar la petición POST al servidor
-        const respuesta = await fetch("http://localhost:8080/api/auth/login", {
+       // const respuesta = await fetch("http://localhost:8080/api/auth/login", {
+            
+            const respuesta = await fetch("/api/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
